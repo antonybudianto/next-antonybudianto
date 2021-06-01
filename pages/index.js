@@ -18,7 +18,12 @@ export default function Home() {
         />
       </Head>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-start items-center h-screen">
+      <div
+        className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-start items-center"
+        style={{
+          height: "95%",
+        }}
+      >
         <div className="text-left">
           <div className="container">
             <Image
@@ -29,9 +34,6 @@ export default function Home() {
               height={150}
             />
           </div>
-          {/* <p className="text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium">
-            Hi! I am
-          </p> */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-white-900 my-8 sm:mt-14 sm:mb-10">
             Antony Budianto
           </h1>
@@ -56,16 +58,16 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="px-4 py-8 mx-auto container">
+      <div className="p-8 mx-auto container rounded-xl shadow-md bg-white">
         <h2
           id="work"
-          className="mb-5 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-700 to-blue-700"
+          className="mb-8 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-700 to-blue-700"
         >
           My recent work
         </h2>
         <div className="flex flex-col lg:flex-row">
-          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded shadow-md">
-            <h3 className="text-2xl">Deesain</h3>
+          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded-xl border">
+            <h3 className="text-2xl mb-2">Deesain</h3>
             <p className="mb-5">
               Modern Design platform for social media, thumbnails, or any
               creative works. Made using NextJS (React), Bootstrap, and
@@ -88,8 +90,8 @@ export default function Home() {
             />
           </div>
 
-          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded shadow-md mt-2 lg:mt-0 lg:ml-5">
-            <h3 className="text-2xl">StickyNoted</h3>
+          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded-xl border mt-2 lg:mt-0 lg:ml-5">
+            <h3 className="text-2xl mb-2">StickyNoted</h3>
             <p className="mb-5">
               Simple Sticky Note app with Markdown flavour. Supports progressive
               web app so users can install on Android and iOS.{" "}
