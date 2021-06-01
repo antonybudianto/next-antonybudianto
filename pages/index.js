@@ -7,13 +7,31 @@ export default function Home() {
       <Head>
         <title>Antony Budianto</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Engineer, Open-source dev, Google cloud certified"
+        />
+        <meta name="og:title" content="Antony Budianto" />
+        <meta
+          name="og:description"
+          content="Engineer, Open-source dev, Google cloud certified"
+        />
       </Head>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-start items-center h-screen">
         <div className="text-left">
-          <p className="text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
+          <div className="container">
+            <Image
+              src="/profile.jpeg"
+              alt="Profile"
+              className="rounded-full mb-5"
+              width={150}
+              height={150}
+            />
+          </div>
+          {/* <p className="text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium">
             Hi! I am
-          </p>
+          </p> */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-white-900 my-8 sm:mt-14 sm:mb-10">
             Antony Budianto
           </h1>
