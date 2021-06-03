@@ -65,11 +65,16 @@ export default function Home() {
         >
           My recent work
         </h2>
-        <div className="flex flex-col lg:flex-row">
+        <div
+          className="flex flex-col lg:flex-row"
+          style={{
+            contentVisibility: "auto",
+          }}
+        >
           <div className="py-8 bg-white text-gray-500 lg:w-4/12">
             <h3 className="text-2xl mb-2">
               <a
-                className="text-blue-800 hover:underline"
+                className="text-green-800 hover:underline"
                 href="https://deesain.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,10 +96,10 @@ export default function Home() {
             />
           </div>
 
-          <div className="py-8 bg-white text-gray-500 lg:w-4/12 mt-2 lg:mt-0 lg:ml-5">
+          <div className="py-8 bg-white text-gray-500 lg:w-4/12 mt-2 lg:mt-0 lg:ml-12">
             <h3 className="text-2xl mb-2">
               <a
-                className="text-blue-800 hover:underline"
+                className="text-green-800 hover:underline"
                 href="https://stickynoted.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -115,10 +120,10 @@ export default function Home() {
             />
           </div>
 
-          <div className="py-8 bg-white text-gray-500 lg:w-4/12 lg:mt-0 lg:ml-5">
+          <div className="py-8 bg-white text-gray-500 lg:w-4/12 lg:mt-0 lg:ml-12">
             <h3 className="text-2xl mb-2">
               <a
-                className="text-blue-800 hover:underline"
+                className="text-green-800 hover:underline"
                 href="https://jsbench.netlify.com"
                 target="_blank"
                 rel="noopener noreferrer"
