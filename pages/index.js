@@ -66,20 +66,21 @@ export default function Home() {
           My recent work
         </h2>
         <div className="flex flex-col lg:flex-row">
-          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded-xl border">
-            <h3 className="text-2xl mb-2">Deesain</h3>
-            <p className="mb-5">
-              Modern Design platform for social media, thumbnails, or any
-              creative works. Made using NextJS (React), Bootstrap, and
-              Firebase.{" "}
+          <div className="py-8 bg-white text-gray-500 lg:w-4/12">
+            <h3 className="text-2xl mb-2">
               <a
-                className="text-blue-500"
+                className="text-blue-800 hover:underline"
                 href="https://deesain.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://deesain.com
+                Deesain
               </a>
+            </h3>
+            <p className="mb-5">
+              Modern Design platform for social media, thumbnails, or any
+              creative works. Made using NextJS (React), Bootstrap, and
+              Firebase.
             </p>
             <Image
               src="/deesain.jpg"
@@ -90,19 +91,20 @@ export default function Home() {
             />
           </div>
 
-          <div className="px-4 py-8 sm:px-6 md:px-8 bg-white text-gray-500 rounded-xl border mt-2 lg:mt-0 lg:ml-5">
-            <h3 className="text-2xl mb-2">StickyNoted</h3>
-            <p className="mb-5">
-              Simple Sticky Note app with Markdown flavour. Supports progressive
-              web app so users can install on Android and iOS.{" "}
+          <div className="py-8 bg-white text-gray-500 lg:w-4/12 mt-2 lg:mt-0 lg:ml-5">
+            <h3 className="text-2xl mb-2">
               <a
-                className="text-blue-500"
+                className="text-blue-800 hover:underline"
                 href="https://stickynoted.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://stickynoted.xyz
+                StickyNoted
               </a>
+            </h3>
+            <p className="mb-5">
+              Simple Sticky Note app with Markdown flavour. Supports progressive
+              web app so users can install on Android and iOS.
             </p>
             <Image
               src="/sticky.jpeg"
@@ -111,6 +113,37 @@ export default function Home() {
               width={2880 / 5}
               height={1446 / 5}
             />
+          </div>
+
+          <div className="py-8 bg-white text-gray-500 lg:w-4/12 lg:mt-0 lg:ml-5">
+            <h3 className="text-2xl mb-2">
+              <a
+                className="text-blue-800 hover:underline"
+                href="https://jsbench.netlify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                JSBench
+              </a>
+            </h3>
+            <p className="mb-5">
+              Simple JS Benchmark tools, easily compare codes side-by-side.
+              Using WebWorker API for UI responsiveness.
+            </p>
+            <div
+              className="border rounded-lg overflow-hidden"
+              style={{
+                height: "200px",
+              }}
+            >
+              <Image
+                src="/jsb.jpg"
+                alt="JSBench"
+                className="rounded"
+                width={2184 / 5}
+                height={1278 / 5}
+              />
+            </div>
           </div>
         </div>
       </div>
