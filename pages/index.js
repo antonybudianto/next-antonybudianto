@@ -1,6 +1,43 @@
 import Head from "next/head";
 import Image from "next/image";
 
+const WORKS = [
+  [
+    {
+      title: "Deesain",
+      href: "https://deesain.com",
+      imgsrc: "/deesain.jpg",
+      p: `Modern Design platform for social media, thumbnails, or any
+  creative works. Made using NextJS (React), Bootstrap, and
+  Firebase.`,
+      w: 2880 / 5,
+      h: 1446 / 5,
+      gradient: "from-gray-800 to-gray-700",
+    },
+    {
+      title: "StickyNoted",
+      href: "https://stickynoted.com",
+      imgsrc: "/sticky.jpeg",
+      p: `Simple Sticky Note app with Markdown flavour. Supports progressive
+      web app so users can install on Android and iOS.`,
+      w: 2880 / 5,
+      h: 1446 / 5,
+      gradient: "from-red-700 to-yellow-600",
+    },
+    {
+      title: "JSBench",
+      href: "https://jsbench.netlify.com",
+      imgsrc: "/jsb.jpg",
+      p: `Simple JS Benchmark tools, easily compare codes side-by-side.
+      Using WebWorker API for UI responsiveness.`,
+      w: 2184 / 7,
+      h: 1278 / 7,
+      imgborder: true,
+      gradient: "from-gray-900 to-blue-900",
+    },
+  ],
+];
+
 export default function Home() {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-800 text-white h-screen">
@@ -66,92 +103,45 @@ export default function Home() {
         >
           My recent work
         </h2>
-        <div
-          className="flex flex-col lg:flex-row"
-          style={{
-            contentVisibility: "auto",
-          }}
-        >
-          <div className="py-2 bg-white text-gray-500 lg:w-4/12">
-            <h3 className="text-2xl font-bold mb-2">
-              <a
-                className="text-green-800 hover:underline"
-                href="https://deesain.com"
-                target="_blank"
-                rel="noopener noreferrer"
+        {WORKS.map((row, i) => (
+          <div
+            key={i}
+            className="flex flex-col lg:flex-row"
+            style={{
+              contentVisibility: "auto",
+            }}
+          >
+            {row.map((r, ri) => (
+              <div
+                key={ri}
+                className={`py-2 bg-white text-gray-500 lg:w-4/12 ${
+                  ri !== 0 ? "mt-8 lg:mt-0 lg:ml-12" : ""
+                }`}
               >
-                Deesain
-              </a>
-            </h3>
-            <p className="mb-5">
-              Modern Design platform for social media, thumbnails, or any
-              creative works. Made using NextJS (React), Bootstrap, and
-              Firebase.
-            </p>
-            <Image
-              src="/deesain.jpg"
-              alt="Deesain"
-              className="rounded"
-              width={2880 / 5}
-              height={1446 / 5}
-            />
+                <h3 className="text-2xl font-bold mb-2">
+                  <a
+                    className="text-green-800 hover:underline"
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {r.title}
+                  </a>
+                </h3>
+                <p className="mb-5">{r.p}</p>
+                <div className={r.imgborder ? "border rounded" : ""}>
+                  <Image
+                    src={r.imgsrc}
+                    alt={r.title}
+                    className="rounded"
+                    width={r.w}
+                    height={r.h}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="py-2 bg-white text-gray-500 lg:w-4/12 mt-8 lg:mt-0 lg:ml-12">
-            <h3 className="text-2xl font-bold mb-2">
-              <a
-                className="text-green-800 hover:underline"
-                href="https://stickynoted.xyz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                StickyNoted
-              </a>
-            </h3>
-            <p className="mb-5">
-              Simple Sticky Note app with Markdown flavour. Supports progressive
-              web app so users can install on Android and iOS.
-            </p>
-            <Image
-              src="/sticky.jpeg"
-              alt="StickyNoted"
-              className="rounded"
-              width={2880 / 5}
-              height={1446 / 5}
-            />
-          </div>
-
-          <div className="py-2 bg-white text-gray-500 lg:w-4/12 mt-8 lg:mt-0 lg:ml-12">
-            <h3 className="text-2xl font-bold mb-2">
-              <a
-                className="text-green-800 hover:underline"
-                href="https://jsbench.netlify.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                JSBench
-              </a>
-            </h3>
-            <p className="mb-5">
-              Simple JS Benchmark tools, easily compare codes side-by-side.
-              Using WebWorker API for UI responsiveness.
-            </p>
-            <div
-              className="border rounded-lg overflow-hidden"
-              style={{
-                height: "200px",
-              }}
-            >
-              <Image
-                src="/jsb.jpg"
-                alt="JSBench"
-                className="rounded"
-                width={2184 / 5}
-                height={1278 / 5}
-              />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="px-4 py-8 mx-auto text-center container text-gray-500">
