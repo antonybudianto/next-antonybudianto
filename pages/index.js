@@ -16,7 +16,7 @@ const WORKS = [
     },
     {
       title: "StickyNoted",
-      href: "https://stickynoted.com",
+      href: "https://stickynoted.xyz",
       imgsrc: "/sticky.jpeg",
       p: `Simple Sticky Note app with Markdown flavour. Supports progressive
       web app so users can install on Android and iOS.`,
