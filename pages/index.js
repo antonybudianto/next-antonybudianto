@@ -29,6 +29,7 @@ export default function Home() {
             <Image
               src="/profile.jpeg"
               alt="Profile"
+              priority
               className="rounded-full mb-5"
               width={150}
               height={150}
@@ -89,7 +90,7 @@ export default function Home() {
             </p>
             <Image
               src="/deesain.jpg"
-              alt="Picture of the author"
+              alt="Deesain"
               className="rounded"
               width={2880 / 5}
               height={1446 / 5}
@@ -153,7 +154,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-4 py-8 mx-auto text-center container text-gray-400">
+      <div className="px-4 py-8 mx-auto text-center container text-gray-500">
         Designed with{" "}
         <a
           href="https://tailwindcss.com/"
