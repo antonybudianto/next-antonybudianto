@@ -97,7 +97,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="py-2 bg-white text-gray-500 lg:w-4/12 mt-2 lg:mt-0 lg:ml-12">
+          <div className="py-2 bg-white text-gray-500 lg:w-4/12 mt-8 lg:mt-0 lg:ml-12">
             <h3 className="text-2xl font-bold mb-2">
               <a
                 className="text-green-800 hover:underline"
@@ -121,7 +121,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="py-2 bg-white text-gray-500 lg:w-4/12 lg:mt-0 lg:ml-12">
+          <div className="py-2 bg-white text-gray-500 lg:w-4/12 mt-8 lg:mt-0 lg:ml-12">
             <h3 className="text-2xl font-bold mb-2">
               <a
                 className="text-green-800 hover:underline"
