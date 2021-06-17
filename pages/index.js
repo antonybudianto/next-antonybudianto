@@ -1,12 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 
+import deesainJpg from "../public/deesain.jpg";
+import stickyJpg from "../public/sticky.jpeg";
+import jsbJpg from "../public/jsb.jpg";
+
 const WORKS = [
   [
     {
       title: "Deesain",
       href: "https://deesain.com",
-      imgsrc: "/deesain.jpg",
+      imgsrc: deesainJpg,
       p: `Modern Design platform for social media, thumbnails, or any
   creative works. Made using NextJS (React), Bootstrap, and
   Firebase.`,
@@ -17,7 +21,7 @@ const WORKS = [
     {
       title: "StickyNoted",
       href: "https://stickynoted.xyz",
-      imgsrc: "/sticky.jpeg",
+      imgsrc: stickyJpg,
       p: `Simple Sticky Note app with Markdown flavour. Supports progressive
       web app so users can install on Android and iOS.`,
       w: 2880 / 5,
@@ -27,7 +31,7 @@ const WORKS = [
     {
       title: "JSBench",
       href: "https://jsbench.netlify.com",
-      imgsrc: "/jsb.jpg",
+      imgsrc: jsbJpg,
       p: `Simple JS Benchmark tools, easily compare codes side-by-side.
       Using WebWorker API for UI responsiveness.`,
       w: 2184 / 7,
@@ -134,6 +138,7 @@ export default function Home() {
                     src={r.imgsrc}
                     alt={r.title}
                     className="rounded"
+                    placeholder="blur"
                     width={r.w}
                     height={r.h}
                   />
