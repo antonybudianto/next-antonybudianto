@@ -14,34 +14,16 @@ export default function Home3d(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder.geometry}
-          material={nodes.Cylinder.material}
+          geometry={nodes.Cylinder_5.geometry}
+          material={nodes.Cylinder_5.material}
           position={[0, 1.39, 0]}
           scale={[0.54, 1.31, 0.48]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_1.geometry}
-          material={nodes.Cylinder_1.material}
-          position={[0, 0.92, 0]}
-          scale={[0.09, 1.88, 0.07]}
-        />
-      </group>
-      <group position={[1.93, 0, 3.13]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cylinder_2.geometry}
-          material={nodes.Cylinder_2.material}
-          position={[0, 1.39, 0]}
-          scale={[0.54, 1.31, 0.48]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cylinder_3.geometry}
-          material={nodes.Cylinder_3.material}
+          geometry={nodes.Cylinder_6.geometry}
+          material={nodes.Cylinder_6.material}
           position={[0, 0.92, 0]}
           scale={[0.09, 1.88, 0.07]}
         />
@@ -50,16 +32,16 @@ export default function Home3d(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_4.geometry}
-          material={nodes.Cylinder_4.material}
+          geometry={nodes.Cylinder_7.geometry}
+          material={nodes.Cylinder_7.material}
           position={[0, 1.39, 0]}
           scale={[0.54, 1.31, 0.48]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_5.geometry}
-          material={nodes.Cylinder_5.material}
+          geometry={nodes.Cylinder_8.geometry}
+          material={nodes.Cylinder_8.material}
           position={[0, 0.92, 0]}
           scale={[0.09, 1.88, 0.07]}
         />
@@ -68,60 +50,150 @@ export default function Home3d(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_6.geometry}
-          material={nodes.Cylinder_6.material}
+          geometry={nodes.Cylinder_9.geometry}
+          material={nodes.Cylinder_9.material}
           position={[-1.13, 0.25, -2.33]}
           scale={[0.32, 0.54, 0.32]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_7.geometry}
-          material={nodes.Cylinder_7.material}
+          geometry={nodes.Cylinder_10.geometry}
+          material={nodes.Cylinder_10.material}
           position={[-1.13, 0.25, -0.29]}
           scale={[0.32, 0.52, 0.32]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_8.geometry}
-          material={nodes.Cylinder_8.material}
+          geometry={nodes.Cylinder_11.geometry}
+          material={nodes.Cylinder_11.material}
           position={[1.12, 0.25, -2.33]}
           scale={[0.32, 0.5, 0.32]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder_9.geometry}
-          material={nodes.Cylinder_9.material}
+          geometry={nodes.Cylinder_12.geometry}
+          material={nodes.Cylinder_12.material}
           position={[1.12, 0.25, -0.29]}
           scale={[0.32, 0.52, 0.32]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Box_4.geometry}
-          material={nodes.Box_4.material}
+          geometry={nodes.Box_11.geometry}
+          material={nodes.Box_11.material}
           position={[0, 0.67, -1.32]}
           scale={[2.88, 0.76, 2.67]}
         />
       </group>
-      {/* <pointLight intensity={1} decay={2} position={[7.39, 7.67, 1.53]} /> */}
+      <group position={[3.51, 0.88, -1.27]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Box_12.geometry}
+          material={nodes.Box_12.material}
+          position={[0.01, -0.07, 0]}
+          rotation={[0, 0, -0.11]}
+          scale={[0.01, 0.58, 0.83]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Box_13.geometry}
+          material={nodes.Box_13.material}
+          position={[-0.26, -0.37, 0]}
+          rotation={[0, 0, -Math.PI]}
+          scale={[-0.49, 0.02, 0.83]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Box_14.geometry}
+          material={nodes.Box_14.material}
+          position={[0, -0.6, 0]}
+          scale={[0.99, 0.47, 1.93]}
+        />
+      </group>
+      <group position={[-2.17, 0, -8.72]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder_14.geometry}
+          material={nodes.Cylinder_14.material}
+          position={[0, 0.92, 0]}
+          scale={[0.09, 1.88, 0.07]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder_13.geometry}
+          material={nodes.Cylinder_13.material}
+          position={[0, 1.39, 0]}
+          scale={[0.54, 1.31, 0.48]}
+        />
+      </group>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Box.geometry}
         material={nodes.Box.material}
-        position={[0.59, 0, -0.33]}
-        scale={[6.89, 0.1, 10.57]}
+        position={[0.59, 0, -2.2]}
+        scale={[6.89, 0.1, 14.5]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_5.geometry}
+        material={nodes.Box_5.material}
+        position={[0.59, 0, -9.7]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        scale={[-6.89, 0.1, 0.5]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_6.geometry}
+        material={nodes.Box_6.material}
+        position={[0.59, 0, -11.7]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        scale={[-6.89, 0.1, 0.5]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_7.geometry}
+        material={nodes.Box_7.material}
+        position={[3.63, 0, -10.71]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        scale={[-0.8, 0.1, 1.52]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_8.geometry}
+        material={nodes.Box_8.material}
+        position={[-2.46, 0, -10.71]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        scale={[-0.8, 0.1, 1.52]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_9.geometry}
+        material={nodes.Box_9.material}
+        position={[0.6, -0.03, -10.71]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        scale={[-5.29, 0.1, 1.52]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Box_1.geometry}
         material={nodes.Box_1.material}
-        position={[-2.84, 1.45, -0.3]}
-        scale={[0.05, 2.81, 10.51]}
+        position={[-2.84, 1.46, -3.43]}
+        scale={[0.05, 2.81, 17.06]}
       />
       <mesh
         castShadow
@@ -130,6 +202,22 @@ export default function Home3d(props) {
         material={nodes.Box_2.material}
         position={[-0.11, 1.34, 2.18]}
         scale={[5.42, 2.7, 0.07]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_3.geometry}
+        material={nodes.Box_3.material}
+        position={[-0.82, 1.34, -5.28]}
+        scale={[4, 2.7, 0.07]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_4.geometry}
+        material={nodes.Box_4.material}
+        position={[-0.82, 1.34, -7.89]}
+        scale={[4, 2.7, 0.07]}
       />
       <mesh
         castShadow
@@ -143,10 +231,51 @@ export default function Home3d(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Box_3.geometry}
-        material={nodes.Box_3.material}
-        position={[3.4, 0.28, -1.31]}
-        scale={[0.99, 0.47, 1.93]}
+        geometry={nodes.Cylinder.geometry}
+        material={nodes.Cylinder.material}
+        position={[-1.89, 0.34, -6.6]}
+        scale={[0.61, 0.54, 0.6]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder_1.geometry}
+        material={nodes.Cylinder_1.material}
+        position={[-2.57, 1.06, -6.63]}
+        rotation={[0, 0, -1.32]}
+        scale={[0.68, 0.12, 0.55]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder_2.geometry}
+        material={nodes.Cylinder_2.material}
+        position={[-1.21, 0.19, -8.74]}
+        scale={[0.41, 0.28, 0.39]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder_3.geometry}
+        material={nodes.Cylinder_3.material}
+        position={[-2.12, 1.11, -3.66]}
+        scale={[0.49, 0.23, 0.49]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder_4.geometry}
+        material={nodes.Cylinder_4.material}
+        position={[-2.13, 0.77, -3.66]}
+        scale={[0.06, 0.47, 0.05]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Box_10.geometry}
+        material={nodes.Box_10.material}
+        position={[-2, 0.29, -3.68]}
+        scale={[1.2, 0.5, 1.5]}
       />
     </group>
   );
