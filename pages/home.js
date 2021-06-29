@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const HomeScene = dynamic(() => import("../components/HomeScene"));
 
@@ -22,21 +23,24 @@ export default function Home() {
           zIndex: 9,
           left: 0,
           top: 0,
-          padding: "10px 10px",
+          padding: "20px",
         }}
       >
         <div className="flex align-center justify-between">
           <div className={dark ? "text-white" : "text-blue-900"}>
-            3D Apart by Antony Budianto
+            <div className="text-lg">3D Apart</div>
+            <div className="text-sm">
+              by <Link href="/">Antony Budianto</Link>
+            </div>
           </div>
           <button
             onClick={() => {
               setDark(!dark);
             }}
-            className={`w-full sm:w-auto flex-none bg-${
-              dark ? "gray-700" : "blue-100"
+            className={`w-auto shadow-md flex-none bg-${
+              dark ? "gray-700" : "white"
             } hover:bg-${
-              dark ? "gray-600" : "blue-200"
+              dark ? "gray-600" : "blue-100"
             } text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-${
               dark ? "gray-900" : "blue-300"
             } focus:outline-none transition-colors duration-200`}
