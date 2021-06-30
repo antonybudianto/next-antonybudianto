@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Head from "next/head";
 
+import Button from "../components/Button";
 const HomeScene = dynamic(() => import("../components/HomeScene"));
 
 export default function Home() {
   const [dark, setDark] = useState(false);
+  const [autoRotate, setAutoRotate] = useState(true);
+
   return (
     <div
       style={{
@@ -16,6 +20,42 @@ export default function Home() {
           : "linear-gradient(to top, #FFF, #87cefa)",
       }}
     >
+      <Head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+          name="description"
+          content="3D Interactive Apartment by Antony Budianto"
+        />
+        <meta property="og:site_name" content="antonybudianto.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="3D Apartment" />
+        <meta
+          property="og:description"
+          content="3D Interactive Apartment by Antony Budianto"
+        />
+        <meta property="og:url" content="https://antonybudianto.com/home" />
+        <meta
+          property="og:image"
+          content="https://antonybudianto.com/meta-home.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="3D Apartment" />
+        <meta
+          name="twitter:description"
+          content="3D Interactive Apartment by Antony Budianto"
+        />
+        <meta name="twitter:url" content="https://antonybudianto.com/home" />
+        <meta
+          name="twitter:image"
+          content="https://antonybudianto.com/meta-home.jpg"
+        />
+        <meta name="twitter:site" content="@antonybudianto" />
+        <meta name="theme-color" content="#FFFFFF" />
+      </Head>
       <div
         style={{
           position: "fixed",
@@ -33,23 +73,32 @@ export default function Home() {
               by <Link href="/">Antony Budianto</Link>
             </div>
           </div>
-          <button
-            onClick={() => {
-              setDark(!dark);
-            }}
-            className={`w-auto shadow-md flex-none bg-${
-              dark ? "gray-700" : "white"
-            } hover:bg-${
-              dark ? "gray-600" : "blue-100"
-            } text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-${
-              dark ? "gray-900" : "blue-300"
-            } focus:outline-none transition-colors duration-200`}
-          >
-            {dark ? "🌙" : "☀️"}
-          </button>
+          <div className="select-none flex align-center justify-center">
+            <Button
+              title="Switch Auto-rotate"
+              dark={dark}
+              onClick={() => {
+                setAutoRotate(!autoRotate);
+              }}
+              className={
+                autoRotate ? (dark ? "text-blue-200" : "text-blue-500") : ""
+              }
+            >
+              {"↺"}
+            </Button>
+            <Button
+              title="Switch Night Mode"
+              dark={dark}
+              onClick={() => {
+                setDark(!dark);
+              }}
+            >
+              {dark ? "🌙" : "☀️"}
+            </Button>
+          </div>
         </div>
       </div>
-      <HomeScene dark={dark} />
+      <HomeScene dark={dark} autoRotate={autoRotate} />
     </div>
   );
 }

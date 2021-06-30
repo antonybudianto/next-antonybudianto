@@ -4,7 +4,7 @@ import { OrbitControls, Stage } from "@react-three/drei";
 
 import Home3d from "../components/Home3d";
 
-const HomeScene = ({ dark }) => {
+const HomeScene = ({ dark, autoRotate }) => {
   const ref = useRef();
 
   return (
@@ -19,7 +19,7 @@ const HomeScene = ({ dark }) => {
           <Home3d dark={dark} />
         </Stage>
       </Suspense>
-      <OrbitControls ref={ref} autoRotate />
+      <OrbitControls ref={ref} autoRotate={autoRotate} />
     </Canvas>
   );
 };
