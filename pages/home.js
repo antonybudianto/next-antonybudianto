@@ -21,6 +21,7 @@ export default function Home() {
       }}
     >
       <Head>
+        <title>3D Apart by Antony</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
