@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import Head from "next/head";
 
-import Button from "../components/Button";
+import HomeHeader from "../components/HomeHeader";
+
 const HomeScene = dynamic(() => import("../components/HomeScene"));
 
 export default function Home() {
@@ -56,48 +56,12 @@ export default function Home() {
         <meta name="twitter:site" content="@antonybudianto" />
         <meta name="theme-color" content="#FFFFFF" />
       </Head>
-      <div
-        style={{
-          position: "fixed",
-          width: "100%",
-          zIndex: 9,
-          left: 0,
-          top: 0,
-          padding: "20px",
-        }}
-      >
-        <div className="flex align-center justify-between">
-          <div className={dark ? "text-white" : "text-blue-900"}>
-            <div className="text-lg">3D Apart</div>
-            <div className="text-sm">
-              by <Link href="/">Antony Budianto</Link>
-            </div>
-          </div>
-          <div className="select-none flex align-center justify-center">
-            <Button
-              title="Switch Auto-rotate"
-              dark={dark}
-              onClick={() => {
-                setAutoRotate(!autoRotate);
-              }}
-              className={
-                autoRotate ? (dark ? "text-blue-200" : "text-blue-500") : ""
-              }
-            >
-              {"↺"}
-            </Button>
-            <Button
-              title="Switch Night Mode"
-              dark={dark}
-              onClick={() => {
-                setDark(!dark);
-              }}
-            >
-              {dark ? "🌙" : "☀️"}
-            </Button>
-          </div>
-        </div>
-      </div>
+      <HomeHeader
+        dark={dark}
+        autoRotate={autoRotate}
+        setDark={setDark}
+        setAutoRotate={setAutoRotate}
+      />
       <HomeScene dark={dark} autoRotate={autoRotate} />
     </div>
   );
