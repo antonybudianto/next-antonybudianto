@@ -105,18 +105,18 @@ export default function Home() {
       <div className="p-8 mx-auto container rounded-xl shadow-md bg-white">
         <h2
           id="work"
-          className="mb-8 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-700 to-blue-700"
+          className="mb-8 text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-700 to-blue-700"
         >
           My recent work
         </h2>
         <div className="flex flex-col items-center lg:flex-row py-2 bg-white text-gray-500 mb-8 lg:w-12/12 lg:mb-14 lg:mb-0">
           <div className="flex-grow">
-            <h2 className="text-3xl font-bold mb-5">
+            <h2 className="lg:text-3xl text-2xl font-bold mb-2 lg:mb-3">
               <Link href="/home">
                 <a className="text-green-800 hover:underline">3D Apart</a>
               </Link>
             </h2>
-            <p className="mb-5 text-xl">
+            <p className="mb-5 lg:text-xl">
               Interactive 3D Web with simple apartment concept with low-poly
               design. Made with React and Three.js. <br />
               You can enjoy 3D experience with pan, swipe, zoom, and Night mode!{" "}
