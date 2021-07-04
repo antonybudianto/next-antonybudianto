@@ -117,7 +117,7 @@ export default function Home() {
               </Link>
             </h2>
             <p className="mb-5 lg:text-xl">
-              Interactive 3D Web with simple apartment concept with low-poly
+              Interactive 3D Web with simple apartment concept and low-poly
               design. Made with React and Three.js. <br />
               You can enjoy 3D experience with pan, swipe, zoom, and Night mode!{" "}
               <br />
