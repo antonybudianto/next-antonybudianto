@@ -101,19 +101,21 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {WORKS.map((w, i) => (
-        <HomePortfolio
-          key={i}
-          localHref={w.localHref}
-          href={w.href}
-          title={w.title}
-          desc={w.desc}
-          imgSrc={w.imgSrc}
-          imgAlt={w.title}
-          imgW={w.imgW}
-          imgH={w.imgH}
-        />
-      ))}
+      <div id="work">
+        {WORKS.map((w, i) => (
+          <HomePortfolio
+            key={i}
+            localHref={w.localHref}
+            href={w.href}
+            title={w.title}
+            desc={w.desc}
+            imgSrc={w.imgSrc}
+            imgAlt={w.title}
+            imgW={w.imgW}
+            imgH={w.imgH}
+          />
+        ))}
+      </div>
 
       <div className="px-4 py-8 bg-gray-900 mx-auto text-center text-gray-100">
         &copy; {new Date().getFullYear()}. Antony Budianto.
