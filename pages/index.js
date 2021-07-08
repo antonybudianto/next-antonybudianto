@@ -20,7 +20,7 @@ const WORKS = [
     title: "Deesain",
     href: "https://deesain.com",
     imgSrc: deesainJpg,
-    desc: `Modern Design platform for social media, thumbnails, or any
+    desc: `Modern Graphic Design platform for social media and any
   creative works`,
     imgW: 2880 / 5,
     imgH: 1446 / 5,
@@ -29,8 +29,7 @@ const WORKS = [
     title: "StickyNoted",
     href: "https://stickynoted.netlify.app/",
     imgSrc: stickyJpg,
-    desc: `Simple Sticky Note app with Markdown flavour. Supports progressive
-      web app so users can install on Android, iOS, Windows.`,
+    desc: `Simple Sticky Note app with Markdown flavour`,
     imgW: 2880 / 5,
     imgH: 1446 / 5,
   },
@@ -38,7 +37,7 @@ const WORKS = [
     title: "JSBench",
     href: "https://jsbench.netlify.com",
     imgSrc: jsbJpg,
-    desc: `Simple JS Benchmark tools, easily compare code's performance side-by-side.`,
+    desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`,
     imgW: 2184 / 4,
     imgH: 1278 / 4,
   },
