@@ -13,6 +13,8 @@ const WORKS = [
     localHref: "/home",
     imgSrc: apart3d,
     desc: `Interactive Web 3D Apartment with low-poly design.`,
+    imgW: 1748 / 3,
+    imgH: 756 / 3,
   },
   {
     title: "Deesain",
@@ -70,13 +72,12 @@ export default function Home() {
               <Image
                 src="/profile.jpeg"
                 alt="Profile"
-                priority
                 className="rounded-full mb-5"
                 width={150}
                 height={150}
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-white-900 my-8 sm:mt-14 sm:mb-10">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-white my-8 sm:mt-14 sm:mb-10">
               Antony Budianto
             </h1>
             <p className="text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
@@ -101,7 +102,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="work">
+      <div
+        id="work"
+        style={{
+          contentVisibility: "auto",
+        }}
+      >
         {WORKS.map((w, i) => (
           <HomePortfolio
             key={i}

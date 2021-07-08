@@ -12,7 +12,7 @@ function HomePortfolio({
   desc,
 }) {
   return (
-    <div className="bg-gradient-to-tr from-gray-900 via-gray-900 to-gray-800 text-white">
+    <div className="bg-gradient-to-r from-gray-900 via-gray-900 to-gray-800 text-white">
       <div className="container mx-auto py-5 sm:py-20 px-4 sm:px-6 md:px-8">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-white-900 my-8 sm:mt-14 sm:mb-10">
           {title}
@@ -30,7 +30,7 @@ function HomePortfolio({
               />
             </div>
             <div className="w-12/12 mt-3 lg:mt-0 lg:ml-14 lg:w-4/12">
-              <div className="text-lg sm:text-xl">{desc}</div>
+              <div className="text-lg font-sans sm:text-xl">{desc}</div>
               <div className="my-5">
                 {localHref ? (
                   <Link href={localHref}>
