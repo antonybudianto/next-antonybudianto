@@ -10,10 +10,11 @@ function HomePortfolio({
   imgSrc,
   imgAlt,
   desc,
+  thumbs = [],
 }) {
   return (
     <div className="bg-gradient-to-tr from-gray-900 via-gray-900 to-gray-800 text-white lg:h-screen">
-      <div className="container mx-auto py-5 sm:py-20 px-4 sm:px-6 md:px-8">
+      <div className="container mx-auto py-5 lg:pb-20 px-4 sm:px-6 md:px-8">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-white-900 my-8 sm:mt-14 sm:mb-10">
           {title}
         </h2>
@@ -22,7 +23,7 @@ function HomePortfolio({
             <div className="w-12/12 lg:w-8/12">
               <Image
                 src={imgSrc}
-                className="rounded shadow-md"
+                className="rounded-lg shadow-md"
                 alt={imgAlt}
                 width={imgW}
                 height={imgH}
@@ -49,6 +50,38 @@ function HomePortfolio({
               </div>
             </div>
           </div>
+          {thumbs.length !== 0 ? (
+            <div className="flex my-5 lg:mt-6 max-w-full sm:max-w-none overflow-x-auto">
+              {thumbs.map(({ type, src: videoSrc }, tmbIdx) => {
+                if (type === "video") {
+                  return (
+                    <video
+                      className="rounded-lg w-1/3 xl:w-1/5 shadow-md mr-3 lg:mr-8"
+                      autoPlay
+                      muted
+                      loop
+                      key={tmbIdx}
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                    </video>
+                  );
+                } else if (type === "img") {
+                  return (
+                    <div
+                      key={tmbIdx}
+                      className={`rounded-lg h-28 lg:h-32 2xl:h-40 w-1/3 xl:w-1/5 shadow-md mr-3 lg:mr-8`}
+                      style={{
+                        background: `url(${videoSrc})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    ></div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

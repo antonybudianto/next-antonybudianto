@@ -15,6 +15,20 @@ const WORKS = [
     desc: `Interactive Web 3D Apartment with low-poly design.`,
     imgW: 1748 / 3,
     imgH: 756 / 3,
+    thumbs: [
+      {
+        type: "video",
+        src: "/video/mov1.mp4",
+      },
+      {
+        type: "video",
+        src: "/video/mov2a.mp4",
+      },
+      {
+        type: "video",
+        src: "/video/mov3a.mp4",
+      },
+    ],
   },
   {
     title: "Deesain",
@@ -24,6 +38,16 @@ const WORKS = [
   creative works`,
     imgW: 2880 / 5,
     imgH: 1446 / 5,
+    thumbs: [
+      {
+        type: "img",
+        src: "/img-thumbs/deesain-t1.jpg",
+      },
+      {
+        type: "img",
+        src: "/img-thumbs/deesain-t2a.jpg",
+      },
+    ],
   },
   {
     title: "StickyNoted",
@@ -118,6 +142,7 @@ export default function Home() {
             imgAlt={w.title}
             imgW={w.imgW}
             imgH={w.imgH}
+            thumbs={w.thumbs}
           />
         ))}
       </div>
