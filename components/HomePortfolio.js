@@ -69,7 +69,7 @@ function HomePortfolio({
                   return (
                     <div
                       key={tmbIdx}
-                      className={`rounded-lg h-28 lg:h-32 2xl:h-40 w-1/3 xl:w-1/5 shadow-md mr-3 lg:mr-8`}
+                      className={`rounded-lg h-20 lg:h-32 2xl:h-40 w-1/3 xl:w-1/5 shadow-md mr-3 lg:mr-8`}
                       style={{
                         background: `url(${videoSrc})`,
                         backgroundSize: "cover",
