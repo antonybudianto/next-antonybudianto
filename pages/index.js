@@ -70,7 +70,7 @@ const WORKS = [
 export default function Home() {
   return (
     <>
-      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-800 text-white h-screen">
+      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-800 text-white lg:h-screen">
         <Head>
           <title>Antony Budianto</title>
           <link rel="icon" href="/favicon.ico" />
@@ -85,7 +85,7 @@ export default function Home() {
           />
         </Head>
         <div
-          className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-start items-center"
+          className="container mx-auto px-4 sm:px-6 md:px-8 py-16 lg:py-0 flex justify-start items-center"
           style={{
             height: "95%",
           }}
@@ -100,7 +100,7 @@ export default function Home() {
                 height={150}
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-white my-8 sm:mt-14 sm:mb-10">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-blue-100 my-8 sm:mt-14 sm:mb-10">
               Antony Budianto
             </h1>
             <p className="text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">

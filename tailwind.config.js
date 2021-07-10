@@ -2,9 +2,20 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadeslide: {
+          "0%": { opacity: 0, transform: "translateX(-10%)" },
+          "100%": { opacity: 1, transform: "translateX(0%)" },
+        },
+      },
+      animation: {
+        fadeslide: "fadeslide 1s linear",
+      },
+    },
   },
   variants: {
+    animation: ["responsive"],
     extend: {},
   },
   plugins: [],
