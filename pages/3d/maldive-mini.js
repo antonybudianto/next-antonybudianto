@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import HomeHeader from "../components/HomeHeader";
+import HomeHeader from "../../components/HomeHeader";
 
-const HomeScene = dynamic(() => import("../components/HomeScene"));
+const MaldiveMiniScene = dynamic(() => import("../../components/scenes/MaldiveMiniScene"));
 
-export default function Home() {
+export default function MaldiveMiniPage() {
   const [dark, setDark] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
 
@@ -21,7 +21,7 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>3D Apart by Antony</title>
+        <title>3D Maldive by Antony</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -29,14 +29,14 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="3D Interactive Apartment by Antony Budianto"
+          content="3D Interactive Maldive by Antony Budianto"
         />
         <meta property="og:site_name" content="antonybudianto.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="3D Apartment" />
+        <meta property="og:title" content="3D Maldive" />
         <meta
           property="og:description"
-          content="3D Interactive Apartment by Antony Budianto"
+          content="3D Interactive Maldive by Antony Budianto"
         />
         <meta property="og:url" content="https://antonybudianto.com/home" />
         <meta
@@ -44,10 +44,10 @@ export default function Home() {
           content="https://antonybudianto.com/meta-home.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="3D Apartment" />
+        <meta name="twitter:title" content="3D Maldive" />
         <meta
           name="twitter:description"
-          content="3D Interactive Apartment by Antony Budianto"
+          content="3D Interactive Maldive by Antony Budianto"
         />
         <meta name="twitter:url" content="https://antonybudianto.com/home" />
         <meta
@@ -58,13 +58,13 @@ export default function Home() {
         <meta name="theme-color" content="#FFFFFF" />
       </Head>
       <HomeHeader
-        title="3D Apart"
+        title="3D Maldive Mini"
         dark={dark}
         autoRotate={autoRotate}
         setDark={setDark}
         setAutoRotate={setAutoRotate}
       />
-      <HomeScene dark={dark} autoRotate={autoRotate} />
+      <MaldiveMiniScene dark={dark} autoRotate={autoRotate} />
     </div>
   );
 }

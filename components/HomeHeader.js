@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Button from "./Button";
 
-function HomeHeader({ dark, setDark, autoRotate, setAutoRotate }) {
+function HomeHeader({ title, dark, setDark, autoRotate, setAutoRotate }) {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ function HomeHeader({ dark, setDark, autoRotate, setAutoRotate }) {
     >
       <div className="flex align-center justify-between">
         <div className={dark ? "text-white" : "text-blue-900"}>
-          <div className="text-lg">3D Apart</div>
+          <div className="text-lg">{title}</div>
           <div className="text-sm">
             by <Link href="/">Antony Budianto</Link>
           </div>
