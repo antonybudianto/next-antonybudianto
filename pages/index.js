@@ -5,9 +5,32 @@ import deesainJpg from "../public/deesain.jpg";
 import stickyJpg from "../public/sticky.jpeg";
 import jsbJpg from "../public/jsb.jpg";
 import apart3d from "../public/meta-home.jpg";
+import mdvm3d from "../public/meta-maldive-mini.jpg";
 import HomePortfolio from "../components/HomePortfolio";
 
 const WORKS = [
+  {
+    title: "3D Maldive Mini",
+    localHref: "/3d/maldive-mini",
+    imgSrc: mdvm3d,
+    desc: `Interactive Web 3D Maldive-inspired island and resort`,
+    imgW: 1218 / 2.5,
+    imgH: 657 / 2.5,
+    thumbs: [
+      {
+        type: "img",
+        src: "/img-thumbs/mdvm1.jpg",
+      },
+      {
+        type: "img",
+        src: "/img-thumbs/mdvm2.jpg",
+      },
+      {
+        type: "img",
+        src: "/img-thumbs/mdvm3.jpg",
+      },
+    ],
+  },
   {
     title: "3D Apart",
     localHref: "/home",

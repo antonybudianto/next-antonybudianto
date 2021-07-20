@@ -75,9 +75,7 @@ export default function MaldiveMiniPage() {
         setAutoRotate={setAutoRotate}
         credits={[
           "https://free-3dtextureshd.com",
-          "https://www.archibaseplanet.com",
           "https://www.sketchuptextureclub.com",
-          "https://www.goodtextures.com",
           "https://polyhaven.com",
         ]}
       />
