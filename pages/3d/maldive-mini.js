@@ -23,7 +23,7 @@ export default function MaldiveMiniPage() {
       }}
     >
       <Head>
-        <title>3D Maldive by Antony</title>
+        <title>3D Maldive Mini by Antony</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -31,30 +31,36 @@ export default function MaldiveMiniPage() {
         />
         <meta
           name="description"
-          content="3D Interactive Maldive by Antony Budianto"
+          content="3D Interactive Maldive Mini by Antony Budianto"
         />
         <meta property="og:site_name" content="antonybudianto.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="3D Maldive" />
+        <meta property="og:title" content="3D Maldive Mini" />
         <meta
           property="og:description"
-          content="3D Interactive Maldive by Antony Budianto"
+          content="3D Interactive Maldive Mini by Antony Budianto"
         />
-        <meta property="og:url" content="https://antonybudianto.com/home" />
+        <meta
+          property="og:url"
+          content="https://antonybudianto.com/3d/maldive-mini"
+        />
         <meta
           property="og:image"
-          content="https://antonybudianto.com/meta-home.jpg"
+          content="https://antonybudianto.com/meta-maldive-mini.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="3D Maldive" />
+        <meta name="twitter:title" content="3D Maldive Mini" />
         <meta
           name="twitter:description"
-          content="3D Interactive Maldive by Antony Budianto"
+          content="3D Interactive Maldive Mini by Antony Budianto"
         />
-        <meta name="twitter:url" content="https://antonybudianto.com/home" />
+        <meta
+          name="twitter:url"
+          content="https://antonybudianto.com/3d/maldive-mini"
+        />
         <meta
           name="twitter:image"
-          content="https://antonybudianto.com/meta-home.jpg"
+          content="https://antonybudianto.com/meta-maldive-mini.jpg"
         />
         <meta name="twitter:site" content="@antonybudianto" />
         <meta name="theme-color" content="#FFFFFF" />
