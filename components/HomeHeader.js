@@ -1,7 +1,39 @@
 import Link from "next/link";
 import Button from "./Button";
 
-function HomeHeader({ title, dark, setDark, autoRotate, setAutoRotate }) {
+function HomeHeader({
+  credits = [],
+  title,
+  dark,
+  setDark,
+  autoRotate,
+  setAutoRotate,
+}) {
+  const showCredit = async () => {
+    const Swal = (await import("sweetalert2")).default;
+    Swal.fire({
+      title: "<strong>Credits</strong>",
+      icon: "info",
+      html: `
+      <div class="text-sm">
+        Big thanks to these sites for the texture!
+        <ul>
+          ${credits
+            .map(
+              (c) =>
+                `<li><a class="text-blue-600 underline" href="${c}">${c}</a></li>`
+            )
+            .join("\n")}
+        </ul>
+      </div>
+      `,
+      showCloseButton: true,
+      showConfirmButton: false,
+      showCancelButton: false,
+      focusConfirm: false,
+    });
+  };
+
   return (
     <div
       style={{
@@ -15,12 +47,20 @@ function HomeHeader({ title, dark, setDark, autoRotate, setAutoRotate }) {
     >
       <div className="flex align-center justify-between">
         <div className={dark ? "text-white" : "text-blue-900"}>
-          <div className="text-lg">{title}</div>
-          <div className="text-sm">
-            by <Link href="/">Antony Budianto</Link>
+          <div className="text-sm lg:text-lg">{title}</div>
+          <div className="text-xs lg:text-sm">
+            by{" "}
+            <Link href="/">
+              <a className="underline">Antony Budianto</a>
+            </Link>
           </div>
         </div>
         <div className="select-none flex align-center justify-center">
+          {credits.length ? (
+            <Button title="Info" dark={dark} onClick={showCredit}>
+              {"ℹ️"}
+            </Button>
+          ) : null}
           <Button
             title="Switch Auto-rotate"
             dark={dark}

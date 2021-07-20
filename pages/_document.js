@@ -13,6 +13,7 @@ class MyDocument extends Document {
         <body
           style={{
             background: "#001024",
+            overscrollBehavior: "none",
           }}
         >
           <Main />

@@ -4,7 +4,9 @@ import Head from "next/head";
 
 import HomeHeader from "../../components/HomeHeader";
 
-const MaldiveMiniScene = dynamic(() => import("../../components/scenes/MaldiveMiniScene"));
+const MaldiveMiniScene = dynamic(() =>
+  import("../../components/scenes/MaldiveMiniScene")
+);
 
 export default function MaldiveMiniPage() {
   const [dark, setDark] = useState(false);
@@ -63,6 +65,13 @@ export default function MaldiveMiniPage() {
         autoRotate={autoRotate}
         setDark={setDark}
         setAutoRotate={setAutoRotate}
+        credits={[
+          "https://free-3dtextureshd.com",
+          "https://www.archibaseplanet.com",
+          "https://www.sketchuptextureclub.com",
+          "https://www.goodtextures.com",
+          "https://polyhaven.com",
+        ]}
       />
       <MaldiveMiniScene dark={dark} autoRotate={autoRotate} />
     </div>
