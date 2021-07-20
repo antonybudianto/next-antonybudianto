@@ -5,12 +5,14 @@ import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
 import Home3d from "../components/Home3d";
 import LoadingWidget from "../components/LoadingWidget";
 import ProgressLoader from "../components/ProgressLoader";
+import getFov from "./helpers/fov";
 
 const HomeScene = ({ dark, autoRotate }) => {
   const ref = useRef();
   const camRef = useRef();
   const [enable, setEnable] = useState(false);
   const [loading, setLoading] = useState(true);
+  const fov = getFov();
 
   const handleUpdate = () => {
     setEnable(true);
@@ -33,7 +35,7 @@ const HomeScene = ({ dark, autoRotate }) => {
         </Suspense>
         <PerspectiveCamera
           makeDefault={enable}
-          fov={50}
+          fov={fov}
           ref={camRef}
           position={[0, 5, -18]}
         />

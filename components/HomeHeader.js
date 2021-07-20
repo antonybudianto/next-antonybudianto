@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { useCallback } from "react";
+
 import Button from "./Button";
+import showCredit from "./helpers/showCredit";
 
 function HomeHeader({
   credits = [],
@@ -9,30 +12,9 @@ function HomeHeader({
   autoRotate,
   setAutoRotate,
 }) {
-  const showCredit = async () => {
-    const Swal = (await import("sweetalert2")).default;
-    Swal.fire({
-      title: "<strong>Credits</strong>",
-      icon: "info",
-      html: `
-      <div class="text-sm">
-        Big thanks to these sites for the texture!
-        <ul>
-          ${credits
-            .map(
-              (c) =>
-                `<li><a class="text-blue-600 underline" href="${c}">${c}</a></li>`
-            )
-            .join("\n")}
-        </ul>
-      </div>
-      `,
-      showCloseButton: true,
-      showConfirmButton: false,
-      showCancelButton: false,
-      focusConfirm: false,
-    });
-  };
+  const handleShowCredit = useCallback(() => {
+    showCredit(credits);
+  }, [credits]);
 
   return (
     <div
@@ -57,7 +39,7 @@ function HomeHeader({
         </div>
         <div className="select-none flex align-center justify-center">
           {credits.length ? (
-            <Button title="Info" dark={dark} onClick={showCredit}>
+            <Button title="Info" dark={dark} onClick={handleShowCredit}>
               {"ℹ️"}
             </Button>
           ) : null}

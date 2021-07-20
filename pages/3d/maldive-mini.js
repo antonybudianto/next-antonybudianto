@@ -17,6 +17,8 @@ export default function MaldiveMiniPage() {
       style={{
         width: "100%",
         height: "100vh",
+        userSelect: "none",
+        overflowY: "hidden",
         background: dark
           ? "linear-gradient(to top, #283E51, #0A2342)"
           : "linear-gradient(to top, #FFF, #87cefa)",
