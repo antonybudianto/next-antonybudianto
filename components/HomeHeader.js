@@ -1,7 +1,21 @@
 import Link from "next/link";
-import Button from "./Button";
+import { useCallback } from "react";
 
-function HomeHeader({ dark, setDark, autoRotate, setAutoRotate }) {
+import Button from "./Button";
+import showCredit from "./helpers/showCredit";
+
+function HomeHeader({
+  credits = [],
+  title,
+  dark,
+  setDark,
+  autoRotate,
+  setAutoRotate,
+}) {
+  const handleShowCredit = useCallback(() => {
+    showCredit(credits);
+  }, [credits]);
+
   return (
     <div
       style={{
@@ -15,12 +29,20 @@ function HomeHeader({ dark, setDark, autoRotate, setAutoRotate }) {
     >
       <div className="flex align-center justify-between">
         <div className={dark ? "text-white" : "text-blue-900"}>
-          <div className="text-lg">3D Apart</div>
-          <div className="text-sm">
-            by <Link href="/">Antony Budianto</Link>
+          <div className="text-sm lg:text-lg">{title}</div>
+          <div className="text-xs lg:text-sm">
+            by{" "}
+            <Link href="/">
+              <a className="underline">Antony Budianto</a>
+            </Link>
           </div>
         </div>
         <div className="select-none flex align-center justify-center">
+          {credits.length ? (
+            <Button title="Info" dark={dark} onClick={handleShowCredit}>
+              {"ℹ️"}
+            </Button>
+          ) : null}
           <Button
             title="Switch Auto-rotate"
             dark={dark}

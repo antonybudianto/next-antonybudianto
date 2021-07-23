@@ -2,10 +2,10 @@ import { useRef, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
 
-import Home3d from "../components/Home3d";
-import LoadingWidget from "../components/LoadingWidget";
-import ProgressLoader from "../components/ProgressLoader";
-import getFov from "./helpers/fov";
+import Maldive3d from "./Maldive3d";
+import LoadingWidget from "../../components/LoadingWidget";
+import ProgressLoader from "../../components/ProgressLoader";
+import getFov from "../helpers/fov";
 
 const HomeScene = ({ dark, autoRotate }) => {
   const ref = useRef();
@@ -30,7 +30,7 @@ const HomeScene = ({ dark, autoRotate }) => {
             intensity={dark ? 0.2 : 0.7}
             environment={dark ? "night" : "city"}
           >
-            <Home3d dark={dark} />
+            <Maldive3d dark={dark} />
           </Stage>
         </Suspense>
         <PerspectiveCamera
