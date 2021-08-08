@@ -105,6 +105,7 @@ export default function Home() {
       document.documentElement.classList.remove("dark");
     }
     localStorage.theme = dark ? "dark" : "light";
+    window.__dark = dark;
   }, [dark]);
 
   return (
