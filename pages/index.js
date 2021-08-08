@@ -9,6 +9,7 @@ import mdvm3d from "../public/meta-maldive-mini.jpg";
 import HomePortfolio from "../components/HomePortfolio";
 import DarkmodeButton from "../components/DarkmodeButton";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const WORKS = [
   {
@@ -169,6 +170,11 @@ export default function Home() {
               >
                 View work
               </a>
+              <Link href="/3d">
+                <a className="w-full sm:w-auto flex-none bg-blue-600 hover:bg-blue-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+                  3D Showcase
+                </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ function HomeHeader({
           <div className="text-sm lg:text-lg">{title}</div>
           <div className="text-xs lg:text-sm">
             by{" "}
-            <Link href="/">
+            <Link href="/3d">
               <a className="underline">Antony Budianto</a>
             </Link>
           </div>
