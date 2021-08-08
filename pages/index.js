@@ -36,7 +36,7 @@ const WORKS = [
   },
   {
     title: "3D Apart",
-    localHref: "/home",
+    localHref: "/3d/apart",
     imgSrc: apart3d,
     desc: `Interactive Web 3D Apartment with low-poly design.`,
     imgW: 1748 / 3,

@@ -2,12 +2,11 @@ import { useRef, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
 
-import Home3d from "../components/Home3d";
 import LoadingWidget from "../components/LoadingWidget";
 import ProgressLoader from "../components/ProgressLoader";
 import getFov from "./helpers/fov";
 
-const HomeScene = ({ dark, autoRotate }) => {
+const GenericScene = ({ dark, autoRotate, children }) => {
   const ref = useRef();
   const camRef = useRef();
   const [enable, setEnable] = useState(false);
@@ -30,7 +29,7 @@ const HomeScene = ({ dark, autoRotate }) => {
             intensity={dark ? 0.2 : 0.7}
             environment={dark ? "night" : "city"}
           >
-            <Home3d dark={dark} />
+            {children}
           </Stage>
         </Suspense>
         <PerspectiveCamera
@@ -49,4 +48,4 @@ const HomeScene = ({ dark, autoRotate }) => {
   );
 };
 
-export default HomeScene;
+export default GenericScene;

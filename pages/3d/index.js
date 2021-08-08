@@ -10,7 +10,7 @@ const LIST = [
   {
     name: "Apartment",
     img: "/meta-home.jpg",
-    href: "/home",
+    href: "/3d/apart",
   },
 ];
 
