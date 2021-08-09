@@ -65,6 +65,7 @@ function HomePortfolio({
                       className="show-on-scroll rounded-lg w-1/3 xl:w-1/5 mr-3 lg:mr-8"
                       autoPlay
                       muted
+                      playsInline
                       loop
                       key={tmbIdx}
                       style={{
