@@ -166,13 +166,13 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                className="w-full sm:w-auto flex-none bg-blue-600 hover:bg-blue-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className="w-full sm:w-auto flex-none bg-blue-900 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="#work"
               >
                 View work
               </a>
               <Link href="/3d">
-                <a className="w-full sm:w-auto flex-none bg-blue-600 hover:bg-blue-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+                <a className="w-full sm:w-auto flex-none bg-blue-900 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                   3D Showcase
                 </a>
               </Link>
