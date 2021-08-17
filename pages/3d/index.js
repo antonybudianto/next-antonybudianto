@@ -3,6 +3,11 @@ import Link from "next/link";
 
 const LIST = [
   {
+    name: "Maldive Resort",
+    img: "/meta-maldive-mini.jpg",
+    href: "/3d/maldive-resort",
+  },
+  {
     name: "Maldive Mini",
     img: "/meta-maldive-mini.jpg",
     href: "/3d/maldive-mini",

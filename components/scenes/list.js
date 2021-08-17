@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 const HomeScene = dynamic(() => import("./HomeScene"));
 const MaldiveMiniScene = dynamic(() => import("./MaldiveMiniScene"));
+const MaldiveResortScene = dynamic(() => import("./MaldiveResortScene"));
 
 export const SHOWCASE_LIST = [
   {
@@ -20,6 +21,20 @@ export const SHOWCASE_LIST = [
     metaTitle: "3D Maldive Mini",
     metaContent: "3D Interactive Maldive Mini by Antony Budianto",
     component: MaldiveMiniScene,
+    credits: [
+      "https://free-3dtextureshd.com",
+      "https://www.sketchuptextureclub.com",
+      "https://polyhaven.com",
+    ],
+  },
+
+  {
+    id: "maldive-resort",
+    name: "3D Maldive Resort",
+    metaOgImage: "https://antonybudianto.com/meta-maldive-mini.jpg",
+    metaTitle: "3D Maldive Resort",
+    metaContent: "3D Interactive Maldive Resort by Antony Budianto",
+    component: MaldiveResortScene,
     credits: [
       "https://free-3dtextureshd.com",
       "https://www.sketchuptextureclub.com",

@@ -6,12 +6,20 @@ import LoadingWidget from "../components/LoadingWidget";
 import ProgressLoader from "../components/ProgressLoader";
 import getFov from "./helpers/fov";
 
-const GenericScene = ({ dark, autoRotate, children }) => {
+const GenericScene = ({
+  dark,
+  autoRotate,
+  children,
+  cameraPosition,
+  customFov,
+  orbitTarget = [0, 3, 0],
+  maxPolarAngle = Math.PI / 2,
+}) => {
   const ref = useRef();
   const camRef = useRef();
   const [enable, setEnable] = useState(false);
   const [loading, setLoading] = useState(true);
-  const fov = getFov();
+  const fov = getFov(customFov);
 
   const handleUpdate = () => {
     setEnable(true);
@@ -36,13 +44,17 @@ const GenericScene = ({ dark, autoRotate, children }) => {
           makeDefault={enable}
           fov={fov}
           ref={camRef}
-          position={[0, 5, -18]}
+          position={cameraPosition || [0, 5, -18]}
         />
-        <OrbitControls
-          camera={camRef.current}
-          ref={ref}
-          autoRotate={autoRotate}
-        />
+        {enable ? (
+          <OrbitControls
+            camera={camRef.current}
+            ref={ref}
+            target={orbitTarget}
+            autoRotate={autoRotate}
+            maxPolarAngle={maxPolarAngle}
+          />
+        ) : null}
       </Canvas>
     </>
   );
