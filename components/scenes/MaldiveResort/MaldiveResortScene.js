@@ -1,6 +1,6 @@
-import GenericScene from "../GenericScene";
+import GenericScene from "../../GenericScene";
 import MaldiveResort3d from "./MaldiveResort3d";
-import Hut3d from "./MaldiveResort/Hut3d";
+import Hut3d from "./Hut3d";
 
 const MaldiveResortScene = (p) => (
   <GenericScene orbitTarget={[0, 1, 0]} cameraPosition={[-25, 12, 5]} {...p}>

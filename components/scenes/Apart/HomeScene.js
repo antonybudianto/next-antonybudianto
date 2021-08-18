@@ -1,4 +1,4 @@
-import GenericScene from "../GenericScene";
+import GenericScene from "../../GenericScene";
 import Home3d from "./Home3d";
 
 const HomeScene = (p) => (

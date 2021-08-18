@@ -28,7 +28,7 @@ const GenericScene = ({
   return (
     <>
       {loading ? <LoadingWidget /> : null}
-      <Canvas shadows dpr={[1, 2]}>
+      <Canvas shadows dpr={[1, 2]} className="select-none">
         <Suspense fallback={<ProgressLoader setLoading={setLoading} />}>
           <Stage
             onUpdate={handleUpdate}

@@ -4,7 +4,7 @@ import Link from "next/link";
 const LIST = [
   {
     name: "Maldive Resort",
-    img: "/meta-maldive-mini.jpg",
+    img: "/meta-maldive-resort.jpg",
     href: "/3d/maldive-resort",
   },
   {

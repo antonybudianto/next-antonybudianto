@@ -1,8 +1,12 @@
 import dynamic from "next/dynamic";
 
-const HomeScene = dynamic(() => import("./HomeScene"));
-const MaldiveMiniScene = dynamic(() => import("./MaldiveMiniScene"));
-const MaldiveResortScene = dynamic(() => import("./MaldiveResortScene"));
+const HomeScene = dynamic(() => import("./Apart/HomeScene"));
+const MaldiveMiniScene = dynamic(() =>
+  import("./MaldiveMini/MaldiveMiniScene")
+);
+const MaldiveResortScene = dynamic(() =>
+  import("./MaldiveResort/MaldiveResortScene")
+);
 
 export const SHOWCASE_LIST = [
   {
@@ -31,7 +35,7 @@ export const SHOWCASE_LIST = [
   {
     id: "maldive-resort",
     name: "3D Maldive Resort",
-    metaOgImage: "https://antonybudianto.com/meta-maldive-mini.jpg",
+    metaOgImage: "https://antonybudianto.com/meta-maldive-resort.jpg",
     metaTitle: "3D Maldive Resort",
     metaContent: "3D Interactive Maldive Resort by Antony Budianto",
     component: MaldiveResortScene,
