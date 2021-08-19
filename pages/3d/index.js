@@ -1,23 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-
-const LIST = [
-  {
-    name: "Maldive Resort",
-    img: "/meta-maldive-resort.jpg",
-    href: "/3d/maldive-resort",
-  },
-  {
-    name: "Maldive Mini",
-    img: "/meta-maldive-mini.jpg",
-    href: "/3d/maldive-mini",
-  },
-  {
-    name: "Apartment",
-    img: "/meta-home.jpg",
-    href: "/3d/apart",
-  },
-];
+import { SHOWCASE_LIST } from "../../components/scenes/list";
 
 export default function MaldiveMiniPage() {
   return (
@@ -68,12 +51,12 @@ export default function MaldiveMiniPage() {
           </Link>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
-          {LIST.map((l, i) => (
+          {SHOWCASE_LIST.map((l, i) => (
             <div
               key={i}
               className="shadow rounded-md relative overflow-hidden flex items-around"
             >
-              <Link href={l.href}>
+              <Link href={`/3d/${l.id}`}>
                 <img
                   className="cursor-pointer rounded-md"
                   alt={l.name}
