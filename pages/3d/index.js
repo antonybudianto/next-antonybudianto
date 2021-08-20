@@ -27,7 +27,7 @@ export default function MaldiveMiniPage() {
           <meta property="og:url" content="https://antonybudianto.com/3d" />
           <meta
             property="og:image"
-            content="https://antonybudianto.com/meta-maldive-mini.jpg"
+            content="https://antonybudianto.com/meta-3d/meta-maldive-mini.jpg"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="3D Showcase" />
@@ -38,7 +38,7 @@ export default function MaldiveMiniPage() {
           <meta name="twitter:url" content="https://antonybudianto.com/3d" />
           <meta
             name="twitter:image"
-            content="https://antonybudianto.com/meta-maldive-mini.jpg"
+            content="https://antonybudianto.com/meta-3d/meta-maldive-mini.jpg"
           />
           <meta name="twitter:site" content="@antonybudianto" />
           <meta name="theme-color" content="#FFFFFF" />
