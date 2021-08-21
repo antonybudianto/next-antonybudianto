@@ -343,7 +343,7 @@ export default function Model(props) {
         receiveShadow
         geometry={nodes.CoconutTree.geometry}
         material={nodes.CoconutTree.material}
-        position={[-0.05, -0.47, 15.98]}
+        position={[-0.05, -0.51, 15.98]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
@@ -532,7 +532,7 @@ export default function Model(props) {
         receiveShadow
         geometry={nodes.CoconutTree001.geometry}
         material={nodes.CoconutTree001.material}
-        position={[9.09, -0.54, 13.19]}
+        position={[9.09, -0.54, 13.26]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
@@ -721,7 +721,7 @@ export default function Model(props) {
         receiveShadow
         geometry={nodes.CoconutTree002.geometry}
         material={nodes.CoconutTree002.material}
-        position={[8.25, -0.57, 14.12]}
+        position={[8.25, -0.61, 14.12]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
@@ -2044,7 +2044,7 @@ export default function Model(props) {
         receiveShadow
         geometry={nodes.CoconutTree009.geometry}
         material={nodes.CoconutTree009.material}
-        position={[7.03, -0.3, 13.93]}
+        position={[7.03, -0.42, 14.03]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
@@ -2478,7 +2478,7 @@ export default function Model(props) {
           material={nodes.Cone002_1.material}
         />
       </group>
-      <group position={[5.13, -0.33, 13.95]} rotation={[0, 0.26, 0]}>
+      <group position={[5.13, -0.35, 13.95]} rotation={[0, 0.26, 0]}>
         <mesh
           castShadow
           receiveShadow
