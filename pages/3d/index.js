@@ -1,18 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-
-const LIST = [
-  {
-    name: "Maldive Mini",
-    img: "/meta-maldive-mini.jpg",
-    href: "/3d/maldive-mini",
-  },
-  {
-    name: "Apartment",
-    img: "/meta-home.jpg",
-    href: "/3d/apart",
-  },
-];
+import { SHOWCASE_LIST } from "../../components/scenes/list";
 
 export default function MaldiveMiniPage() {
   return (
@@ -39,7 +27,7 @@ export default function MaldiveMiniPage() {
           <meta property="og:url" content="https://antonybudianto.com/3d" />
           <meta
             property="og:image"
-            content="https://antonybudianto.com/meta-maldive-mini.jpg"
+            content="https://antonybudianto.com/meta-3d/meta-maldive-mini.jpg"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="3D Showcase" />
@@ -50,7 +38,7 @@ export default function MaldiveMiniPage() {
           <meta name="twitter:url" content="https://antonybudianto.com/3d" />
           <meta
             name="twitter:image"
-            content="https://antonybudianto.com/meta-maldive-mini.jpg"
+            content="https://antonybudianto.com/meta-3d/meta-maldive-mini.jpg"
           />
           <meta name="twitter:site" content="@antonybudianto" />
           <meta name="theme-color" content="#FFFFFF" />
@@ -63,12 +51,12 @@ export default function MaldiveMiniPage() {
           </Link>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
-          {LIST.map((l, i) => (
+          {SHOWCASE_LIST.map((l, i) => (
             <div
               key={i}
               className="shadow rounded-md relative overflow-hidden flex items-around"
             >
-              <Link href={l.href}>
+              <Link href={`/3d/${l.id}`}>
                 <img
                   className="cursor-pointer rounded-md"
                   alt={l.name}

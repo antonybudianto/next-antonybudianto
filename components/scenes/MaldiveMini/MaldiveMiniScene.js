@@ -1,4 +1,4 @@
-import GenericScene from "../GenericScene";
+import GenericScene from "../../GenericScene";
 import Maldive3d from "./Maldive3d";
 
 const MaldiveMiniScene = (p) => (
