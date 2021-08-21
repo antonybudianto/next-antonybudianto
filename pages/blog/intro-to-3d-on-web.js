@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 
 import CodeBlock from "../../components/CodeBlock";
 
@@ -6,6 +7,7 @@ const metaDesc = "Learn about 3D on Web at Antony's Blog";
 const metaTitle = "Introduction to 3D on Web";
 
 export default function Blog3d() {
+  const [menuHidden, setMenuHidden] = useState(true);
   return (
     <>
       <Head>
@@ -55,6 +57,7 @@ export default function Blog3d() {
           <div className="block lg:hidden pr-4">
             <button
               id="nav-toggle"
+              onClick={() => setMenuHidden((m) => !m)}
               className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none"
             >
               <svg
@@ -69,7 +72,9 @@ export default function Blog3d() {
           </div>
 
           <div
-            className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20"
+            className={`w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20 ${
+              menuHidden ? "hidden" : ""
+            }`}
             id="nav-content"
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
@@ -128,7 +133,7 @@ export default function Blog3d() {
             software if you want to use CAD for creating your 3D model.
           </p>
           <h2 className="pb-2 pt-6 font-sans">Install</h2>
-          <p>
+          <div>
             You can install required dependencies using:
             <br />
             <CodeBlock>
@@ -136,9 +141,9 @@ export default function Blog3d() {
 npm i three @react-three/fiber
               `}
             </CodeBlock>
-          </p>
+          </div>
           <h3 className="pb-2 pt-6 font-sans">Render "Hello box"</h3>
-          <p>
+          <div>
             Let's do simple "hello world" by rendering simple Box in our scene:{" "}
             <br />
             <CodeBlock>
@@ -164,7 +169,7 @@ ReactDOM.render(
 )
             `}
             </CodeBlock>
-          </p>
+          </div>
           <div className="mt-2">
             <img
               className="border"
@@ -206,7 +211,7 @@ ReactDOM.render(
             From Blender UI, you can export by click menu File > Export > glTF
             2.0 <br />
             <img
-              style={{ height: "430px" }}
+              style={{ height: "390px" }}
               src="https://i.ibb.co/w4PbMNG/Screen-Shot-2021-08-21-at-8-36-08-PM.jpg"
             />
             You can save as "hello.gltf" for now. <br />
