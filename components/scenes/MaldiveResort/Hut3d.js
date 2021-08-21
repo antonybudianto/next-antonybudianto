@@ -10,13 +10,14 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/3d/hut.gltf");
   const { dark } = props;
   const intensity = dark ? 1 : 0;
+  const distance = 7;
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group>
         <group position={[2.85, 0.31, -3.19]} scale={[0.17, 0.1, 0.1]}>
           <pointLight
-            distance={7}
+            distance={distance}
             intensity={intensity}
             decay={2}
             color="#ff8b1c"
@@ -25,7 +26,7 @@ export default function Model(props) {
         </group>
         <group position={[3.1, 0.31, -3.62]} scale={[0.17, 0.1, 0.1]}>
           <pointLight
-            distance={7}
+            distance={distance}
             intensity={intensity}
             decay={2}
             color="#ff8b1c"

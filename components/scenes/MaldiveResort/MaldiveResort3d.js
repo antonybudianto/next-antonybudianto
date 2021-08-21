@@ -9,6 +9,9 @@ export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/3d/maldive.gltf");
   const { actions } = useAnimations(animations, group);
+  const { dark } = props;
+  const beachLightDistance = 3;
+  const beachLightIntensity = dark ? 0.7 : 0;
 
   useEffect(() => {
     actions.SeaWaterAction.play();
@@ -16,6 +19,27 @@ export default function Model(props) {
 
   return (
     <group {...props} dispose={null}>
+      <group position={[4.14, -0.04, 13.81]}>
+        <pointLight
+          distance={beachLightDistance}
+          intensity={beachLightIntensity}
+          color="#ff8b1c"
+        />
+      </group>
+      <group position={[-1.63, -0.04, 14.65]}>
+        <pointLight
+          distance={beachLightDistance}
+          intensity={beachLightIntensity}
+          color="#dd8b1c"
+        />
+      </group>
+      <group position={[10.15, -0.04, 10.77]}>
+        <pointLight
+          distance={beachLightDistance}
+          intensity={beachLightIntensity}
+          color="#dd8b1c"
+        />
+      </group>
       <mesh
         castShadow
         receiveShadow
