@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useState } from "react";
 
 import CodeBlock from "../../components/CodeBlock";
@@ -79,12 +80,12 @@ export default function Blog3d() {
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="mr-3">
-                <a
+                <Link
                   className="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
                   href="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -174,6 +175,7 @@ ReactDOM.render(
             <img
               className="border"
               style={{ height: "220px" }}
+              alt="box"
               src="https://i.ibb.co/bRYqtwS/Screen-Shot-2021-08-21-at-8-04-26-PM.png"
             />
             <br />
@@ -212,6 +214,7 @@ ReactDOM.render(
             2.0 <br />
             <img
               style={{ height: "390px" }}
+              alt="blender"
               src="https://i.ibb.co/w4PbMNG/Screen-Shot-2021-08-21-at-8-36-08-PM.jpg"
             />
             You can save as "hello.gltf" for now. <br />
@@ -312,6 +315,7 @@ const ref = useRef();
             <br />
             <img
               style={{ height: "300px" }}
+              alt="demo 3d"
               src="https://i.ibb.co/P6kN1nX/Screen-Shot-2021-08-21-at-9-21-47-PM.jpg"
             />
             <br />I think that's all for today, thanks for reading until this
