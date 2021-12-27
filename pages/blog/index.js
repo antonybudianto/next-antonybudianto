@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import { SHOWCASE_LIST } from "../../components/scenes/list";
+import { getAllPosts } from "../../lib/api";
 
-export default function MaldiveMiniPage() {
+export default function BlogIndex({ allPosts }) {
   return (
     <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 text-gray-800 dark:text-white min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 lg:py-10 ">
@@ -42,22 +43,29 @@ export default function MaldiveMiniPage() {
           </Link>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
-          <div className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3">
-            <Link href="/blog/intro-to-3d-on-web">
-              <a>Intro to 3D on Web</a>
-            </Link>
-          </div>
-          <div className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3">
-            Modeling a simple door
-          </div>
-          <div className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3">
-            Modeling a simple door
-          </div>
-          <div className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3">
-            Modeling a simple door
-          </div>
+          {allPosts.map((p, i) => (
+            <div
+              key={i}
+              className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3"
+            >
+              <Link href={"/blog/" + p.slug}>
+                <a className="hover:underline">{p.title}</a>
+              </Link>
+              <div className="text-sm mt-1 text-gray-400">
+                posted at {new Date(p.date).toLocaleDateString()}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts(["title", "date", "slug"]);
+
+  return {
+    props: { allPosts },
+  };
 }

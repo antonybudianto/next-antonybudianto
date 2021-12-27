@@ -268,21 +268,6 @@ const ref = useRef();
           </a>{" "}
           for complete code
         </blockquote>
-        <div className=" flex w-full items-center font-sans px-4 py-12">
-          <img
-            className="w-10 h-10 rounded-full mr-4"
-            src="https://antonybudianto.com/profile.jpeg"
-            alt="Avatar of Antony"
-          />
-          <div className="flex-1 px-2">
-            <p className=" font-bold text-base md:text-xl leading-none mb-2">
-              Antony Budianto
-            </p>
-            <p className=" text-xs md:text-base">
-              Software Engineering, Web, 3D Arts, random thoughts.
-            </p>
-          </div>
-        </div>
       </BlogWrapper>
     </>
   );

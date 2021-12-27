@@ -11,7 +11,7 @@ function BlogNav(props) {
     >
       <div id="progress" className="h-1 z-20 top-0"></div>
 
-      <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3 shadow">
+      <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
         <div className="pl-4">
           <Link href="/blog">
             <a className="text-gray-900 dark:text-white no-underline hover:no-underline font-extrabold text-xl">
