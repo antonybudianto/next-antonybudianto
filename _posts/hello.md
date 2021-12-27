@@ -1,8 +1,8 @@
 ---
 title: "Hello world"
+desc: "Hello world"
 date: "2020-03-16T05:35:07.322Z"
-ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+ogImage: "https://i.ibb.co/P6kN1nX/Screen-Shot-2021-08-21-at-9-21-47-PM.jpg"
 ---
 
 ## Welcome
