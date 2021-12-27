@@ -11,7 +11,7 @@ function BlogNav(props) {
     >
       <div id="progress" className="h-1 z-20 top-0"></div>
 
-      <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+      <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3 shadow">
         <div className="pl-4">
           <Link href="/blog">
             <a className="text-gray-900 dark:text-white no-underline hover:no-underline font-extrabold text-xl">
@@ -24,7 +24,7 @@ function BlogNav(props) {
           <button
             id="nav-toggle"
             onClick={() => setMenuHidden((m) => !m)}
-            className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none"
+            className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:border-blue-500 appearance-none focus:outline-none"
           >
             <svg
               className="fill-current h-3 w-3"
@@ -38,7 +38,7 @@ function BlogNav(props) {
         </div>
 
         <div
-          className={`w-full flex-grow lg:w-auto lg:block mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20 ${
+          className={`w-full flex-grow lg:w-auto lg:block mt-2 lg:mt-0 z-20 px-5 py-3 lg:px-0 lg:py-0 ${
             menuHidden ? "hidden" : ""
           }`}
           id="nav-content"
