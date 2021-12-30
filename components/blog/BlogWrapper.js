@@ -7,14 +7,13 @@ import BlogNav from "./BlogNav";
 function BlogWrapper({ title, publishDate, children }) {
   return (
     <>
-      <BlogNav />
       <div className="pt-20 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
         <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
           <div className="font-sans">
-            <p className="text-base md:text-sm text-blue-500 font-bold">
+            <p className="text-base md:text-sm text-blue-500 dark:text-blue-300 font-bold">
               &lt;{" "}
               <Link href="/blog">
-                <a className="text-base md:text-sm text-blue-500 font-bold no-underline hover:underline">
+                <a className="text-base md:text-sm font-bold no-underline hover:underline">
                   BACK TO BLOG
                 </a>
               </Link>
@@ -23,7 +22,7 @@ function BlogWrapper({ title, publishDate, children }) {
               {title}
             </h1>
             <p className="text-sm md:text-base font-normal text-gray-500">
-              Published {publishDate}
+              Posted at {publishDate}
             </p>
           </div>
           {children}

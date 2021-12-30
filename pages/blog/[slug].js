@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import BlogBody from "../../components/blog/BlogBody";
 import BlogWrapper from "../../components/blog/BlogWrapper";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import markdownToHtml from "../../lib/mdToHtml";
+import DarkmodeButton from "../../components/DarkmodeButton";
+import useDarkMode from "../../components/hooks/useDarkMode";
 
 function BlogTemplate({ post }) {
+  const [dark, setDark] = useDarkMode();
+
   return (
     <>
       <Head>
@@ -37,9 +41,17 @@ function BlogTemplate({ post }) {
         <meta name="twitter:image" content={post.ogImage} />
         <meta name="twitter:site" content="@antonybudianto" />
       </Head>
+      <DarkmodeButton
+        title="Switch Night Mode"
+        onClick={() => {
+          setDark(!dark);
+        }}
+      >
+        {dark ? "🌙" : "☀️"}
+      </DarkmodeButton>
       <BlogWrapper
         title={post.title}
-        publishDate={new Date(post.date).toLocaleString()}
+        publishDate={new Date(post.date).toDateString()}
       >
         <BlogBody content={post.content} />
       </BlogWrapper>

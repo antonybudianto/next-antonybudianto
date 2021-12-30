@@ -37,17 +37,17 @@ function HomePortfolio({
               <div className="text-lg text-gray-600 dark:text-blue-100 sm:text-xl">
                 {desc}
               </div>
-              <div className="my-5">
+              <div className="my-7">
                 {localHref ? (
                   <Link href={localHref}>
-                    <a className="whitespace-nowrap inline-flex rounded-md bg-blue-500 dark:bg-blue-900 py-3 sm:py-4 px-5  sm:px-6 text-sm font-semibold uppercase text-blue-100 hover:bg-blue-800">
+                    <a className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                       Visit {title}
                     </a>
                   </Link>
                 ) : (
                   <a
                     href={href}
-                    className="whitespace-nowrap inline-flex rounded-md bg-blue-900 py-3 sm:py-4 px-5  sm:px-6 text-sm font-semibold uppercase text-blue-100 hover:bg-blue-800"
+                    className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                   >
                     Visit {title}
                   </a>

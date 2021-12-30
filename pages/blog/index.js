@@ -14,11 +14,17 @@ export default function BlogIndex({ allPosts }) {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <meta name="description" content="Blog by Antony Budianto" />
+          <meta
+            name="description"
+            content="Blog by Antony Budianto, post about web and technology"
+          />
           <meta property="og:site_name" content="antonybudianto.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Blog by Antony" />
-          <meta property="og:description" content="Blog by Antony Budianto" />
+          <meta
+            property="og:description"
+            content="Blog by Antony Budianto, post about web and technology"
+          />
           <meta property="og:url" content="https://antonybudianto.com/blog" />
           {/* <meta
             property="og:image"
@@ -42,17 +48,21 @@ export default function BlogIndex({ allPosts }) {
             <a className="text-blue-600 dark:text-blue-300">Antony Budianto</a>
           </Link>
         </div>
-        <div className="mt-8 grid sm:grid-cols-3 gap-4">
+        <div className="mt-8 gap-4">
           {allPosts.map((p, i) => (
             <div
               key={i}
-              className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3"
+              className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3 mb-3 shadow"
             >
               <Link href={"/blog/" + p.slug}>
-                <a className="hover:underline">{p.title}</a>
+                <a className="text-2xl font-extrabold hover:underline">
+                  {p.title}
+                </a>
               </Link>
+              <div className="text-gray-500">{p.desc}</div>
+
               <div className="text-sm mt-1 text-gray-400">
-                posted at {new Date(p.date).toLocaleDateString()}
+                posted at {new Date(p.date).toDateString()}
               </div>
             </div>
           ))}
@@ -63,7 +73,7 @@ export default function BlogIndex({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["title", "date", "slug"]);
+  const allPosts = getAllPosts(["title", "desc", "date", "slug"]);
 
   return {
     props: { allPosts },

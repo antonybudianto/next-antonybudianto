@@ -10,6 +10,7 @@ import HomePortfolio from "../components/HomePortfolio";
 import DarkmodeButton from "../components/DarkmodeButton";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import useDarkMode from "../components/hooks/useDarkMode";
 
 const WORKS = [
   {
@@ -94,19 +95,7 @@ const WORKS = [
 ];
 
 export default function Home() {
-  const [dark, setDark] = useState(
-    typeof window !== "undefined" ? window.__dark : "light"
-  );
-
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.theme = dark ? "dark" : "light";
-    window.__dark = dark;
-  }, [dark]);
+  const [dark, setDark] = useDarkMode();
 
   return (
     <>
@@ -124,16 +113,14 @@ export default function Home() {
             content="Engineer, Open-source dev, Google cloud certified"
           />
         </Head>
-        <div className="fixed top-3 right-3 z-10">
-          <DarkmodeButton
-            title="Switch Night Mode"
-            onClick={() => {
-              setDark(!dark);
-            }}
-          >
-            {dark ? "🌙" : "☀️"}
-          </DarkmodeButton>
-        </div>
+        <DarkmodeButton
+          title="Switch Night Mode"
+          onClick={() => {
+            setDark(!dark);
+          }}
+        >
+          {dark ? "🌙" : "☀️"}
+        </DarkmodeButton>
         <div
           className="container mx-auto px-4 sm:px-6 md:px-8 py-16 lg:py-0 flex justify-start items-center"
           style={{
@@ -150,15 +137,15 @@ export default function Home() {
                 height={150}
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-blue-500 dark:text-blue-100 my-8 sm:mt-14 sm:mb-10">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-8 sm:mt-14 sm:mb-10">
               Antony Budianto
             </h1>
             <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
               Engineer, Open-source dev, Google Cloud certified
             </p>
-            <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 ">
+            <div className="flex flex-wrap flex-row gap-2">
               <a
-                className="w-full sm:w-auto flex-none bg-gray-700 hover:bg-gray-600 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className=" bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="https://github.com/antonybudianto"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -166,18 +153,18 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                className="w-full sm:w-auto flex-none bg-blue-500 dark:bg-blue-900 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className=" bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="#work"
               >
                 Recent works
               </a>
               <Link href="/blog">
-                <a className="w-full sm:w-auto flex-none bg-blue-500 dark:bg-blue-900 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+                <a className=" bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                   Blog
                 </a>
               </Link>
               <Link href="/3d">
-                <a className="w-full sm:w-auto flex-none bg-blue-500 dark:bg-blue-900 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+                <a className=" bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                   3D Showcase
                 </a>
               </Link>
