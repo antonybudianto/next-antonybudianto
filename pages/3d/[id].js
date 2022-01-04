@@ -12,6 +12,17 @@ export default function Home() {
   const router = useRouter();
   const { id } = router.query;
 
+  useEffect(() => {
+    if (typeof iNoBounce !== "undefined" && !iNoBounce.isEnabled()) {
+      iNoBounce.enable();
+    }
+    return () => {
+      if (iNoBounce && iNoBounce.isEnabled()) {
+        iNoBounce.disable();
+      }
+    };
+  }, []);
+
   let modelData = null;
   if (id) {
     modelData = SHOWCASE_LIST.find((l) => l.id === id);
