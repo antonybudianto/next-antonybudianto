@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
 import HomeHeader from "../../components/HomeHeader";
 import { SHOWCASE_LIST } from "../../components/scenes/list";
+import Script from "next/script";
 
 export default function Home() {
   const [dark, setDark] = useState(false);
@@ -35,10 +36,6 @@ export default function Home() {
       <Head>
         <title>{modelData.name} by Antony</title>
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
         <meta name="description" content={modelData.metaContent} />
         <meta property="og:site_name" content="antonybudianto.com" />
         <meta property="og:type" content="website" />
@@ -60,6 +57,7 @@ export default function Home() {
         <meta name="twitter:site" content="@antonybudianto" />
         <meta name="theme-color" content="#FFFFFF" />
       </Head>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.min.js"></Script>
       <HomeHeader
         title={modelData.name}
         dark={dark}
