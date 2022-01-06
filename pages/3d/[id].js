@@ -12,17 +12,6 @@ export default function Home() {
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-    if (typeof iNoBounce !== "undefined" && !iNoBounce.isEnabled()) {
-      iNoBounce.enable();
-    }
-    return () => {
-      if (iNoBounce && iNoBounce.isEnabled()) {
-        iNoBounce.disable();
-      }
-    };
-  }, []);
-
   let modelData = null;
   if (id) {
     modelData = SHOWCASE_LIST.find((l) => l.id === id);
@@ -68,7 +57,6 @@ export default function Home() {
         <meta name="twitter:site" content="@antonybudianto" />
         <meta name="theme-color" content="#FFFFFF" />
       </Head>
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.min.js"></Script>
       <HomeHeader
         title={modelData.name}
         dark={dark}
