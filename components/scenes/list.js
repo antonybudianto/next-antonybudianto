@@ -10,6 +10,13 @@ const MaldiveResortScene = dynamic(() =>
 
 export const SHOWCASE_LIST = [
   {
+    id: "studio",
+    external: true,
+    name: "3D Studio",
+    img: "/meta-3d/meta-studio.jpg",
+    href: "https://ab-3d-studio.vercel.app/",
+  },
+  {
     id: "maldive-resort",
     name: "3D Maldive Resort",
     img: "/meta-3d/meta-maldive-resort.jpg",
