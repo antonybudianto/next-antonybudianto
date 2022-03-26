@@ -59,7 +59,7 @@ const WORKS = [
   },
   {
     title: "Deesain",
-    href: "https://deesain.com",
+    href: "https://deesain.netlify.app/",
     imgSrc: deesainJpg,
     desc: `Modern Graphic Design platform for social media and any
   creative works`,
