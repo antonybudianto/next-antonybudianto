@@ -16,7 +16,7 @@ function HomePortfolio({
   useScrollAnimation();
 
   return (
-    <div className="bg-gradient-to-tr border-b-2 border-opacity-50 dark:border-opacity-5 flex flex-col justify-center text-gray-500 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white lg:h-screen">
+    <div className="bg-gradient-to-tr border-b-2 border-sky-500/20 dark:border-white/5 flex flex-col justify-center text-gray-500 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white lg:h-screen">
       <div className="container mx-auto py-5 lg:pb-20 px-4 sm:px-6 md:px-8">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-blue-400 dark:text-blue-200 my-8 sm:mt-14 sm:mb-10">
           {title}
