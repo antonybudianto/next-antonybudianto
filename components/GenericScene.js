@@ -23,6 +23,7 @@ const GenericScene = ({
 
   const handleUpdate = () => {
     setEnable(true);
+    setLoading(false);
   };
 
   return (

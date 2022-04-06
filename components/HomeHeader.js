@@ -49,7 +49,7 @@ function HomeHeader({
             onClick={() => {
               setAutoRotate(!autoRotate);
             }}
-            className={
+            textColor={
               autoRotate ? (dark ? "text-blue-200" : "text-blue-500") : ""
             }
           >
