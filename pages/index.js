@@ -133,6 +133,7 @@ export default function Home() {
                 src="/profile.jpeg"
                 alt="Profile"
                 className="rounded-full mb-5"
+                priority
                 width={150}
                 height={150}
               />
