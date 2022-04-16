@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { SHOWCASE_LIST } from "../../components/scenes/list";
 import { getAllPosts } from "../../lib/api";
 
 export default function BlogIndex({ allPosts }) {

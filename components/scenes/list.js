@@ -1,10 +1,8 @@
-import dynamic from "next/dynamic";
+import { lazy } from "react";
 
-const HomeScene = dynamic(() => import("./Apart/HomeScene"));
-const MaldiveMiniScene = dynamic(() =>
-  import("./MaldiveMini/MaldiveMiniScene")
-);
-const MaldiveResortScene = dynamic(() =>
+const HomeScene = lazy(() => import("./Apart/HomeScene"));
+const MaldiveMiniScene = lazy(() => import("./MaldiveMini/MaldiveMiniScene"));
+const MaldiveResortScene = lazy(() =>
   import("./MaldiveResort/MaldiveResortScene")
 );
 

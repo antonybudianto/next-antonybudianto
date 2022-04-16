@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
@@ -65,7 +65,9 @@ export default function Home() {
         setAutoRotate={setAutoRotate}
         credits={modelData.credits}
       />
-      <modelData.component dark={dark} autoRotate={autoRotate} />
+      <Suspense fallback={null}>
+        <modelData.component dark={dark} autoRotate={autoRotate} />
+      </Suspense>
     </div>
   );
 }
