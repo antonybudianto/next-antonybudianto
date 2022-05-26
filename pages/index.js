@@ -1,5 +1,7 @@
+import { Suspense, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import deesainJpg from "../public/deesain.jpg";
 import stickyJpg from "../public/sticky.jpeg";
@@ -8,8 +10,6 @@ import apart3d from "../public/meta-3d/meta-home.jpg";
 import mdvm3d from "../public/meta-3d/meta-maldive-mini.jpg";
 import HomePortfolio from "../components/HomePortfolio";
 import DarkmodeButton from "../components/DarkmodeButton";
-import { useEffect, useState } from "react";
-import Link from "next/link";
 import useDarkMode from "../components/hooks/useDarkMode";
 
 const WORKS = [
@@ -142,7 +142,7 @@ export default function Home() {
               Antony Budianto
             </h1>
             <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
-              Engineer, Open-source dev, Google Cloud certified
+              Engineering, Open-source dev, Google Cloud certified
             </p>
             <div className="flex flex-wrap flex-row gap-2">
               <a
@@ -179,20 +179,22 @@ export default function Home() {
           contentVisibility: "auto",
         }}
       >
-        {WORKS.map((w, i) => (
-          <HomePortfolio
-            key={i}
-            localHref={w.localHref}
-            href={w.href}
-            title={w.title}
-            desc={w.desc}
-            imgSrc={w.imgSrc}
-            imgAlt={w.title}
-            imgW={w.imgW}
-            imgH={w.imgH}
-            thumbs={w.thumbs}
-          />
-        ))}
+        <Suspense fallback={null}>
+          {WORKS.map((w, i) => (
+            <HomePortfolio
+              key={i}
+              localHref={w.localHref}
+              href={w.href}
+              title={w.title}
+              desc={w.desc}
+              imgSrc={w.imgSrc}
+              imgAlt={w.title}
+              imgW={w.imgW}
+              imgH={w.imgH}
+              thumbs={w.thumbs}
+            />
+          ))}
+        </Suspense>
       </div>
 
       <div className="px-4 py-8 bg-blue-50 dark:bg-gray-900 mx-auto text-center text-gray-700 dark:text-gray-100">
