@@ -54,7 +54,7 @@ export default function MaldiveMiniPage() {
           {SHOWCASE_LIST.map((l, i) => (
             <div
               key={i}
-              className="shadow rounded-md relative overflow-hidden flex items-around"
+              className="shadow rounded-md bg-gray-700 relative overflow-hidden flex items-around"
             >
               <Link href={l.external ? l.href : `/3d/${l.id}`} passHref>
                 <img
