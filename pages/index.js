@@ -13,50 +13,50 @@ import DarkmodeButton from "../components/DarkmodeButton";
 import useDarkMode from "../components/hooks/useDarkMode";
 
 const WORKS = [
-  {
-    title: "3D Maldive Mini",
-    localHref: "/3d/maldive-mini",
-    imgSrc: mdvm3d,
-    desc: `Interactive Web 3D Maldive-inspired island and resort`,
-    imgW: 1218 / 2.5,
-    imgH: 657 / 2.5,
-    thumbs: [
-      {
-        type: "img",
-        src: "/img-thumbs/mdvm1.jpg",
-      },
-      {
-        type: "img",
-        src: "/img-thumbs/mdvm2.jpg",
-      },
-      {
-        type: "img",
-        src: "/img-thumbs/mdvm3.jpg",
-      },
-    ],
-  },
-  {
-    title: "3D Apart",
-    localHref: "/3d/apart",
-    imgSrc: apart3d,
-    desc: `Interactive Web 3D Apartment with low-poly design.`,
-    imgW: 1748 / 3,
-    imgH: 756 / 3,
-    thumbs: [
-      {
-        type: "video",
-        src: "/video/mov1.mp4",
-      },
-      {
-        type: "video",
-        src: "/video/mov2a.mp4",
-      },
-      {
-        type: "video",
-        src: "/video/mov3a.mp4",
-      },
-    ],
-  },
+  // {
+  //   title: "3D Maldive Mini",
+  //   localHref: "/3d/maldive-mini",
+  //   imgSrc: mdvm3d,
+  //   desc: `Interactive Web 3D Maldive-inspired island and resort`,
+  //   imgW: 1218 / 2.5,
+  //   imgH: 657 / 2.5,
+  //   thumbs: [
+  //     {
+  //       type: "img",
+  //       src: "/img-thumbs/mdvm1.jpg",
+  //     },
+  //     {
+  //       type: "img",
+  //       src: "/img-thumbs/mdvm2.jpg",
+  //     },
+  //     {
+  //       type: "img",
+  //       src: "/img-thumbs/mdvm3.jpg",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "3D Apart",
+  //   localHref: "/3d/apart",
+  //   imgSrc: apart3d,
+  //   desc: `Interactive Web 3D Apartment with low-poly design.`,
+  //   imgW: 1748 / 3,
+  //   imgH: 756 / 3,
+  //   thumbs: [
+  //     {
+  //       type: "video",
+  //       src: "/video/mov1.mp4",
+  //     },
+  //     {
+  //       type: "video",
+  //       src: "/video/mov2a.mp4",
+  //     },
+  //     {
+  //       type: "video",
+  //       src: "/video/mov3a.mp4",
+  //     },
+  //   ],
+  // },
   {
     title: "Deesain",
     href: "https://deesain.netlify.app/",
@@ -164,11 +164,11 @@ export default function Home() {
                   Blog
                 </a>
               </Link>
-              <Link href="/3d">
+              {/* <Link href="/3d">
                 <a className=" bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                   3D Showcase
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
