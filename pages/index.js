@@ -103,14 +103,11 @@ export default function Home() {
         <Head>
           <title>Antony Budianto</title>
           <link rel="icon" href="/favicon.ico" />
-          <meta
-            name="description"
-            content="Engineer, Open-source dev, Google cloud certified"
-          />
+          <meta name="description" content="Engineer, Open-source dev, Web" />
           <meta name="og:title" content="Antony Budianto" />
           <meta
             name="og:description"
-            content="Engineer, Open-source dev, Google cloud certified"
+            content="Engineer, Open-source dev, Web"
           />
         </Head>
         <DarkmodeButton
@@ -142,7 +139,7 @@ export default function Home() {
               Antony Budianto
             </h1>
             <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
-              Engineering, Open-source dev, Google Cloud certified
+              Engineering, Open-source dev, Web
             </p>
             <div className="flex flex-wrap flex-row gap-2">
               <a
