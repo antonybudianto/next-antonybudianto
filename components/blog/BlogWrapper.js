@@ -37,7 +37,7 @@ function BlogWrapper({ title, publishDate, children }) {
                 Antony Budianto
               </p>
               <p className=" text-xs md:text-base">
-                Software Engineering, Web, 3D Arts, random thoughts.
+                Software Engineering, Web, and some random life thoughts.
               </p>
             </div>
           </div>
