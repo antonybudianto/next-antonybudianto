@@ -9,7 +9,7 @@ function Footer() {
             <div className="px-8">
               <h3 className="font-bold">About</h3>
               <p className="py-4 text-sm">
-                Antony Budianto posts about tech stuff; Web, 3D, Engineering and
+                Antony Budianto posts about tech stuff; Web, Engineering and
                 more
               </p>
             </div>
