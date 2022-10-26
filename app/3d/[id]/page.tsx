@@ -1,7 +1,6 @@
 "use client";
 
 import React, { Suspense, useState } from "react";
-// import { useRouter } from "next/router";
 
 import HomeHeader from "@/components/HomeHeader";
 import { SHOWCASE_LIST } from "@/components/scenes/list";
@@ -9,7 +8,6 @@ import { SHOWCASE_LIST } from "@/components/scenes/list";
 export default function Home({ params }) {
   const [dark, setDark] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
-  // const router = useRouter();
   const { id } = params;
 
   let modelData = null;
