@@ -1,6 +1,6 @@
 import React, { use } from "react";
-import BlogBody from "@/components/blog/BlogBody";
-import BlogWrapper from "@/components/blog/BlogWrapper";
+// import BlogBody from "@/components/blog/BlogBody";
+// import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/mdToHtml";
 // import DarkmodeButton from "../../../components/DarkmodeButton";
@@ -15,6 +15,7 @@ interface BlogPost {
 function BlogTemplate({ params }) {
   // const [dark, setDark] = useDarkMode();
   const { post } = use(getData(params.slug)) as { post: BlogPost };
+  console.log(">>", post);
 
   return (
     <>
@@ -26,12 +27,13 @@ function BlogTemplate({ params }) {
       >
         {dark ? "🌙" : "☀️"}
       </DarkmodeButton> */}
-      <BlogWrapper
+      {/* <BlogWrapper
         title={post.title}
         publishDate={new Date(post.date).toDateString()}
       >
         <BlogBody content={post.content} />
-      </BlogWrapper>
+      </BlogWrapper> */}
+      <div>tmp</div>
     </>
   );
 }
