@@ -1,11 +1,9 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 
-// import apart3d from "../public/meta-3d/meta-home.jpg";
-// import mdvm3d from "../public/meta-3d/meta-maldive-mini.jpg";
-import HomePortfolio from "../components/HomePortfolio";
-import DarkmodeButtonWrapper from "../components/DarkmodeButtonWrapper";
-import { WORKS } from "../components/data";
+import HomePortfolio from "@/components/HomePortfolio";
+import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
+import { WORKS } from "@/components/data";
 
 export default function Home() {
   return (
