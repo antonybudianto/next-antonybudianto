@@ -55,19 +55,14 @@ export async function getData(slug) {
   };
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const posts = getAllPosts(["slug"]);
 
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
+  return posts.map((post) => {
+    return {
+      slug: post.slug,
+    };
+  });
 }
 
 export default BlogTemplate;
