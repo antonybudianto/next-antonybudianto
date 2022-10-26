@@ -1,3 +1,5 @@
+"use client";
+
 import GenericScene from "../../GenericScene";
 import Home3d from "./Home3d";
 
