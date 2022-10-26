@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import useScrollAnimation from "./hooks/useScrollAnimation";
 
 function HomePortfolio({
   title,
@@ -13,7 +12,7 @@ function HomePortfolio({
   desc,
   thumbs = [],
 }) {
-  useScrollAnimation();
+  // useScrollAnimation();
 
   return (
     <div className="bg-gradient-to-tr border-b-2 border-sky-500/20 dark:border-white/5 flex flex-col justify-center text-gray-500 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white lg:h-screen">
