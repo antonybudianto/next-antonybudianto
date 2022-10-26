@@ -43,8 +43,8 @@ export default function BlogIndex({ allPosts }) {
         <div className="text-4xl">Blog</div>
         <div>
           by{" "}
-          <Link href="/">
-            <a className="text-blue-600 dark:text-blue-300">Antony Budianto</a>
+          <Link href="/" className="text-blue-600 dark:text-blue-300">
+            Antony Budianto
           </Link>
         </div>
         <div className="mt-8 gap-4">
@@ -53,10 +53,11 @@ export default function BlogIndex({ allPosts }) {
               key={i}
               className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3 mb-3 shadow"
             >
-              <Link href={"/blog/" + p.slug}>
-                <a className="text-2xl font-extrabold hover:underline">
-                  {p.title}
-                </a>
+              <Link
+                href={"/blog/" + p.slug}
+                className="text-2xl font-extrabold hover:underline"
+              >
+                {p.title}
               </Link>
               <div className="text-gray-300">{p.desc}</div>
 

@@ -31,10 +31,7 @@ function HomeHeader({
         <div className={dark ? "text-white" : "text-blue-900"}>
           <div className="text-sm lg:text-lg">{title}</div>
           <div className="text-xs lg:text-sm">
-            by{" "}
-            <Link href="/3d">
-              <a className="underline">Antony Budianto</a>
-            </Link>
+            by <Link className="underline" href="/3d"></Link>
           </div>
         </div>
         <div className="select-none flex align-center justify-center">

@@ -13,10 +13,11 @@ function BlogNav(props) {
 
       <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
         <div className="pl-4">
-          <Link href="/blog">
-            <a className="text-gray-900 dark:text-white no-underline hover:no-underline font-extrabold text-xl">
-              Antony{"'"}s Blog
-            </a>
+          <Link
+            href="/blog"
+            className="text-gray-900 dark:text-white no-underline hover:no-underline font-extrabold text-xl"
+          >
+            Antony{"'"}s Blog
           </Link>
         </div>
 

@@ -46,8 +46,8 @@ export default function MaldiveMiniPage() {
         <div className="text-4xl">3D Showcase</div>
         <div>
           by{" "}
-          <Link href="/">
-            <a className="text-blue-600 dark:text-blue-300">Antony Budianto</a>
+          <Link href="/" className="text-blue-600 dark:text-blue-300">
+            Antony Budianto
           </Link>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
