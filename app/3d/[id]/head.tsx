@@ -15,11 +15,6 @@ export default async function Head({ params }) {
         precedence="default"
       />
       <title>Model by Antony</title>
-      <meta charSet="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
       {/* <meta name="description" content={modelData.metaContent} /> */}
       <meta property="og:site_name" content="antonybudianto.com" />
       <meta property="og:type" content="website" />

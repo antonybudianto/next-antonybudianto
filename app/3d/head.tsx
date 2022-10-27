@@ -15,11 +15,7 @@ export default async function Head({ params }) {
         precedence="default"
       />
       <title>3D Showcase by Antony</title>
-      <meta charSet="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
+
       <meta
         name="description"
         content="3D Interactive Showcase by Antony Budianto"
