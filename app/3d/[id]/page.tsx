@@ -1,20 +1,23 @@
-"use client";
+import React, { use } from "react";
 
-import React, { Suspense, useState } from "react";
-
-import HomeHeader from "@/components/HomeHeader";
 import { SHOWCASE_LIST } from "@/components/scenes/list";
+import Display3DBase from "@/components/Display3DBase";
 
-export default function Home({ params }) {
-  const [dark, setDark] = useState(false);
-  const [autoRotate, setAutoRotate] = useState(true);
+async function getData(id) {
+  return {
+    modelData: SHOWCASE_LIST.find((l) => l.id === id),
+  };
+}
+
+function Display3DSlug({ params }) {
   const { id } = params;
 
-  let modelData = null;
+  const { modelData } = use(getData(id));
   if (id) {
-    modelData = SHOWCASE_LIST.find((l) => l.id === id);
     if (!modelData) {
-      window.location.href = "/3d";
+      if (typeof window !== "undefined") {
+        window.location.href = "/3d";
+      }
       return null;
     }
   } else {
@@ -25,26 +28,29 @@ export default function Home({ params }) {
   }
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        background: dark
-          ? "linear-gradient(to top, #283E51, #0A2342)"
-          : "linear-gradient(to top, #FFF, #87cefa)",
-      }}
-    >
-      <HomeHeader
-        title={modelData.name}
-        dark={dark}
-        autoRotate={autoRotate}
-        setDark={setDark}
-        setAutoRotate={setAutoRotate}
-        credits={modelData.credits}
-      />
-      <Suspense fallback={null}>
-        <modelData.component dark={dark} autoRotate={autoRotate} />
-      </Suspense>
-    </div>
+    <Display3DBase
+      name={modelData.name}
+      credits={modelData.credits}
+      modelId={id}
+    />
   );
 }
+
+export async function generateStaticParams() {
+  return [
+    {
+      id: "hello",
+    },
+    {
+      id: "blender-baking-for-web",
+    },
+    {
+      id: "blender-shortcuts",
+    },
+    {
+      id: "intro-to-3d-on-web",
+    },
+  ];
+}
+
+export default Display3DSlug;

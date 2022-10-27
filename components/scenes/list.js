@@ -1,11 +1,3 @@
-import { lazy } from "react";
-
-const HomeScene = lazy(() => import("./Apart/HomeScene"));
-const MaldiveMiniScene = lazy(() => import("./MaldiveMini/MaldiveMiniScene"));
-const MaldiveResortScene = lazy(() =>
-  import("./MaldiveResort/MaldiveResortScene")
-);
-
 export const SHOWCASE_LIST = [
   {
     id: "studio",
@@ -21,7 +13,6 @@ export const SHOWCASE_LIST = [
     metaOgImage: "https://antonybudianto.com/meta-3d/meta-maldive-resort.jpg",
     metaTitle: "3D Maldive Resort",
     metaContent: "3D Interactive Maldive Resort by Antony Budianto",
-    component: MaldiveResortScene,
     credits: [
       "https://free-3dtextureshd.com",
       "https://www.sketchuptextureclub.com",
@@ -35,7 +26,6 @@ export const SHOWCASE_LIST = [
     metaOgImage: "https://antonybudianto.com/meta-3d/meta-maldive-mini.jpg",
     metaTitle: "3D Maldive Mini",
     metaContent: "3D Interactive Maldive Mini by Antony Budianto",
-    component: MaldiveMiniScene,
     credits: [
       "https://free-3dtextureshd.com",
       "https://www.sketchuptextureclub.com",
@@ -49,6 +39,5 @@ export const SHOWCASE_LIST = [
     metaOgImage: "https://antonybudianto.com/meta-3d/meta-home.jpg",
     metaTitle: "3D Apartment",
     metaContent: "3D Interactive Apartment by Antony Budianto",
-    component: HomeScene,
   },
 ];

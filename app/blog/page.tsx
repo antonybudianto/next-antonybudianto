@@ -1,3 +1,4 @@
+import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ export default async function BlogIndex() {
   const { allPosts } = await getData();
   return (
     <ErrorBoundary>
+      <DarkmodeButtonWrapper />
       <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 text-gray-800 dark:text-white min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 lg:py-20 ">
           <div className="text-4xl">Blog</div>

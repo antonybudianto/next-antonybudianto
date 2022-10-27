@@ -3,8 +3,7 @@ import BlogBody from "@/components/blog/BlogBody";
 import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/mdToHtml";
-// import DarkmodeButton from "../../../components/DarkmodeButton";
-// import useDarkMode from "../../components/hooks/useDarkMode";
+import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 
 interface BlogPost {
   title: string;
@@ -32,27 +31,17 @@ export async function getData(slug) {
 }
 
 function BlogTemplate({ params }) {
-  // const [dark, setDark] = useDarkMode();
   const { post } = use(getData(params.slug)) as { post: BlogPost };
-  console.log(">>", post);
 
   return (
     <>
-      {/* <DarkmodeButton
-        title="Switch Night Mode"
-        onClick={() => {
-          setDark(!dark);
-        }}
-      >
-        {dark ? "🌙" : "☀️"}
-      </DarkmodeButton> */}
+      <DarkmodeButtonWrapper />
       <BlogWrapper
         title={post.title}
         publishDate={new Date(post.date).toDateString()}
       >
         <BlogBody content={post.content} />
       </BlogWrapper>
-      <div>tmp</div>
     </>
   );
 }
