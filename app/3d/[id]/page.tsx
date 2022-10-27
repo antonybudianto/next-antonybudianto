@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 
 import { SHOWCASE_LIST } from "@/components/scenes/list";
 import Display3DBase from "@/components/Display3DBase";
@@ -9,10 +9,10 @@ async function getData(id) {
   };
 }
 
-function Display3DSlug({ params }) {
+async function Display3DSlug({ params }) {
   const { id } = params;
 
-  const { modelData } = use(getData(id));
+  const { modelData } = await getData(id);
   if (id) {
     if (!modelData) {
       if (typeof window !== "undefined") {

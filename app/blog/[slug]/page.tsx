@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 import BlogBody from "@/components/blog/BlogBody";
 import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
@@ -30,8 +30,8 @@ export async function getData(slug) {
   };
 }
 
-function BlogTemplate({ params }) {
-  const { post } = use(getData(params.slug)) as { post: BlogPost };
+async function BlogTemplate({ params }) {
+  const { post } = (await getData(params.slug)) as { post: BlogPost };
 
   return (
     <>
