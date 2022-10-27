@@ -3,7 +3,7 @@ title: "My most used Blender shortcuts"
 desc: "Listing all my most used Blender shortcuts!"
 date: "2021-12-27T00:00:00.322Z"
 ogImage: "https://i.ibb.co/P6kN1nX/Screen-Shot-2021-08-21-at-9-21-47-PM.jpg"
-active: false
+active: true
 ---
 
 Hi, here's list of my most used Blender shortcuts:

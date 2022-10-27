@@ -1,5 +1,5 @@
 import Image from "next/legacy/image";
-// import Link from "next/link";
+import Link from "next/link";
 
 import HomePortfolio from "@/components/HomePortfolio";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
@@ -48,12 +48,12 @@ export default function Home() {
               >
                 Recent works
               </a>
-              {/* <Link
+              <Link
                 href="/blog"
                 className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
               >
                 Blog
-              </Link> */}
+              </Link>
               {/* <Link
                 href="/3d"
                 className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"

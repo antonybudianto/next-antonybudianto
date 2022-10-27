@@ -1,10 +1,15 @@
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Link from "next/link";
 
-// import { getAllPosts } from "../../lib/api";
+import { getAllPosts } from "../../lib/api";
 
 async function getData() {
-  return { allPosts: [] };
+  try {
+    const allPosts = getAllPosts(["title", "desc", "date", "slug", "active"]);
+    return { allPosts };
+  } catch (e) {
+    return { allPosts: [] };
+  }
 }
 
 export default async function BlogIndex() {
@@ -45,12 +50,3 @@ export default async function BlogIndex() {
     </ErrorBoundary>
   );
 }
-
-// async function getData() {
-//   try {
-//     const allPosts = getAllPosts(["title", "desc", "date", "slug", "active"]);
-//     return { allPosts };
-//   } catch (e) {
-//     return { allPosts: [] };
-//   }
-// }

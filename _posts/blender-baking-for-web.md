@@ -3,7 +3,7 @@ title: "Blender Baking for Web"
 desc: "Learn how to bake your 3D Model for Web"
 date: "2021-12-30T10:35:07.322Z"
 ogImage: "https://i.ibb.co/gW45hwc/Screen-Shot-2021-12-30-at-11-20-49-AM.jpg"
-active: false
+active: true
 ---
 
 ## Introduction

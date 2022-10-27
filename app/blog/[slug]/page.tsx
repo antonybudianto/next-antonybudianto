@@ -1,6 +1,6 @@
 import React, { use } from "react";
-// import BlogBody from "@/components/blog/BlogBody";
-// import BlogWrapper from "@/components/blog/BlogWrapper";
+import BlogBody from "@/components/blog/BlogBody";
+import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/mdToHtml";
 // import DarkmodeButton from "../../../components/DarkmodeButton";
@@ -10,32 +10,6 @@ interface BlogPost {
   title: string;
   date: string;
   content: string;
-}
-
-function BlogTemplate({ params }) {
-  // const [dark, setDark] = useDarkMode();
-  const { post } = use(getData(params.slug)) as { post: BlogPost };
-  console.log(">>", post);
-
-  return (
-    <>
-      {/* <DarkmodeButton
-        title="Switch Night Mode"
-        onClick={() => {
-          setDark(!dark);
-        }}
-      >
-        {dark ? "🌙" : "☀️"}
-      </DarkmodeButton> */}
-      {/* <BlogWrapper
-        title={post.title}
-        publishDate={new Date(post.date).toDateString()}
-      >
-        <BlogBody content={post.content} />
-      </BlogWrapper> */}
-      <div>tmp</div>
-    </>
-  );
 }
 
 export async function getData(slug) {
@@ -55,6 +29,32 @@ export async function getData(slug) {
       content,
     },
   };
+}
+
+function BlogTemplate({ params }) {
+  // const [dark, setDark] = useDarkMode();
+  const { post } = use(getData(params.slug)) as { post: BlogPost };
+  console.log(">>", post);
+
+  return (
+    <>
+      {/* <DarkmodeButton
+        title="Switch Night Mode"
+        onClick={() => {
+          setDark(!dark);
+        }}
+      >
+        {dark ? "🌙" : "☀️"}
+      </DarkmodeButton> */}
+      <BlogWrapper
+        title={post.title}
+        publishDate={new Date(post.date).toDateString()}
+      >
+        <BlogBody content={post.content} />
+      </BlogWrapper>
+      <div>tmp</div>
+    </>
+  );
 }
 
 export async function generateStaticParams() {
