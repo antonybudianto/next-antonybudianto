@@ -22,7 +22,7 @@
     "three": "0.139.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "4.28.2-appdir.0",
+    "@netlify/plugin-nextjs": "4.28.4-appdir.0",
     "@types/node": "18.11.5",
     "autoprefixer": "^10.4.4",
     "eslint": "8.26.0",
