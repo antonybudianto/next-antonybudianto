@@ -1,6 +1,6 @@
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import Link from "next/link";
+import { PatchLink } from "@/components/PatchLink";
 
 import { getAllPosts } from "../../lib/api";
 
@@ -23,9 +23,9 @@ export default async function BlogIndex() {
           <div className="text-4xl">Blog</div>
           <div>
             by{" "}
-            <Link href="/" className="text-blue-600 dark:text-blue-300">
+            <PatchLink href="/" className="text-blue-600 dark:text-blue-300">
               Antony Budianto
-            </Link>
+            </PatchLink>
           </div>
           <div className="mt-8 gap-4">
             {allPosts.map((p, i) => (
@@ -33,12 +33,12 @@ export default async function BlogIndex() {
                 key={i}
                 className="bg-blue-50 dark:bg-gray-900 rounded px-5 py-3 mb-3 shadow"
               >
-                <Link
+                <PatchLink
                   href={"/blog/" + p.slug}
                   className="text-2xl font-extrabold hover:underline"
                 >
                   {p.title}
-                </Link>
+                </PatchLink>
                 <div className="text-gray-300">{p.desc}</div>
 
                 <div className="text-sm mt-1 text-gray-400">
