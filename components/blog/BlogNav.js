@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { PatchLink } from "../PatchLink";
+import Link from "next/link";
 
 function BlogNav(props) {
   const [menuHidden, setMenuHidden] = useState(true);
@@ -15,12 +15,12 @@ function BlogNav(props) {
 
       <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
         <div className="pl-4">
-          <PatchLink
+          <Link
             href="/blog"
             className="text-gray-900 dark:text-white no-underline hover:no-underline font-extrabold text-xl"
           >
             Antony{"'"}s Blog
-          </PatchLink>
+          </Link>
         </div>
 
         <div className="block lg:hidden pr-4">
@@ -48,12 +48,12 @@ function BlogNav(props) {
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
             <li className="mr-3">
-              <PatchLink
+              <Link
                 className="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
                 href="/"
               >
                 Home
-              </PatchLink>
+              </Link>
             </li>
           </ul>
         </div>

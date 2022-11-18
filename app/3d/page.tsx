@@ -1,4 +1,4 @@
-import { PatchLink } from "@/components/PatchLink";
+import Link from "next/link";
 import { SHOWCASE_LIST } from "../../components/scenes/list";
 
 export default function MaldiveMiniPage() {
@@ -8,9 +8,9 @@ export default function MaldiveMiniPage() {
         <div className="text-4xl">3D Showcase</div>
         <div>
           by{" "}
-          <PatchLink href="/" className="text-blue-600 dark:text-blue-300">
+          <Link href="/" className="text-blue-600 dark:text-blue-300">
             Antony Budianto
-          </PatchLink>
+          </Link>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
           {SHOWCASE_LIST.map((l, i) => (
@@ -18,13 +18,13 @@ export default function MaldiveMiniPage() {
               key={i}
               className="shadow rounded-md bg-gray-700 relative overflow-hidden flex items-around"
             >
-              <PatchLink href={l.external ? l.href : `/3d/${l.id}`} passHref>
+              <Link href={l.external ? l.href : `/3d/${l.id}`} passHref>
                 <img
                   className="cursor-pointer rounded-md"
                   alt={l.name}
                   src={l.img}
                 />
-              </PatchLink>
+              </Link>
               <div className="absolute bg-blue-50 text-gray-600 px-2 py-1 rounded bottom-0 left-0 dark:bg-gray-700 dark:text-white">
                 {l.name}
               </div>

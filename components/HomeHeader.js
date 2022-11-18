@@ -1,4 +1,4 @@
-import PatchLink from "next/link";
+import Link from "next/link";
 import { useCallback } from "react";
 
 import Button from "./Button";
@@ -32,9 +32,9 @@ function HomeHeader({
           <div className="text-sm lg:text-lg">{title}</div>
           <div className="text-xs lg:text-sm">
             by{" "}
-            <PatchLink className="underline" href="/3d">
+            <Link className="underline" href="/3d">
               Antony Budianto
-            </PatchLink>
+            </Link>
           </div>
         </div>
         <div className="select-none flex align-center justify-center">

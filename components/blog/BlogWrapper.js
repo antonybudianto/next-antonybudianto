@@ -1,5 +1,5 @@
 import React from "react";
-import { PatchLink } from "../PatchLink";
+import Link from "next/link";
 
 import BlogFooter from "./BlogFooter";
 import BlogNav from "./BlogNav";
@@ -12,12 +12,12 @@ function BlogWrapper({ title, publishDate, children }) {
           <div className="font-sans">
             <p className="text-base md:text-sm text-blue-500 dark:text-blue-300 font-bold">
               &lt;{" "}
-              <PatchLink
+              <Link
                 href="/blog"
                 className="text-base md:text-sm font-bold no-underline hover:underline"
               >
                 BACK TO BLOG
-              </PatchLink>
+              </Link>
             </p>
             <h1 className="font-bold font-sans break-normal pt-6 pb-2 text-3xl md:text-4xl">
               {title}

@@ -19,8 +19,7 @@
     "remark-html": "15.0.1",
     "sharp": "^0.30.3",
     "sweetalert2": "^11.4.8",
-    "three": "0.139.2",
-    "classnames": "2.3.2"
+    "three": "0.139.2"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "4.28.4-appdir.0",
