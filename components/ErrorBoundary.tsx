@@ -1,11 +1,16 @@
 "use client";
 
-import { Component } from "react";
+import { Component, ReactNode } from "react";
 
-export default class ErrorBoundary extends Component<
-  {},
-  { hasError: boolean }
-> {
+interface EBState {
+  hasError: boolean;
+}
+
+interface EBProps {
+  children: ReactNode | ReactNode[];
+}
+
+export default class ErrorBoundary extends Component<EBProps, EBState> {
   constructor(props) {
     super(props);
     this.state = { hasError: false };

@@ -12,7 +12,7 @@
     "@react-three/drei": "9.1.2",
     "@react-three/fiber": "8.0.8",
     "gray-matter": "4.0.3",
-    "next": "13.0.3",
+    "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "14.0.2",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@netlify/plugin-nextjs": "4.28.4-appdir.0",
     "@types/node": "18.11.5",
+    "@types/react": "18.0.25",
     "autoprefixer": "^10.4.4",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
