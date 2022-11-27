@@ -1,3 +1,5 @@
+"use client";
+
 import GenericScene from "../../GenericScene";
 import MaldiveResort3d from "./MaldiveResort3d";
 import Hut3d from "./Hut3d";

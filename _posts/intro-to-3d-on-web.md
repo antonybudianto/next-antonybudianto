@@ -3,7 +3,7 @@ title: "Introduction to 3D on Web"
 desc: "Learn how to render 3D model on Web"
 date: "2021-08-21T05:35:07.322Z"
 ogImage: "https://i.ibb.co/P6kN1nX/Screen-Shot-2021-08-21-at-9-21-47-PM.jpg"
-active: false
+active: true
 ---
 
 Hello, today I would like to share how to make 3D Web app using
