@@ -4,7 +4,7 @@ import DarkmodeButton from "./DarkmodeButton";
 import useDarkMode from "./hooks/useDarkMode";
 
 const DarkmodeButtonWrapper = () => {
-  const [dark, setDark] = useDarkMode();
+  const { dark, setDark } = useDarkMode();
   return (
     <DarkmodeButton
       title="Switch Night Mode"

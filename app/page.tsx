@@ -93,9 +93,3 @@ export default function Home() {
     </>
   );
 }
-
-// export default function RootPage() {
-//   return (
-//     <div>aaa</div>
-//   )
-// }
