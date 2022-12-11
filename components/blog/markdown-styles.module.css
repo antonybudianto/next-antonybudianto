@@ -18,7 +18,11 @@
 }
 
 .markdown pre {
-  @apply bg-gray-900 text-gray-200 px-4 py-3 rounded text-sm overflow-auto mb-5;
+  @apply text-gray-200 mb-5 rounded text-sm overflow-auto;
+}
+
+.markdown pre > code:not(.hljs) {
+  @apply bg-gray-900 p-5 block;
 }
 
 .markdown ul {
