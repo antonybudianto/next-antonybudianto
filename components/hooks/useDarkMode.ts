@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import Cookies from "js-cookie";
 
 const useDarkMode = () => {
   const [dark, setDark] = useState<boolean>(
-    typeof window !== "undefined" ? Cookies.get("dark") === "1" : false
+    typeof window !== "undefined" ? window.__dark : false
   );
 
   useEffect(() => {
@@ -12,7 +11,8 @@ const useDarkMode = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-    Cookies.set("dark", dark ? 1 : 0, { expires: 7 });
+    localStorage.theme = dark ? "dark" : "light";
+    window.__dark = dark;
   }, [dark]);
 
   return useMemo(() => {

@@ -1,17 +1,14 @@
 import "tailwindcss/tailwind.css";
-// import { cookies } from "next/headers";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // const nextCookies = cookies();
-  // const dark = nextCookies.get("dark").value === "1";
   const dark = false;
 
   return (
-    <html className={`${dark ? "dark" : ""}`}>
+    <html suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta
@@ -26,6 +23,23 @@ export default function RootLayout({
         }}
       >
         {children}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+            <script type="text/javascript">
+            try {
+              const __isdark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+              window.__dark = __isdark;
+              if (__dark) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            }catch(e){console.error(e)}
+            </script>
+          `,
+          }}
+        />
       </body>
     </html>
   );
