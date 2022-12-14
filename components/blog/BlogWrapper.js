@@ -22,7 +22,7 @@ function BlogWrapper({ title, publishDate, children }) {
             <h1 className="font-bold font-sans break-normal pt-6 pb-2 text-3xl md:text-4xl">
               {title}
             </h1>
-            <p className="text-sm md:text-base font-normal text-gray-500">
+            <p className="text-sm md:text-base font-normal text-gray-400">
               Posted at {publishDate}
             </p>
           </div>
