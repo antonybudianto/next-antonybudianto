@@ -1,6 +1,11 @@
 import { useRef, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
+import {
+  Bounds,
+  OrbitControls,
+  PerspectiveCamera,
+  Stage,
+} from "@react-three/drei";
 
 import LoadingWidget from "../components/LoadingWidget";
 import ProgressLoader from "../components/ProgressLoader";
@@ -12,19 +17,14 @@ const GenericScene = ({
   children,
   cameraPosition,
   customFov,
-  orbitTarget = [0, 3, 0],
+  orbitTarget = [0, 0, 0],
   maxPolarAngle = Math.PI / 2,
 }) => {
   const ref = useRef();
   const camRef = useRef();
-  const [enable, setEnable] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [enable, setEnable] = useState(true);
+  const [loading, setLoading] = useState(false);
   const fov = getFov(customFov);
-
-  const handleUpdate = () => {
-    setEnable(true);
-    setLoading(false);
-  };
 
   return (
     <>
@@ -32,9 +32,9 @@ const GenericScene = ({
       <Canvas shadows dpr={[1, 2]} className="select-none">
         <Suspense fallback={<ProgressLoader setLoading={setLoading} />}>
           <Stage
-            onUpdate={handleUpdate}
             controls={ref}
             preset="rembrandt"
+            adjustCamera={false}
             intensity={dark ? 0.2 : 0.7}
             environment={dark ? "night" : "city"}
           >
@@ -42,20 +42,18 @@ const GenericScene = ({
           </Stage>
         </Suspense>
         <PerspectiveCamera
-          makeDefault={enable}
+          makeDefault
           fov={fov}
           ref={camRef}
-          position={cameraPosition || [0, 5, -18]}
+          position={cameraPosition || [0, 5, -16]}
         />
-        {enable ? (
-          <OrbitControls
-            camera={camRef.current}
-            ref={ref}
-            target={orbitTarget}
-            autoRotate={autoRotate}
-            maxPolarAngle={maxPolarAngle}
-          />
-        ) : null}
+        <OrbitControls
+          camera={camRef.current}
+          ref={ref}
+          target={orbitTarget}
+          autoRotate={autoRotate}
+          maxPolarAngle={maxPolarAngle}
+        />
       </Canvas>
     </>
   );

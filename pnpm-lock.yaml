@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@netlify/plugin-nextjs': 4.29.3-appdir.0
-  '@react-three/drei': 9.41.0
+  '@react-three/drei': 9.46.5
   '@react-three/fiber': ^8.9.1
   '@types/node': 18.11.5
   '@types/react': 18.0.25
@@ -30,7 +30,7 @@ specifiers:
   unified: 10.1.2
 
 dependencies:
-  '@react-three/drei': 9.41.0_b83d756fcd052d7565a6aa277325ed8f
+  '@react-three/drei': 9.46.5_b83d756fcd052d7565a6aa277325ed8f
   '@react-three/fiber': 8.9.1_7d47287e5c1f54d0dc259cdf332519d8
   gray-matter: 4.0.3
   highlight.js: 11.7.0
@@ -625,8 +625,8 @@ packages:
     resolution: {integrity: sha512-7I/qY8H7Enwasxr4jU6WmtNK+RZ4Z/XvSlDvjXFVe7ii1x0MoSlkw6pD7xuac8qrHQRm9BTcbZNyeeKApYsvCg==}
     dev: false
 
-  /@react-three/drei/9.41.0_b83d756fcd052d7565a6aa277325ed8f:
-    resolution: {integrity: sha512-0yl459fjCLe6jJJHG7gFBVZ4TFY2RPFjmRndLaQEBYLmlhMYp2dReY+yBrrOyruhejpc860NNYKz7UtpYJg3sw==}
+  /@react-three/drei/9.46.5_b83d756fcd052d7565a6aa277325ed8f:
+    resolution: {integrity: sha512-iPCMHxOIQ9SXRTpIWFNLl6/fpyKr/xW5bdl3MuqiNS9F/h8eI99cejj0hMlDbtDpG/l5WUgujhEryE75Q0DxGg==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
       react: '>=18.0'
@@ -640,12 +640,12 @@ packages:
       '@react-spring/three': 9.5.5_fafa2f9baf3f89dc04f558efb3c9185c
       '@react-three/fiber': 8.9.1_7d47287e5c1f54d0dc259cdf332519d8
       '@use-gesture/react': 10.2.22_react@18.2.0
-      detect-gpu: 4.0.50
+      detect-gpu: 5.0.2
       glsl-noise: 0.0.0
       lodash.clamp: 4.0.3
       lodash.omit: 4.5.0
       lodash.pick: 4.4.0
-      meshline: 2.0.4_three@0.147.0
+      meshline: 3.1.6_three@0.147.0
       react: 18.2.0
       react-composer: 5.0.3_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1341,8 +1341,8 @@ packages:
     resolution: {integrity: sha512-ud8w0qMLlci6iFG7CNgeRr8OcbUWMsbfjtWft1eJ5Luqrz/M8Ebqk/KCzne8rKUlIQWWfLv0wD6QHrqOf4GshA==}
     dev: true
 
-  /detect-gpu/4.0.50:
-    resolution: {integrity: sha512-T67HE5+ONONN8rPXCBJPupyCg2QT8+l2NUUMuPxAppsMJBDPG/Jg0URLs6GyDzLm2niUE+oncIHSuy3VinoPeQ==}
+  /detect-gpu/5.0.2:
+    resolution: {integrity: sha512-1lAXK0NWhsZYhhqwVWGQYRsTlY+9DL9cB80+4fBMo9GRLuAKCK4MzEz5Rc+F/4RDgnAFPzrsMcnmnDU007X3NQ==}
     dependencies:
       webgl-constants: 1.1.1
     dev: false
@@ -2754,8 +2754,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meshline/2.0.4_three@0.147.0:
-    resolution: {integrity: sha512-Jh6DJl/zLqA4xsKvGv5950jr2ukyXQE1wgxs8u94cImHrvL6soVIggqjP+2hVHZXGYaKnWszhtjuCbKNeQyYiw==}
+  /meshline/3.1.6_three@0.147.0:
+    resolution: {integrity: sha512-8JZJOdaL5oz3PI/upG8JvP/5FfzYUOhrkJ8np/WKvXzl0/PZ2V9pqTvCIjSKv+w9ccg2xb+yyBhXAwt6ier3ug==}
     peerDependencies:
       three: '>=0.137'
     dependencies:

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "9.41.0",
+    "@react-three/drei": "9.46.5",
     "@react-three/fiber": "^8.9.1",
     "gray-matter": "4.0.3",
     "next": "13.0.6",
