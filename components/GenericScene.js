@@ -35,7 +35,7 @@ const GenericScene = ({
             controls={ref}
             preset="rembrandt"
             adjustCamera={false}
-            intensity={dark ? 0.2 : 0.7}
+            intensity={dark ? 0.2 : 0.5}
             environment={dark ? "night" : "city"}
           >
             {children}
@@ -45,7 +45,7 @@ const GenericScene = ({
           makeDefault
           fov={fov}
           ref={camRef}
-          position={cameraPosition || [0, 5, -16]}
+          position={cameraPosition || [0, 2, -16]}
         />
         <OrbitControls
           camera={camRef.current}
