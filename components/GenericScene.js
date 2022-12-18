@@ -35,7 +35,7 @@ const GenericScene = ({
             controls={ref}
             preset="rembrandt"
             adjustCamera={false}
-            intensity={dark ? 0.2 : 0.5}
+            intensity={dark ? 0.2 : 0.6}
             environment={dark ? "night" : "city"}
           >
             {children}
