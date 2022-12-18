@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@netlify/plugin-nextjs': 4.29.3-appdir.0
+  '@netlify/plugin-nextjs': 4.29.3
   '@react-three/drei': 9.47.1
   '@react-three/fiber': ^8.9.1
   '@types/node': 18.11.5
@@ -50,7 +50,7 @@ dependencies:
   unified: 10.1.2
 
 devDependencies:
-  '@netlify/plugin-nextjs': 4.29.3-appdir.0
+  '@netlify/plugin-nextjs': 4.29.3
   '@types/node': 18.11.5
   '@types/react': 18.0.25
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -375,8 +375,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@netlify/plugin-nextjs/4.29.3-appdir.0:
-    resolution: {integrity: sha512-oDI3HjknX5bXsH1BDGsbTLbf8V6eRvQRdjHOyErTKPQvFJ6+fFmeY07HYUsHovD940a/YblumK1BRk6Ah7G/dw==}
+  /@netlify/plugin-nextjs/4.29.3:
+    resolution: {integrity: sha512-zsv8NZ6OF4oFJM1NTtn1FSyE2GT/Qa3HqrcUxMWeLpA4IwNesQ21h3/7u0C69LlHCoNlGFSFWADya4B3Mv8D2A==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@netlify/esbuild': 0.14.39
