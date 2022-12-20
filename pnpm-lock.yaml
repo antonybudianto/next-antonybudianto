@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@netlify/plugin-nextjs': 4.29.3
+  '@netlify/plugin-nextjs': 4.29.4
   '@react-three/drei': 9.47.1
   '@react-three/fiber': ^8.9.1
   '@types/node': 18.11.5
@@ -50,7 +50,7 @@ dependencies:
   unified: 10.1.2
 
 devDependencies:
-  '@netlify/plugin-nextjs': 4.29.3
+  '@netlify/plugin-nextjs': 4.29.4
   '@types/node': 18.11.5
   '@types/react': 18.0.25
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -355,8 +355,8 @@ packages:
       is-promise: 4.0.0
     dev: true
 
-  /@netlify/ipx/1.3.1:
-    resolution: {integrity: sha512-kjw26KYM1jLe+bGRnhqxWs0ACG8eg6kN6wV7uqUu1J8dE6QC73ksyVtCA6IAHl3/5qf5RyMUzquNCp0N0+lXEw==}
+  /@netlify/ipx/1.3.2:
+    resolution: {integrity: sha512-IozNE8IDJiMsWvNG0HqSfArJKl1HhgvvPPNfWGieg5AIQzLxu57L7ol10DYBARsrVZWGZstM3J7sTaP6fbhdQw==}
     dependencies:
       '@netlify/functions': 1.3.0
       etag: 1.8.1
@@ -366,7 +366,7 @@ packages:
       mkdirp: 1.0.4
       murmurhash: 2.0.1
       node-fetch: 2.6.7
-      ufo: 0.8.6
+      ufo: 1.0.1
       unstorage: 0.6.0
     transitivePeerDependencies:
       - bufferutil
@@ -375,13 +375,13 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@netlify/plugin-nextjs/4.29.3:
-    resolution: {integrity: sha512-zsv8NZ6OF4oFJM1NTtn1FSyE2GT/Qa3HqrcUxMWeLpA4IwNesQ21h3/7u0C69LlHCoNlGFSFWADya4B3Mv8D2A==}
+  /@netlify/plugin-nextjs/4.29.4:
+    resolution: {integrity: sha512-tx1TSvtLa/tJUf1Z0XcToMONCYPXwPTJC1rEYJP5bh1qsBIqQxNYxKVgJOXjsBOgtmRD9l146UjbtF1a5Tockw==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@netlify/esbuild': 0.14.39
       '@netlify/functions': 1.3.0
-      '@netlify/ipx': 1.3.1
+      '@netlify/ipx': 1.3.2
       '@vercel/node-bridge': 2.2.2
       chalk: 4.1.2
       destr: 1.2.1
@@ -4268,6 +4268,10 @@ packages:
 
   /ufo/0.8.6:
     resolution: {integrity: sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==}
+    dev: true
+
+  /ufo/1.0.1:
+    resolution: {integrity: sha512-boAm74ubXHY7KJQZLlXrtMz52qFvpsbOxDcZOnw/Wf+LS4Mmyu7JxmzD4tDLtUQtmZECypJ0FrCz4QIe6dvKRA==}
     dev: true
 
   /unbox-primitive/1.0.2:

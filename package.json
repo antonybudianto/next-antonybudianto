@@ -29,7 +29,7 @@
     "three": "~0.147.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "4.29.3",
+    "@netlify/plugin-nextjs": "4.29.4",
     "@types/node": "18.11.5",
     "@types/react": "18.0.25",
     "autoprefixer": "^10.4.13",
