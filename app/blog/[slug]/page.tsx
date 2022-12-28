@@ -1,37 +1,12 @@
 import React from "react";
 import BlogBody from "@/components/blog/BlogBody";
 import BlogWrapper from "@/components/blog/BlogWrapper";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/mdToHtml";
+import { getAllPosts } from "@/lib/api";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
-
-interface BlogPost {
-  title: string;
-  date: string;
-  content: string;
-}
-
-export async function getData(slug) {
-  const post = getPostBySlug(slug, [
-    "title",
-    "desc",
-    "date",
-    "slug",
-    "content",
-    "ogImage",
-  ]);
-  const content = await markdownToHtml(post.content || "");
-
-  return {
-    post: {
-      ...post,
-      content,
-    },
-  };
-}
+import { getData } from "./data";
 
 async function BlogTemplate({ params }) {
-  const { post } = (await getData(params.slug)) as { post: BlogPost };
+  const post = await getData(params.slug);
 
   return (
     <>

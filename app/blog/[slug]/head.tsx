@@ -1,20 +1,35 @@
+import { getData } from "./data";
+
 export default async function Head({ params }) {
+  const post = await getData(params.slug);
+  const titleText = `${post.title} | Antony's Blog`;
   return (
     <>
-      <title>Blog Template</title>
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
+      <title>{titleText}</title>
+
+      <meta
+        property="og:url"
+        content="https://antonybudianto.com/blog/blender-baking-for-web"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
-        rel="stylesheet"
-        // @ts-ignore
-        precedence="default"
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={post.title} />
+      <meta property="og:description" content={post.desc} />
+      <meta
+        property="og:image"
+        content={`https://vercel-og-ab.vercel.app/api/param?title=${post.title}`}
       />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="antonybudianto.com" />
+      <meta
+        property="twitter:url"
+        content={`https://antonybudianto.com/blog/${post.slug}`}
+      />
+      <meta name="twitter:title" content={post.title} />
+      <meta name="twitter:description" content={post.desc} />
+      <meta
+        name="twitter:image"
+        content={`https://vercel-og-ab.vercel.app/api/param?title=${post.title}`}
+      ></meta>
     </>
   );
 }
