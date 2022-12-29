@@ -1,4 +1,4 @@
-const Button = ({ dark, children, className = "", textColor, ...p }) => (
+const Button = ({ dark, children, className = "", textColor = "", ...p }) => (
   <button
     {...p}
     className={`w-auto shadow-md flex-none ${dark ? "bg-gray-700" : "bg-white"} 

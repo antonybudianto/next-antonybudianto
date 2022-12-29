@@ -1,14 +1,9 @@
 import { useRef, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-  Bounds,
-  OrbitControls,
-  PerspectiveCamera,
-  Stage,
-} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
 
-import LoadingWidget from "../components/LoadingWidget";
-import ProgressLoader from "../components/ProgressLoader";
+import LoadingWidget from "./LoadingWidget";
+import ProgressLoader from "./ProgressLoader";
 import getFov from "./helpers/fov";
 
 const GenericScene = ({
@@ -41,6 +36,7 @@ const GenericScene = ({
             {children}
           </Stage>
         </Suspense>
+        {/* @ts-ignore */}
         <PerspectiveCamera
           makeDefault
           fov={fov}
