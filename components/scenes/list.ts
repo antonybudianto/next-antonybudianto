@@ -1,4 +1,4 @@
-import { Showcase3D } from "@/app/3d/[id]/types";
+import type { Showcase3D } from "@/app/3d/[id]/types";
 
 export const SHOWCASE_LIST: Showcase3D[] = [
   {
