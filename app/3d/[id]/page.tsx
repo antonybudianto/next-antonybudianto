@@ -1,11 +1,6 @@
-import { SHOWCASE_LIST } from "@/components/scenes/list";
 import Display3DBase from "@/components/Display3DBase";
-
-export async function getShowcaseData(id) {
-  return {
-    modelData: SHOWCASE_LIST.find((l) => l.id === id),
-  };
-}
+import { getShowcaseData } from "@/lib/showcase3d";
+import { SHOWCASE_LIST_CMP } from "@/components/scenes/list-cmp";
 
 export default async function Display3DSlug({ params }) {
   const { id } = params;
@@ -21,7 +16,7 @@ export default async function Display3DSlug({ params }) {
 }
 
 export async function generateStaticParams() {
-  return SHOWCASE_LIST.map((post) => {
+  return SHOWCASE_LIST_CMP.map((post) => {
     return {
       id: post.id,
     };

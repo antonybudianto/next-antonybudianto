@@ -1,4 +1,4 @@
-import { getShowcaseData } from "./page";
+import { getShowcaseData } from "@/lib/showcase3d";
 
 export default async function Head({ params }) {
   const { id } = params;
