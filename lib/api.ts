@@ -17,6 +17,9 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const items: {
     active?: boolean;
     date?: string;
+    slug?: string;
+    title?: string;
+    desc?: string;
   } = {};
 
   // Ensure only the minimal needed data is exposed

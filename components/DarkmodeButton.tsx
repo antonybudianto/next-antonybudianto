@@ -1,18 +1,22 @@
-import type { FC, ReactNode } from "react";
+import type { FC, MouseEventHandler, ReactNode } from "react";
 
 interface DarkmodeButtonProps {
-  className: string;
   children: ReactNode | ReactNode[];
+  className?: string;
+  title: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const DarkmodeButton: FC<DarkmodeButtonProps> = ({
   children,
   className = "",
-  ...p
+  title,
+  onClick = () => {},
 }) => (
   <div className="fixed top-3 right-3 z-10">
     <button
-      {...p}
+      title={title}
+      onClick={onClick}
       suppressHydrationWarning
       className={`w-auto shadow-md flex-none bg-blue-50 dark:bg-gray-700
     hover:bg-blue-100 dark:hover:bg-gray-600
