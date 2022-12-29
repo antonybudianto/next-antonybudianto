@@ -1,4 +1,4 @@
-const showCredit = async (credits) => {
+const showCredit = async (credits: string[]) => {
   const Swal = (await import("sweetalert2")).default;
   Swal.fire({
     title: "<strong>Credits</strong>",

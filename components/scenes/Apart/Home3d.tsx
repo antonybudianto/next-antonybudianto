@@ -12,8 +12,8 @@ export default function Model(props) {
   const group = useRef();
   const [lampOn, setLampOn] = useState(dark);
   const { nodes, materials } = useGLTF("/3d/home.gltf");
-  const [doorRef, doorOpen, setDoorOpen] = useDoorAnimationFrame();
-  const [mbpRef, mbpOpen, setMbpOpen] = useMbpAnimationFrame();
+  const { doorRef, doorOpen, setDoorOpen } = useDoorAnimationFrame();
+  const { mbpRef, mbpOpen, setMbpOpen } = useMbpAnimationFrame();
 
   useEffect(() => {
     if (lampOn !== dark) {

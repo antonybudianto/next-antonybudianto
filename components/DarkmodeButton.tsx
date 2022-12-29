@@ -1,4 +1,15 @@
-const DarkmodeButton = ({ children, className = "", ...p }) => (
+import type { FC, ReactNode } from "react";
+
+interface DarkmodeButtonProps {
+  className: string;
+  children: ReactNode | ReactNode[];
+}
+
+const DarkmodeButton: FC<DarkmodeButtonProps> = ({
+  children,
+  className = "",
+  ...p
+}) => (
   <div className="fixed top-3 right-3 z-10">
     <button
       {...p}
