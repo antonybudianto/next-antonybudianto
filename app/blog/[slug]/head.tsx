@@ -17,7 +17,7 @@ export default async function Head({ params }) {
       <meta property="og:description" content={post.desc} />
       <meta
         property="og:image"
-        content={`https://vercel-og-ab.vercel.app/api/param?title=${encodedTitle}`}
+        content={`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="antonybudianto.com" />
@@ -29,7 +29,7 @@ export default async function Head({ params }) {
       <meta name="twitter:description" content={post.desc} />
       <meta
         name="twitter:image"
-        content={`https://vercel-og-ab.vercel.app/api/param?title=${encodedTitle}`}
+        content={`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`}
       ></meta>
     </>
   );
