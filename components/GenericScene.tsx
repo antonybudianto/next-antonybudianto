@@ -17,7 +17,6 @@ const GenericScene = ({
 }) => {
   const ref = useRef();
   const camRef = useRef();
-  const [enable, setEnable] = useState(true);
   const [loading, setLoading] = useState(false);
   const fov = getFov(customFov);
 

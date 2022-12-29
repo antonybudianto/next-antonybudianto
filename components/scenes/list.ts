@@ -1,4 +1,6 @@
-export const SHOWCASE_LIST = [
+import { Showcase3D } from "@/app/3d/[id]/types";
+
+export const SHOWCASE_LIST: Showcase3D[] = [
   {
     id: "studio",
     external: true,
