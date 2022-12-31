@@ -10,7 +10,7 @@ export default async function Head({ params }) {
 
       <meta
         property="og:url"
-        content="https://antonybudianto.com/blog/blender-baking-for-web"
+        content={`https://antonybudianto.com/blog/${post.slug}`}
       />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={post.title} />
