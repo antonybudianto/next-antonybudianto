@@ -8,7 +8,7 @@ export default function RootLayout({
   const dark = false;
 
   return (
-    <html suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta

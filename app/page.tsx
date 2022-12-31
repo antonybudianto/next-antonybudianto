@@ -35,7 +35,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap flex-row gap-2">
               <a
-                className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-100 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="https://github.com/antonybudianto"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -43,20 +43,20 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-100 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="#work"
               >
                 Recent works
               </a>
               <Link
                 href="/blog"
-                className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-100 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
               >
                 Blog
               </Link>
               <Link
                 href="/3d"
-                className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-100 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
               >
                 3D Showcase
               </Link>

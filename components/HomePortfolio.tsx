@@ -17,7 +17,7 @@ function HomePortfolio({
   return (
     <div className="bg-gradient-to-tr border-b-2 border-sky-500/20 dark:border-white/5 flex flex-col justify-center text-gray-500 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white lg:h-screen">
       <div className="container mx-auto py-5 lg:pb-20 px-4 sm:px-6 md:px-8">
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-blue-400 dark:text-blue-200 my-8 sm:mt-14 sm:mb-10">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-sky-700 dark:text-blue-200 my-8 sm:mt-14 sm:mb-10">
           {title}
         </h2>
         <div>
@@ -40,14 +40,14 @@ function HomePortfolio({
                 {localHref ? (
                   <Link
                     href={localHref}
-                    className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                    className="bg-sky-200 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-100 text-sky-900 dark:text-sky-50 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                   >
                     Visit {title}
                   </Link>
                 ) : (
                   <a
                     href={href}
-                    className="bg-sky-600 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-500 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+                    className="bg-sky-200 dark:bg-gray-700 dark:hover:bg-gray-500 hover:bg-sky-100 text-sky-900 dark:text-sky-50 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                   >
                     Visit {title}
                   </a>
