@@ -1,4 +1,4 @@
-import markdownStyles from "./markdown-styles.module.css";
+import "./markdown-styles.css";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -10,10 +10,7 @@ hljs.registerLanguage("js", javascript);
 export default function BlogBody({ content }) {
   return (
     <div className="mmax-w-2xl mmx-auto">
-      <div
-        className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }

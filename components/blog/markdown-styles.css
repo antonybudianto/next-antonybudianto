@@ -34,7 +34,7 @@
 }
 
 .markdown a {
-  @apply text-blue-600 underline;
+  @apply text-blue-600 dark:text-blue-200 hover:underline;
 }
 
 .markdown p {
