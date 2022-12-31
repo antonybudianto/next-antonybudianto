@@ -5,6 +5,8 @@ import rehypeHighlight from "rehype-highlight";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypeFormat from "rehype-format";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolink from "rehype-autolink-headings";
 
 export default async function markdownToHtml(markdown) {
   const result = await unified()
@@ -12,6 +14,8 @@ export default async function markdownToHtml(markdown) {
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeFormat)
+    .use(rehypeSlug)
+    .use(rehypeAutolink, { behavior: "prepend" })
     .use(rehypeHighlight)
     .use(rehypeStringify, { allowDangerousHtml: true })
 
