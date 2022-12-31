@@ -39,7 +39,7 @@ export default async function BlogIndex() {
                 >
                   {p.title}
                 </Link>
-                <div className="text-gray-300">{p.desc}</div>
+                <div className="text-cyan-800 dark:text-gray-300">{p.desc}</div>
 
                 <div className="text-sm mt-1 text-gray-400">
                   posted at {new Date(p.date).toDateString()}
