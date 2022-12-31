@@ -12,6 +12,7 @@ h3 .icon-link:empty::before {
   border: 1px solid darkcyan;
   border-radius: 5px;
   transform: translateX(-5px);
+  line-height: 1.2;
 }
 
 h2:hover .icon-link:empty::before,

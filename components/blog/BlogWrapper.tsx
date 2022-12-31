@@ -9,8 +9,8 @@ function BlogWrapper({ title, publishDate, children }) {
     <>
       <div className="pt-5 md:pt-10 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
         <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
-          <div className="">
-            <p className="md:text-sm text-blue-500 dark:text-blue-300">
+          <div>
+            <p className="text-base md:text-sm text-blue-500 dark:text-blue-300">
               &lt;{" "}
               <Link
                 href="/blog"
