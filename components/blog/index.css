@@ -1,13 +1,23 @@
-h2:hover .icon-link:empty::before,
-h3:hover .icon-link:empty::before {
+h2 .icon-link:empty::before,
+h3 .icon-link:empty::before {
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
   content: "#";
   text-align: center;
   width: 30px;
   padding: 0 2px;
   position: absolute;
-  left: -30px;
+  right: -35px;
   background-color: lightcyan;
+  border: 1px solid darkcyan;
   border-radius: 5px;
+  transform: translateX(-5px);
+}
+
+h2:hover .icon-link:empty::before,
+h3:hover .icon-link:empty::before {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 a .icon-link {

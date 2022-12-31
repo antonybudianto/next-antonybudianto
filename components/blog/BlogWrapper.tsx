@@ -9,25 +9,25 @@ function BlogWrapper({ title, publishDate, children }) {
     <>
       <div className="pt-5 md:pt-10 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
         <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
-          <div className="font-sans">
-            <p className="text-base md:text-sm text-blue-500 dark:text-blue-300 font-bold">
+          <div className="">
+            <p className="md:text-sm text-blue-500 dark:text-blue-300">
               &lt;{" "}
               <Link
                 href="/blog"
-                className="text-base md:text-sm font-bold no-underline hover:underline"
+                className="no-underline hover:underline hover:text-cyan-500"
               >
                 BACK TO BLOG
               </Link>
             </p>
-            <h1 className="font-bold font-sans break-normal pt-6 pb-2 text-3xl md:text-4xl">
+            <h1 className="font-bold break-normal pt-6 pb-2 text-3xl md:text-4xl">
               {title}
             </h1>
-            <p className="text-sm md:text-base font-normal text-gray-400">
+            <p className="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400">
               Posted at {publishDate}
             </p>
           </div>
           {children}
-          <div className=" flex w-full items-center font-sans px-4 py-12">
+          <div className=" flex w-full items-center px-4 py-12">
             <img
               className="w-10 h-10 rounded-full mr-4"
               src="https://antonybudianto.com/profile.jpeg"

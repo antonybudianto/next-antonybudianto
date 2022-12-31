@@ -33,7 +33,7 @@ Astro used composition/wrapper component pattern to apply Layouting, which is mo
 
 Qwik used file-based layouting (`layout.tsx`) which is more convenient in my opinion, if you're already familiar with [Next.js layout](https://nextjs.org/docs/basic-features/layouts), then you got it 💪🏻.
 
-### IDE
+### Code Editor / IDE
 
 For Qwik, if you already installed React related IDE's extension, it should already works since Qwik use `*.tsx` file. While for Astro, it used `*.astro` file so you need to install the official language support extension [here](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
@@ -163,7 +163,7 @@ As we can see, Astro's package.json is more simple. Oh also, Qwik used Vite unde
 
 It's time to compare the build result! So for fair comparison, I need to setup same code for both generated project. I removed default layout and boilerplate, and only to render "Hello world" on index route.
 
-### Setup
+### Build setup
 
 Qwik
 
@@ -187,7 +187,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 ```
 
-### Result
+### HTML Result
 
 <img src="https://user-images.githubusercontent.com/7658554/208588625-5f94b2b7-0476-4bbb-8ece-46cba4665f2c.jpg" />
 <img src="https://user-images.githubusercontent.com/7658554/208588619-3ecf48c1-9003-4377-9373-d2ca5365628b.jpg" />

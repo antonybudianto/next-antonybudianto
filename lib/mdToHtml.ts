@@ -15,7 +15,7 @@ export default async function markdownToHtml(markdown) {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeFormat)
     .use(rehypeSlug)
-    .use(rehypeAutolink, { behavior: "prepend" })
+    .use(rehypeAutolink, { behavior: "append" })
     .use(rehypeHighlight)
     .use(rehypeStringify, { allowDangerousHtml: true })
 
