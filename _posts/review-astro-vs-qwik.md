@@ -189,13 +189,13 @@ import Layout from "../layouts/Layout.astro";
 
 ### HTML Result
 
-<img alt="network-result-astro" src="https://user-images.githubusercontent.com/7658554/208588625-5f94b2b7-0476-4bbb-8ece-46cba4665f2c.jpg" />
-<img alt="network-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588619-3ecf48c1-9003-4377-9373-d2ca5365628b.jpg" />
+<img width="100%" height="200px" class="max-w-full h-auto" alt="network-result-astro" src="https://user-images.githubusercontent.com/7658554/208588625-5f94b2b7-0476-4bbb-8ece-46cba4665f2c.jpg" />
+<img width="100%" height="200px" class="max-w-full h-auto" alt="network-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588619-3ecf48c1-9003-4377-9373-d2ca5365628b.jpg" />
 
 > HTML output
 
-<img alt="html-result-astro" src="https://user-images.githubusercontent.com/7658554/208588626-2cefa049-0425-4458-ac35-55d13d751840.jpg" />
-<img alt="html-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588628-3c2ba754-fd10-4a4f-8022-b605e27b1ead.jpg" />
+<img width="100%" height="200px" class="max-w-full h-auto" alt="html-result-astro" src="https://user-images.githubusercontent.com/7658554/208588626-2cefa049-0425-4458-ac35-55d13d751840.jpg" />
+<img width="100%" height="200px" class="max-w-full h-auto" alt="html-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588628-3c2ba754-fd10-4a4f-8022-b605e27b1ead.jpg" />
 
 The result is as we expected, since there's no interactivity, we can see there is no JavaScript being downloaded at all ✨.
 
