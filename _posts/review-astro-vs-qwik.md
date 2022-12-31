@@ -25,7 +25,7 @@ npm create qwik@latest
 
 All generated project from Astro and Qwik already comes with TypeScript support, no need to setup your own anymore! 🎉 
 
-For ESLint, it's already configured for Qwik. As for Astro, you need to setup yourself [here](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/) even when I've picked the "recommended" choice on Astro CLI prompt.
+For ESLint, it's already configured for Qwik. As for Astro, you need to setup yourself [with eslint-plugin-astro](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/) even when I've picked the "recommended" choice on Astro CLI prompt.
 
 ### Layout
 
@@ -35,7 +35,7 @@ Qwik used file-based layouting (`layout.tsx`) which is more convenient in my opi
 
 ### Code Editor / IDE
 
-For Qwik, if you already installed React related IDE's extension, it should already works since Qwik use `*.tsx` file. While for Astro, it used `*.astro` file so you need to install the official language support extension [here](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
+For Qwik, if you already installed React related IDE's extension, it should already works since Qwik use `*.tsx` file. While for Astro, it used `*.astro` file so you need to install the official [Astro VSCode extension here](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
 ### Scoped Style
 
@@ -189,13 +189,13 @@ import Layout from "../layouts/Layout.astro";
 
 ### HTML Result
 
-<img src="https://user-images.githubusercontent.com/7658554/208588625-5f94b2b7-0476-4bbb-8ece-46cba4665f2c.jpg" />
-<img src="https://user-images.githubusercontent.com/7658554/208588619-3ecf48c1-9003-4377-9373-d2ca5365628b.jpg" />
+<img alt="network-result-astro" src="https://user-images.githubusercontent.com/7658554/208588625-5f94b2b7-0476-4bbb-8ece-46cba4665f2c.jpg" />
+<img alt="network-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588619-3ecf48c1-9003-4377-9373-d2ca5365628b.jpg" />
 
 > HTML output
 
-<img src="https://user-images.githubusercontent.com/7658554/208588626-2cefa049-0425-4458-ac35-55d13d751840.jpg" />
-<img src="https://user-images.githubusercontent.com/7658554/208588628-3c2ba754-fd10-4a4f-8022-b605e27b1ead.jpg" />
+<img alt="html-result-astro" src="https://user-images.githubusercontent.com/7658554/208588626-2cefa049-0425-4458-ac35-55d13d751840.jpg" />
+<img alt="html-result-qwik" src="https://user-images.githubusercontent.com/7658554/208588628-3c2ba754-fd10-4a4f-8022-b605e27b1ead.jpg" />
 
 The result is as we expected, since there's no interactivity, we can see there is no JavaScript being downloaded at all ✨.
 

@@ -7,7 +7,7 @@ export default async function Head({ params }) {
   return (
     <>
       <title>{titleText}</title>
-
+      <meta name="description" content={post.desc} />
       <meta
         property="og:url"
         content={`https://antonybudianto.com/blog/${post.slug}`}

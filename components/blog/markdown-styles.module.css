@@ -34,7 +34,7 @@
 }
 
 .markdown a {
-  @apply text-blue-400 underline;
+  @apply text-blue-600 underline;
 }
 
 .markdown p {

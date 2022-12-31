@@ -6,7 +6,7 @@ function Footer() {
       <div className="flex py-8">
         <div className="w-full mx-auto flex flex-wrap">
           <div className="flex w-full md:w-1/2 ">
-            <div className="px-8">
+            <div className="md:px-8">
               <h3 className="font-bold">About</h3>
               <p className="py-4 text-sm">
                 Antony Budianto posts about tech stuff; Web, Engineering and
@@ -16,12 +16,12 @@ function Footer() {
           </div>
 
           <div className="flex w-full md:w-1/2">
-            <div className="px-8">
+            <div className="md:px-8">
               <h3 className="font-bold">Social</h3>
               <ul className="list-reset items-center text-sm pt-3">
                 <li>
                   <a
-                    className="inline-block no-underline hover:underline hover:text-underline py-1"
+                    className="inline-block no-underline hover:underline hover:text-underline py-1 my-1"
                     href="https://linkedin.com/in/antonybudianto"
                   >
                     LinkedIn
@@ -29,7 +29,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    className="inline-block no-underline hover:underline hover:text-underline py-1"
+                    className="inline-block no-underline hover:underline hover:text-underline py-1 my-1"
                     href="https://twitter.com/antonybudianto"
                   >
                     Twitter
@@ -37,7 +37,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    className="inline-block no-underline hover:underline hover:text-underline py-1"
+                    className="inline-block no-underline hover:underline hover:text-underline py-1 my-1"
                     href="https://github.com/antonybudianto"
                   >
                     GitHub
