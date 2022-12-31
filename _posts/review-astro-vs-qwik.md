@@ -76,7 +76,7 @@ For Astro, there is also [official React integration](https://docs.astro.build/e
 
 Both Qwik and Astro used file-based routing system. 
 
-```
+```md
 # Qwik
 src/routes/index.tsx          -> mysite.com/
 src/routes/about/index.tsx    -> mysite.com/about
