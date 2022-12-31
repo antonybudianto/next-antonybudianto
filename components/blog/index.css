@@ -1,0 +1,15 @@
+h2:hover .icon-link:empty::before,
+h3:hover .icon-link:empty::before {
+  content: "#";
+  text-align: center;
+  width: 30px;
+  padding: 0 2px;
+  position: absolute;
+  left: -30px;
+  background-color: lightcyan;
+  border-radius: 5px;
+}
+
+a .icon-link {
+  position: relative;
+}
