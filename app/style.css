@@ -1,5 +1,5 @@
 .ab-fade {
-  animation-duration: 0.9s;
+  animation-duration: 1s;
   animation-name: animate-fade;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
@@ -11,23 +11,27 @@
 }
 
 .ab-time--1 {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 0.5s;
 }
 
 .ab-time--2 {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 0.8s;
 }
 
 .ab-time--3 {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 1.1s;
 }
 
 .ab-time--4 {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 1.4s;
+}
+
+.ab-min-h88 {
+  min-height: 88vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -45,7 +49,7 @@
   @keyframes animate-fade {
     0% {
       opacity: 0;
-      transform: scale(0.97);
+      transform: scale(0.9);
     }
     100% {
       opacity: 1;

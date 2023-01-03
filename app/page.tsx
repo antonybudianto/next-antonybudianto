@@ -11,12 +11,7 @@ export default function Home() {
     <>
       <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 dark:text-white lg:h-screen">
         <DarkmodeButtonWrapper />
-        <div
-          className="container mx-auto px-4 sm:px-6 md:px-8 py-16 lg:py-0 flex justify-start items-center"
-          style={{
-            height: "95%",
-          }}
-        >
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
           <div className="text-left">
             <div className="container">
               <Image
