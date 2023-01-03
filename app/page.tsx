@@ -4,7 +4,6 @@ import Link from "next/link";
 import HomePortfolio from "@/components/HomePortfolio";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import { WORKS } from "@/components/data";
-import "./style.css";
 
 export default function Home() {
   return (

@@ -30,24 +30,26 @@
   animation-delay: 1.4s;
 }
 
-@keyframes animate-fade-l {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes animate-fade-l {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
 
-@keyframes animate-fade {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+  @keyframes animate-fade {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }

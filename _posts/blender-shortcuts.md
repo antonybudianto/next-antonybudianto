@@ -2,7 +2,7 @@
 title: "My most used Blender shortcuts"
 desc: "Listing all my most used Blender shortcuts!"
 date: "2021-12-27T00:00:00.322Z"
-ogImage: "https://i.ibb.co/P6kN1nX/Screen-Shot-2021-08-21-at-9-21-47-PM.jpg"
+ogImage: "https://user-images.githubusercontent.com/7658554/210335193-59aed5e5-a634-4431-bcbc-bbbbf4f76262.jpg"
 active: true
 ---
 

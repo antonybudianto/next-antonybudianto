@@ -20,6 +20,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     slug?: string;
     title?: string;
     desc?: string;
+    ogImage?: string;
   } = {};
 
   // Ensure only the minimal needed data is exposed
