@@ -10,6 +10,11 @@
   animation-fill-mode: backwards;
 }
 
+.ab-fade-b {
+  animation-name: animate-fade-b;
+  animation-fill-mode: backwards;
+}
+
 .ab-time--1 {
   animation-duration: 0.9s;
   animation-delay: 0.5s;
@@ -39,6 +44,17 @@
     100% {
       opacity: 1;
       transform: translateX(0px);
+    }
+  }
+
+  @keyframes animate-fade-b {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 

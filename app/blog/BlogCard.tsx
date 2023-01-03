@@ -16,8 +16,8 @@ export default function BlogCard({
   ogImage,
 }: BlogCardProps) {
   return (
-    <div className="cursor-pointer group">
-      <div className="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-video">
+    <div className="cursor-pointer group ab-fade-b ab-time--2">
+      <div className="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 aspect-video">
         <Link href={`/blog/${slug}`}>
           <span
             style={{
@@ -40,14 +40,13 @@ export default function BlogCard({
           >
             <img
               alt="Thumbnail"
-              sizes="80vw"
               src={
                 ogImage ||
                 "https://cdn.sanity.io/images/cijrdavx/production/05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png?rect=0,0,800,468&amp;w=3840&amp;q=75&amp;fit=clip&amp;auto=format"
               }
               decoding="async"
               data-nimg="fill"
-              className="transition-all"
+              className="transition-all md:hover:scale-110"
               style={{
                 position: "absolute",
                 inset: "0px",
@@ -71,18 +70,18 @@ export default function BlogCard({
       <div className="flex gap-3">
         {tags.map((tag, i) => (
           <a key={i} href="#tech">
-            <span className="inline-block mt-5 text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-200">
+            <span className="inline-block mt-3 text-xs font-medium tracking-wider uppercase text-blue-600 dark:text-blue-200 hover:underline">
               {tag}
             </span>
           </a>
         ))}
       </div>
-      <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
+      <h2 className="mt-0 md:mt-1 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
         <span className="bg-gradient-to-r from-cyan-200 to-cyan-100 dark:from-cyan-800 dark:to-cyan-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
           <Link href={`/blog/${slug}`}>{title}</Link>
         </span>
       </h2>
-      <div className="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
+      <div className="flex items-center mt-1 md:mt-2 space-x-3 text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-3">
           <div className="relative flex-shrink-0 w-5 h-5">
             <span
