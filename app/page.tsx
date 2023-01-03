@@ -4,6 +4,7 @@ import Link from "next/link";
 import HomePortfolio from "@/components/HomePortfolio";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import { WORKS } from "@/components/data";
+import "./style.css";
 
 export default function Home() {
   return (
@@ -21,19 +22,19 @@ export default function Home() {
               <Image
                 src="/profile.jpeg"
                 alt="Profile"
-                className="rounded-full mb-5"
+                className="rounded-full mb-5 ab-fade ab-time--1"
                 priority
                 width={150}
                 height={150}
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-8 sm:mt-14 sm:mb-10">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-8 sm:mt-14 sm:mb-10 ab-fade-l ab-time--2">
               Antony Budianto
             </h1>
-            <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
+            <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11 ab-fade-l ab-time--3">
               Engineering, Open-source dev, Web
             </p>
-            <div className="flex flex-wrap flex-row gap-2">
+            <div className="flex flex-wrap flex-row gap-2 ab-fade-l ab-time--4">
               <a
                 className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-100 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 href="https://github.com/antonybudianto"
