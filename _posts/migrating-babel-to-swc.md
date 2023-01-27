@@ -2,7 +2,7 @@
 title: "Migrating Babel to swc"
 desc: "I will share my experience migrating Babel to swc"
 date: "2023-01-15T06:31:24.371Z"
-ogImage: "https://user-images.githubusercontent.com/7658554/210334921-9907a7e3-2aeb-4147-b729-fdcce736b1d1.jpg"
+ogImage: "https://user-images.githubusercontent.com/7658554/215102806-eb740f30-8fd5-4b3c-b2cb-3973b0ba1067.jpg"
 ---
 
 > If you happen to use meta-frameworks like [Next.js](https://nextjs.org/) or such, this post might not be too useful for you, feel free to skip!

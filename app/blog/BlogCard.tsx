@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 interface BlogCardProps {
+  index: number;
   title: string;
   slug: string;
   date: string;
@@ -14,9 +15,16 @@ export default function BlogCard({
   date,
   tags,
   ogImage,
+  index,
 }: BlogCardProps) {
   return (
-    <div className="cursor-pointer group ab-fade-b ab-time--2">
+    <div
+      className="cursor-pointer group ab-fade-b"
+      style={{
+        animationDuration: "0.7s",
+        animationDelay: `${0.25 * (index + 1)}s`,
+      }}
+    >
       <div className="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 aspect-video">
         <Link href={`/blog/${slug}`}>
           <span

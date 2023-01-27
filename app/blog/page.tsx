@@ -40,8 +40,9 @@ export default async function BlogIndex() {
           </div>
 
           <div className="mt-7 md:mt-10 grid gap-10 lg:gap-10 md:grid-cols-2">
-            {allPosts.map((p) => (
+            {allPosts.map((p, i) => (
               <BlogCard
+                index={i}
                 key={p.slug}
                 slug={p.slug}
                 title={p.title}
