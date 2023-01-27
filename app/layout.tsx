@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "tailwindcss/tailwind.css";
 import "./style.css";
 
@@ -30,6 +31,19 @@ export default function RootLayout({
           precedence="default"
         />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-L79J59SE0Q');
+        `}
+      </Script>
       <body
         style={{
           overscrollBehavior: "none",
