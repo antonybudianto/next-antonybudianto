@@ -2,7 +2,7 @@
 title: "Write your swc plugin with Rust"
 desc: "I will share how to write your swc plugin with Rust"
 date: "2023-01-27T12:33:17.887Z"
-ogImage: "https://user-images.githubusercontent.com/7658554/210334921-9907a7e3-2aeb-4147-b729-fdcce736b1d1.jpg"
+ogImage: "https://user-images.githubusercontent.com/7658554/215093049-7f2bc40f-c762-42b8-bd18-37f4ce0fc873.jpg"
 ---
 
 Hi, how are you? Hope you're all good and healthy! 
