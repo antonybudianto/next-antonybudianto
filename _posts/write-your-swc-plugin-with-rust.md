@@ -21,6 +21,15 @@ However, in practical, you might not need to write any swc plugin at all. All co
 
 In any case you have to write your own swc plugin, then you might find this post useful for you!
 
+## Rust knowledge
+
+I'd strongly **recommend** you to [learn Rust](https://doc.rust-lang.org/book/) first, it'll be really helpful on developing the plugin.
+
+If you don't have prior experience with Rust language, some part of the plugin code and development process might seems strange and unfamiliar to you.
+
+But don't worry, I'll try my best to cover important point in the code as much as possible!
+
+Let's get started, shall we?
 
 ## Getting started
 
@@ -75,7 +84,12 @@ impl VisitMut for TransformVisitor {
 
 This block is where we can implement visitor methods we want. You can browse all [available visitors here](https://rustdoc.swc.rs/swc_ecma_visit/trait.VisitMut.html).
 
-So for example, if we want to look over all JS "Identifier" (as in AST), you can do:
+Some points:
+ - `VisitMut` here is a Rust's [Trait](https://doc.rust-lang.org/book/ch10-02-traits.html), similiar with Interface; to abstract shared behavior
+ - `TransformVisitor` is our own struct, you can name it however you wish
+ - `impl` means we want to implement a [Trait](https://doc.rust-lang.org/book/ch10-02-traits.html) to a [Struct](https://doc.rust-lang.org/book/ch05-00-structs.html)
+
+So for example, if we want to look over all JavaScript "Identifier" (as in AST), you can do:
 
 ```rs
 fn visit_mut_ident(&mut self, n: &mut Ident) {
@@ -84,6 +98,8 @@ fn visit_mut_ident(&mut self, n: &mut Ident) {
   println!("Ident: {}", n.sym.to_string());
 }
 ```
+
+> **Tips:** The whole `visit_mut_ident` block can be autocompleted by VSCode, just install [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension!
 
 and to try out the plugin, let's write a simple test on bottom of the file:
 
@@ -199,7 +215,13 @@ file.js
 let dev = __DEV__;
 ```
 
-Try to run `npm run build` and see the content of `out.js`, if should output like:
+Try to run:
+
+```bash
+npm run build
+```
+
+and see the content of `out.js`, it should output something like:
 
 ```js
 var dev = false;
