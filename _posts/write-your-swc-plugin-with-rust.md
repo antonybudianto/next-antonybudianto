@@ -7,7 +7,7 @@ ogImage: "https://user-images.githubusercontent.com/7658554/215093049-7f2bc40f-c
 
 Hi, how are you? Hope you're all good and healthy! 
 
-So last time I'd shared about [Migrating Babel to swc](https://antonybudianto/blog/migrating-babel-to-swc) post, and as promised, I'll share how to write your own swc plugin with [Rust](https://www.rust-lang.org/) language. 
+So last time I'd shared about [Migrating Babel to swc](https://antonybudianto.com/blog/migrating-babel-to-swc) post, and as promised, I'll share how to write your own swc plugin with [Rust](https://www.rust-lang.org/) language. 
 
 If you haven't read that post, I'd suggest to read that first before reading this one to understand the motivation.
 
