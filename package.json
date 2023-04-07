@@ -30,7 +30,8 @@
     "sharp": "^0.31.2",
     "sweetalert2": "^11.6.15",
     "three": "~0.147.0",
-    "unified": "10.1.2"
+    "unified": "10.1.2",
+    "@netlify/functions": "1.4.0"
   },
   "devDependencies": {
     "@netlify/ipx": "^1.3.3",
