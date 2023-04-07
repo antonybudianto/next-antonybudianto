@@ -18,7 +18,10 @@ export default function MaldiveMiniPage() {
               key={i}
               className="shadow rounded-md bg-gray-700 relative overflow-hidden flex items-around"
             >
-              <Link href={l.external ? l.href : `/3d/${l.id}`} passHref>
+              <Link
+                href={l.external ? (l.href as string) : `/3d/${l.id}`}
+                passHref
+              >
                 <img
                   className="cursor-pointer rounded-md"
                   alt={l.name}

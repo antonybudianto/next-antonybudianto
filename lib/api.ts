@@ -14,11 +14,12 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
+  // @ts-ignore
   const items: {
     active?: boolean;
-    date?: string;
-    slug?: string;
-    title?: string;
+    date: string;
+    slug: string;
+    title: string;
     desc?: string;
     ogImage?: string;
   } = {};
@@ -40,7 +41,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
-export function getAllPosts(fields = []) {
+export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))

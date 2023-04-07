@@ -25,6 +25,7 @@ function useMbpAnimationFrame() {
   const [mbpOpen, setMbpOpen] = useState(true);
 
   useFrame(() => {
+    // @ts-ignore
     mbpAnimationFrame(mbpRef, mbpOpen);
   });
 

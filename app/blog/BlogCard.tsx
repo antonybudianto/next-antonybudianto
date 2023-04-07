@@ -5,7 +5,7 @@ interface BlogCardProps {
   title: string;
   slug: string;
   date: string;
-  ogImage: string;
+  ogImage?: string;
   tags: string[];
 }
 

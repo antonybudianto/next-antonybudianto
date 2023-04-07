@@ -1,6 +1,23 @@
 import Link from "next/link";
 import Image from "next/legacy/image";
 
+interface Thumb {
+  type: string;
+  src: string;
+}
+
+interface HomePortfolioProps {
+  title: string;
+  imgW: number;
+  imgH: number;
+  localHref: string;
+  href: string;
+  imgSrc: string;
+  imgAlt: string;
+  desc: string;
+  thumbs: Thumb[];
+}
+
 function HomePortfolio({
   title,
   imgW,
@@ -11,7 +28,7 @@ function HomePortfolio({
   imgAlt,
   desc,
   thumbs = [],
-}) {
+}: HomePortfolioProps) {
   // useScrollAnimation();
 
   return (

@@ -24,6 +24,7 @@ function useDoorAnimationFrame() {
   const [doorOpen, setDoorOpen] = useState(true);
 
   useFrame(() => {
+    // @ts-ignore
     doorAnimationFrame(doorRef, doorOpen);
   });
 

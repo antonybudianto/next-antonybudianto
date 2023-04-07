@@ -7,6 +7,7 @@ import { SHOWCASE_LIST_CMP } from "@/components/scenes/list-cmp";
 export default function Display3DBase({ modelId, name, credits }) {
   const [dark, setDark] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
+  // @ts-ignore
   const Cmp = SHOWCASE_LIST_CMP.find((l) => l.id === modelId).component;
   return (
     <div

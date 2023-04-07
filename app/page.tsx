@@ -73,11 +73,11 @@ export default function Home() {
             href={w.href}
             title={w.title}
             desc={w.desc}
-            imgSrc={w.imgSrc}
+            imgSrc={w.imgSrc as unknown as string}
             imgAlt={w.title}
             imgW={w.imgW}
             imgH={w.imgH}
-            thumbs={w.thumbs}
+            thumbs={w.thumbs || []}
           />
         ))}
       </div>

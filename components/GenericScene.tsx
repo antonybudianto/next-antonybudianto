@@ -44,6 +44,7 @@ const GenericScene = ({
         />
         <OrbitControls
           camera={camRef.current}
+          // @ts-ignore
           ref={ref}
           target={orbitTarget}
           autoRotate={autoRotate}
