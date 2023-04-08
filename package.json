@@ -11,6 +11,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "react-icons": "4.8.0",
+    "react-responsive-masonry": "2.1.7",
     "@react-three/drei": "9.47.1",
     "@react-three/fiber": "^8.9.1",
     "gray-matter": "4.0.3",

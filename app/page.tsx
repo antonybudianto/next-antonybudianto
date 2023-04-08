@@ -1,9 +1,9 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 
-import HomePortfolio from "@/components/HomePortfolio";
+import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
-import { WORKS } from "@/components/data";
+import RecentWork from "./RecentWork";
 
 export default function Home() {
   return (
@@ -61,28 +61,47 @@ export default function Home() {
       </div>
       <div
         id="work"
+        className="bg-gray-50 dark:bg-zinc-900"
         style={{
           contentVisibility: "auto",
         }}
       >
-        {WORKS.map((w, i) => (
-          <HomePortfolio
-            key={i}
-            // @ts-ignore
-            localHref={w.localHref}
-            href={w.href}
-            title={w.title}
-            desc={w.desc}
-            imgSrc={w.imgSrc as unknown as string}
-            imgAlt={w.title}
-            imgW={w.imgW}
-            imgH={w.imgH}
-            thumbs={w.thumbs || []}
-          />
-        ))}
+        <div className="my-5 px-2 lg:px-0 lg:my-20 container mx-auto">
+          <RecentWork />
+        </div>
+      </div>
+      <div className="bg-gray-50 dark:bg-black">
+        <div className="px-2 py-8 lg:px-0 lg:py-20 container mx-auto flex justify-center items-center flex-col">
+          <h3 className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-5 sm:mb-10 ab-fade-l ab-time--2">
+            Let's connect
+          </h3>
+          <div className="flex gap-8">
+            <a
+              title="Twitter"
+              href="https://twitter.com/antonybudianto"
+              className="text-gray-800 dark:text-white text-4xl"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              title="GitHub"
+              href="https://github.com/antonybudianto"
+              className="text-gray-800 dark:text-white text-4xl"
+            >
+              <FaGithub />
+            </a>
+            <a
+              title="Instagram"
+              href="https://instagram.com/antonybudianto"
+              className="text-gray-800 dark:text-white text-4xl"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div className="px-4 py-8 bg-blue-50 dark:bg-gray-900 mx-auto text-center text-gray-700 dark:text-gray-100">
+      <div className="px-4 py-8 bg-blue-50 dark:bg-black mx-auto text-center text-gray-700 dark:text-gray-100">
         &copy; {new Date().getFullYear()}. Antony Budianto.
       </div>
     </>
