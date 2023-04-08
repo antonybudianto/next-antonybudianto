@@ -59,13 +59,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div
-        id="work"
-        className="bg-gray-50 dark:bg-zinc-900"
-        style={{
-          contentVisibility: "auto",
-        }}
-      >
+      <div id="work" className="bg-gray-50 dark:bg-zinc-900 py-2">
         <div className="my-5 px-2 lg:px-0 lg:my-20 container mx-auto">
           <RecentWork />
         </div>

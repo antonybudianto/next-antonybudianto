@@ -21,7 +21,7 @@ export default function RecentWork() {
               <img
                 src={w.imgSrc as unknown as string}
                 alt={w.desc || ""}
-                className="border shadow-md rounded-md ease-in-out duration-300 hover:scale-95 dark:border-slate-800"
+                className="border shadow-md rounded-md ease-in-out duration-300 lg:hover:scale-95 dark:border-slate-800"
                 style={{ width: "100%" }}
               />
             </Wrapper>
