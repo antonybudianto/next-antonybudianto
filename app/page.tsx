@@ -4,6 +4,30 @@ import Link from "next/link";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import RecentWork from "./RecentWork";
+import { Metadata } from "next";
+
+const META_TITLE = `Visit Antony Budianto's Personal Website`;
+const META_DESC = `Hi! I'm Antony, currently living in Indonesia, I post tech content and web development stuff`;
+
+const encodedTitle = encodeURIComponent("Antony Budianto");
+
+export const metadata: Metadata = {
+  title: "Antony Budianto",
+  description: META_DESC,
+  openGraph: {
+    url: "https://antonybudianto.com",
+    title: META_TITLE,
+    description: META_DESC,
+    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@antonybudianto",
+    title: META_TITLE,
+    description: META_DESC,
+    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`],
+  },
+};
 
 export default function Home() {
   return (
@@ -61,11 +85,14 @@ export default function Home() {
       </div>
       <div id="work" className="bg-gray-50 dark:bg-zinc-900 py-2">
         <div className="my-5 px-2 lg:px-0 lg:my-20 container mx-auto">
+          <h3 className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-5 sm:mb-10 ab-fade-l ab-time--2">
+            Recent works
+          </h3>
           <RecentWork />
         </div>
       </div>
-      <div className="bg-gray-50 dark:bg-black">
-        <div className="px-2 py-8 lg:px-0 lg:py-20 container mx-auto flex justify-center items-center flex-col">
+      <div className="bg-blue-50 dark:bg-black">
+        <div className="px-2 py-8 lg:px-0 lg:py-10 container mx-auto flex justify-center items-center flex-col">
           <h3 className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-5 sm:mb-10 ab-fade-l ab-time--2">
             Let's connect
           </h3>

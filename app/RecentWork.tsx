@@ -5,8 +5,8 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function RecentWork() {
   return (
-    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-      <Masonry gutter="20px">
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
+      <Masonry gutter="15px">
         {WORKS.map((w, i) => {
           let Wrapper = ({ children }) => children;
           if (w.href) {

@@ -1,6 +1,7 @@
 export const WORKS = [
   {
     imgSrc: "/img-thumbs/mdvm1.jpg",
+    href: "https://antonybudianto.com/3d",
   },
   {
     imgSrc: "/countboard.jpg",
@@ -26,20 +27,15 @@ export const WORKS = [
       },
     ],
   },
-
   {
-    imgSrc: "/ngpt1.jpg",
-    title: "NextGPT: Opinionated ChatGPT web client",
-    href: "https://github.com/antonybudianto/next-gpt",
+    imgSrc: "/meta-3d/meta-studio.jpg",
+    href: "https://ab-3d-studio.vercel.app/",
   },
-
   {
     title: "JSBench",
     href: "https://jsbench.netlify.com",
     imgSrc: "/jsb.jpg",
     desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`,
-    imgW: 2184 / 4,
-    imgH: 1278 / 4,
   },
 
   {
@@ -49,5 +45,14 @@ export const WORKS = [
     desc: `Simple Sticky Note app with Markdown flavour`,
     imgW: 2880 / 5,
     imgH: 1446 / 5,
+  },
+  {
+    imgSrc: "/meta-3d/meta-maldive-resort.jpg",
+    href: "https://antonybudianto.com/3d",
+  },
+  {
+    imgSrc: "/ngpt1.jpg",
+    title: "NextGPT: Opinionated ChatGPT web client",
+    href: "https://github.com/antonybudianto/next-gpt",
   },
 ];
