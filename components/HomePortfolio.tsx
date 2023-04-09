@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/legacy/image";
 
 interface Thumb {
   type: string;
@@ -40,13 +39,12 @@ function HomePortfolio({
         <div>
           <div className="flex flex-col lg:flex-row tems-center">
             <div className="w-12/12 lg:w-8/12">
-              <Image
+              <img
                 src={imgSrc}
                 className="rounded-lg shadow-md"
                 alt={imgAlt}
                 width={imgW}
                 height={imgH}
-                placeholder="blur"
               />
             </div>
             <div className="w-12/12 mt-3 lg:mt-0 lg:ml-14 lg:w-4/12">

@@ -1,4 +1,3 @@
-import Image from "next/legacy/image";
 import Link from "next/link";
 
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -39,11 +38,10 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
           <div className="text-left">
             <div className="container">
-              <Image
+              <img
                 src="/profile.jpeg"
                 alt="Profile"
                 className="rounded-full mb-5 ab-fade ab-time--1"
-                priority
                 width={150}
                 height={150}
               />
