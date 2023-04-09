@@ -3,6 +3,31 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { getAllPosts } from "../../lib/api";
 import BlogCard from "./BlogCard";
 import NewHeader from "@/components/NewHeader";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog by Antony",
+  description: "Blog by Antony Budianto, post about web and technology",
+  openGraph: {
+    siteName: "antonybudianto.com",
+    title: "Blog by Antony",
+    description: "Blog by Antony Budianto, post about web and technology",
+    url: "https://antonybudianto.com/blog",
+    images: [
+      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog by Antony",
+    description: "Blog by Antony",
+    images: [
+      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony",
+    ],
+    site: "@antonybudianto",
+  },
+  themeColor: "#FFFFFF",
+};
 
 async function getData() {
   try {
