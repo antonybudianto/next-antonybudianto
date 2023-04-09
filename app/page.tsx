@@ -14,6 +14,7 @@ const encodedTitle = encodeURIComponent("Antony Budianto");
 export const metadata: Metadata = {
   title: "Antony Budianto",
   description: META_DESC,
+  creator: "",
   openGraph: {
     url: "https://antonybudianto.com",
     title: META_TITLE,
@@ -34,6 +35,9 @@ export default function Home() {
     <>
       <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 dark:text-white lg:h-screen">
         <DarkmodeButtonWrapper />
+        <div className="fixed top-0 left-0 px-3 lg:px-20 py-5 w-full z-40 backdrop-blur-lg font-semibold">
+          antonybudianto
+        </div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
           <div className="text-left">
             <div className="container">

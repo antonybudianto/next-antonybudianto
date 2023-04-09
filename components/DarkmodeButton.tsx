@@ -13,7 +13,7 @@ const DarkmodeButton: FC<DarkmodeButtonProps> = ({
   title,
   onClick = () => {},
 }) => (
-  <div className="fixed top-3 right-3 z-10">
+  <div className="fixed top-3 right-3 z-50">
     <button
       title={title}
       onClick={onClick}
