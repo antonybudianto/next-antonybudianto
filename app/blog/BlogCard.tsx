@@ -113,7 +113,7 @@ export default function BlogCard({
             >
               <img
                 alt="Antony Budianto"
-                src="/_next/image?url=%2Fprofile.jpeg&w=384&q=75"
+                src="/profile.jpeg"
                 decoding="async"
                 data-nimg="fill"
                 className="rounded-full"
