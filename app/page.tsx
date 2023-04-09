@@ -85,7 +85,10 @@ export default function Home() {
       </div>
       <div id="work" className="bg-gray-50 dark:bg-zinc-900 py-2">
         <div className="my-5 px-2 lg:px-0 lg:my-20 container mx-auto">
-          <h3 className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-5 sm:mb-10 ab-fade-l ab-time--2">
+          <h3
+            id="recent-works"
+            className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 my-5 sm:mb-10 ab-fade-l ab-time--2"
+          >
             Recent works
           </h3>
           <RecentWork />
