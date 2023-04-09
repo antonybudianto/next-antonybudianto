@@ -51,7 +51,7 @@ export default function RecentWork() {
               <img
                 src={w.imgSrc as unknown as string}
                 alt={w.desc || ""}
-                className="ab-masonry-img border shadow-md rounded-md ease-in-out duration-300 lg:hover:scale-95 dark:border-slate-800"
+                className="ab-masonry-img outline outline-offset-0 outline-gray-100 dark:outline-gray-500 border shadow-md rounded-md ease-in-out duration-300 lg:hover:outline-blue-500 lg:hover:shadow-lg dark:border-slate-800"
                 style={{ width: "100%" }}
               />
             </Wrapper>

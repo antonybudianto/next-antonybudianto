@@ -84,7 +84,7 @@ export default function BlogCard({
           </a>
         ))}
       </div>
-      <h2 className="mt-0 md:mt-1 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
+      <h2 className="mt-0 md:mt-1 text-lg font-semibold tracking-normal text-gray-700 dark:text-white">
         <span className="bg-gradient-to-r from-cyan-200 to-cyan-100 dark:from-cyan-800 dark:to-cyan-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
           <Link href={`/blog/${slug}`}>{title}</Link>
         </span>

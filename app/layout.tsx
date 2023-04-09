@@ -30,6 +30,10 @@ export default function RootLayout({
           // @ts-ignore
           precedence="default"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"
