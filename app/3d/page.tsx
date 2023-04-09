@@ -6,14 +6,12 @@ export default function MaldiveMiniPage() {
   return (
     <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 text-gray-800 dark:text-white min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 lg:py-20 ">
-        <div className="text-4xl">3D Showcase</div>
-        <NewHeader />
-        <div>
-          by{" "}
-          <Link href="/" className="text-blue-600 dark:text-blue-300">
-            Antony Budianto
-          </Link>
-        </div>
+        <NewHeader
+          nav={{
+            href: "/3d",
+            name: "3D Showcase",
+          }}
+        />
         <div className="mt-8 grid sm:grid-cols-3 gap-4">
           {SHOWCASE_LIST.map((l, i) => (
             <div

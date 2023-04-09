@@ -1,23 +1,13 @@
 import React from "react";
-import Link from "next/link";
 
 import BlogFooter from "./BlogFooter";
 
 function BlogWrapper({ title, publishDate, children }) {
   return (
     <>
-      <div className="pt-16 md:pt-20 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+      <div className="pt-10 md:pt-12 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
         <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
           <div>
-            <p className="text-base md:text-sm text-blue-800 dark:text-blue-300">
-              &lt;{" "}
-              <Link
-                href="/blog"
-                className="no-underline hover:underline hover:text-cyan-500"
-              >
-                BACK TO BLOG
-              </Link>
-            </p>
             <h1 className="font-bold break-normal pt-6 pb-2 text-3xl md:text-4xl">
               {title}
             </h1>

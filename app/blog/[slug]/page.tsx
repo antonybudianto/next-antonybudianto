@@ -10,7 +10,12 @@ async function BlogTemplate({ params }) {
 
   return (
     <>
-      <NewHeader />
+      <NewHeader
+        nav={{
+          href: "/blog",
+          name: "Blog",
+        }}
+      />
       <BlogWrapper
         title={post.title}
         publishDate={new Date(post.date).toDateString()}
