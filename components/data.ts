@@ -1,7 +1,7 @@
 export const WORKS = [
   {
     imgSrc: "/img-thumbs/mdvm1.jpg",
-    href: "https://antonybudianto.com/3d",
+    href: "/3d",
   },
   {
     imgSrc: "/countboard.jpg",
@@ -48,7 +48,7 @@ export const WORKS = [
   },
   {
     imgSrc: "/meta-3d/meta-maldive-resort.jpg",
-    href: "https://antonybudianto.com/3d",
+    href: "/3d",
   },
   {
     imgSrc: "/ngpt1.jpg",

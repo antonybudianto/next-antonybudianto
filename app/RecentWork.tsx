@@ -1,6 +1,7 @@
 "use client";
 
 import { WORKS } from "@/components/data";
+import Link from "next/link";
 import { useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -15,7 +16,6 @@ export default function RecentWork() {
     const el = document.querySelector("#recent-works");
     const callback = (es) => {
       es.forEach((ev) => {
-        console.log(ev);
         document.querySelectorAll(".ab-masonry-img").forEach((img) => {
           if (ev.isIntersecting && ev.boundingClientRect.bottom > 100) {
             img.classList.add("ab-masonry-img-anim");
@@ -41,9 +41,9 @@ export default function RecentWork() {
           let Wrapper = ({ children }) => children;
           if (w.href) {
             Wrapper = ({ children }) => (
-              <a title={w.title} href={w.href}>
+              <Link title={w.title} href={w.href}>
                 {children}
-              </a>
+              </Link>
             );
           }
           return (
