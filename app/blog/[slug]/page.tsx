@@ -2,15 +2,15 @@ import React from "react";
 import BlogBody from "@/components/blog/BlogBody";
 import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts } from "@/lib/api";
-import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import { getData } from "./data";
+import NewHeader from "@/components/NewHeader";
 
 async function BlogTemplate({ params }) {
   const post = await getData(params.slug);
 
   return (
     <>
-      <DarkmodeButtonWrapper />
+      <NewHeader />
       <BlogWrapper
         title={post.title}
         publishDate={new Date(post.date).toDateString()}

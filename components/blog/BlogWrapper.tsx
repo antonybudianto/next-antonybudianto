@@ -2,12 +2,11 @@ import React from "react";
 import Link from "next/link";
 
 import BlogFooter from "./BlogFooter";
-// import BlogNav from "./BlogNav";
 
 function BlogWrapper({ title, publishDate, children }) {
   return (
     <>
-      <div className="pt-5 md:pt-10 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+      <div className="pt-16 md:pt-20 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
         <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
           <div>
             <p className="text-base md:text-sm text-blue-800 dark:text-blue-300">
