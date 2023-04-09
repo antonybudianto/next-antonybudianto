@@ -32,12 +32,16 @@ export const WORKS = [
     href: "https://ab-3d-studio.vercel.app/",
   },
   {
+    imgSrc: "/ngpt1.jpg",
+    title: "NextGPT: Opinionated ChatGPT web client",
+    href: "https://github.com/antonybudianto/next-gpt",
+  },
+  {
     title: "JSBench",
     href: "https://jsbench.netlify.com",
     imgSrc: "/jsb.jpg",
     desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`,
   },
-
   {
     title: "StickyNoted",
     href: "https://stickynoted.netlify.app/",
@@ -49,10 +53,5 @@ export const WORKS = [
   {
     imgSrc: "/meta-3d/meta-maldive-resort.jpg",
     href: "/3d",
-  },
-  {
-    imgSrc: "/ngpt1.jpg",
-    title: "NextGPT: Opinionated ChatGPT web client",
-    href: "https://github.com/antonybudianto/next-gpt",
   },
 ];
