@@ -45,6 +45,7 @@ const GenericScene = ({
         />
         <OrbitControls
           camera={camRef.current}
+          // @ts-ignore
           ref={ref}
           // @ts-ignore
           target={orbitTarget}

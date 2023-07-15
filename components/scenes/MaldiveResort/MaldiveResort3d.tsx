@@ -7,6 +7,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export default function Model(props) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials, animations } = useGLTF("/3d/maldive.gltf");
   const { actions } = useAnimations(animations, group);
   const { dark } = props;
@@ -14,7 +15,7 @@ export default function Model(props) {
   const beachLightIntensity = dark ? 0.7 : 0;
 
   useEffect(() => {
-    actions.SeaWaterAction.play();
+    actions?.SeaWaterAction?.play();
   }, []);
 
   return (
@@ -2567,6 +2568,7 @@ export default function Model(props) {
         rotation={[0, 0.28, 0]}
       />
       <mesh
+        // @ts-ignore
         ref={group}
         name="SeaWater"
         castShadow

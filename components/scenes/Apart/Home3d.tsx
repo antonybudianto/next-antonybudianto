@@ -308,6 +308,7 @@ export default function Model(props) {
         scale={[3.185, 2.7, 0.07]}
       />
       <group
+        // @ts-ignore
         ref={doorRef}
         position={[3.243, 0, -5.198]}
         rotation={[0, -0.873, 0]}
@@ -337,6 +338,7 @@ export default function Model(props) {
           position={[0.002, 0.002, 0.325]}
           rotation={[0.175, 0, 0]}
           scale={[1, 0.988, 1]}
+          // @ts-ignore
           ref={mbpRef}
         >
           <mesh

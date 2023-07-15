@@ -871,6 +871,7 @@ export default function Model(props) {
           scale={[1.076, 1.01, 1.076]}
         />
         <mesh
+          // @ts-ignore
           ref={seaRef}
           name="SeaWater"
           castShadow
@@ -950,11 +951,12 @@ export default function Model(props) {
           scale={[0.411, 0.447, 0.498]}
         />
         <mesh
+          // @ts-ignore
           ref={cocoRef}
           name="CoconutTree"
           onClick={() => {
-            cocoActions.Swing.reset();
-            cocoActions.Swing.play();
+            cocoActions?.Swing?.reset();
+            cocoActions?.Swing?.play();
           }}
           castShadow
           receiveShadow

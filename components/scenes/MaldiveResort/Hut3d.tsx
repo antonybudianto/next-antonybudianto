@@ -7,6 +7,7 @@ import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials } = useGLTF("/3d/hut.gltf");
   const { dark } = props;
   const intensity = dark ? 1 : 0;
