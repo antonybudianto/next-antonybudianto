@@ -6,7 +6,7 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     external: true,
     name: "3D Studio",
     img: "/meta-3d/meta-studio.jpg",
-    href: "https://ab-3d-studio.vercel.app/",
+    href: "https://ab-3d-studio.vercel.app/"
   },
   {
     id: "maldive-resort",
@@ -18,8 +18,8 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     credits: [
       "https://free-3dtextureshd.com",
       "https://www.sketchuptextureclub.com",
-      "https://polyhaven.com",
-    ],
+      "https://polyhaven.com"
+    ]
   },
   {
     id: "maldive-mini",
@@ -31,8 +31,8 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     credits: [
       "https://free-3dtextureshd.com",
       "https://www.sketchuptextureclub.com",
-      "https://polyhaven.com",
-    ],
+      "https://polyhaven.com"
+    ]
   },
   {
     id: "apart",
@@ -40,6 +40,6 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     img: "/meta-3d/meta-home.jpg",
     metaOgImage: "https://antonybudianto.com/meta-3d/meta-home.jpg",
     metaTitle: "3D Apartment",
-    metaContent: "3D Interactive Apartment by Antony Budianto",
-  },
+    metaContent: "3D Interactive Apartment by Antony Budianto"
+  }
 ];

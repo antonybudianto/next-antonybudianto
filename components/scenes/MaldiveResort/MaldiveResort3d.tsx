@@ -7,6 +7,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export default function Model(props) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials, animations } = useGLTF("/3d/maldive.gltf");
   const { actions } = useAnimations(animations, group);
   const { dark } = props;
@@ -14,7 +15,7 @@ export default function Model(props) {
   const beachLightIntensity = dark ? 0.7 : 0;
 
   useEffect(() => {
-    actions.SeaWaterAction.play();
+    actions?.SeaWaterAction?.play();
   }, []);
 
   return (
@@ -43,8 +44,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube032.geometry}
-        material={nodes.Cube032.material}
+        geometry={nodes.Cube032?.geometry}
+        material={nodes.Cube032?.material}
         position={[0.72, -0.38, 0.35]}
         rotation={[0.05, 0, 0]}
         scale={[0.22, 0.01, 0.88]}
@@ -52,8 +53,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube034.geometry}
-        material={nodes.Cube034.material}
+        geometry={nodes.Cube034?.geometry}
+        material={nodes.Cube034?.material}
         position={[0.72, -0.42, 0.35]}
         rotation={[0.05, 0, 0]}
         scale={[0.22, 0.03, 0.88]}
@@ -61,40 +62,40 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder026.geometry}
-        material={nodes.Cylinder026.material}
+        geometry={nodes.Cylinder026?.geometry}
+        material={nodes.Cylinder026?.material}
         position={[0.72, -0.42, 1.66]}
         scale={[0.5, 0.01, 0.5]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder027.geometry}
-        material={nodes.Cylinder027.material}
+        geometry={nodes.Cylinder027?.geometry}
+        material={nodes.Cylinder027?.material}
         position={[0.72, -0.46, 1.66]}
         scale={[0.5, 0.03, 0.5]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.LongPathway.geometry}
-        material={nodes.LongPathway.material}
+        geometry={nodes.LongPathway?.geometry}
+        material={nodes.LongPathway?.material}
         position={[0.72, -0.42, 2.96]}
         scale={[0.22, 0.01, 0.88]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube016.geometry}
-        material={nodes.Cube016.material}
+        geometry={nodes.Cube016?.geometry}
+        material={nodes.Cube016?.material}
         position={[0.72, -0.46, 2.96]}
         scale={[0.22, 0.03, 0.88]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube017.geometry}
-        material={nodes.Cube017.material}
+        geometry={nodes.Cube017?.geometry}
+        material={nodes.Cube017?.material}
         position={[-0.57, -0.38, 1.59]}
         rotation={[Math.PI / 2, 1.52, -Math.PI / 2]}
         scale={[0.2, 0.01, 0.88]}
@@ -102,8 +103,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube018.geometry}
-        material={nodes.Cube018.material}
+        geometry={nodes.Cube018?.geometry}
+        material={nodes.Cube018?.material}
         position={[-0.58, -0.42, 1.59]}
         rotation={[Math.PI / 2, 1.52, -Math.PI / 2]}
         scale={[0.2, 0.03, 0.88]}
@@ -111,8 +112,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube019.geometry}
-        material={nodes.Cube019.material}
+        geometry={nodes.Cube019?.geometry}
+        material={nodes.Cube019?.material}
         position={[2.01, -0.38, 1.59]}
         rotation={[-Math.PI / 2, 1.52, Math.PI / 2]}
         scale={[0.2, 0.01, 0.88]}
@@ -120,8 +121,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube020.geometry}
-        material={nodes.Cube020.material}
+        geometry={nodes.Cube020?.geometry}
+        material={nodes.Cube020?.material}
         position={[2.01, -0.42, 1.59]}
         rotation={[-Math.PI / 2, 1.52, Math.PI / 2]}
         scale={[0.2, 0.03, 0.88]}
@@ -129,104 +130,104 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder030.geometry}
-        material={nodes.Cylinder030.material}
+        geometry={nodes.Cylinder030?.geometry}
+        material={nodes.Cylinder030?.material}
         position={[0.54, -0.64, -0.4]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder031.geometry}
-        material={nodes.Cylinder031.material}
+        geometry={nodes.Cylinder031?.geometry}
+        material={nodes.Cylinder031?.material}
         position={[0.9, -0.64, -0.4]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder040.geometry}
-        material={nodes.Cylinder040.material}
+        geometry={nodes.Cylinder040?.geometry}
+        material={nodes.Cylinder040?.material}
         position={[-1.38, -0.65, 1.43]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder041.geometry}
-        material={nodes.Cylinder041.material}
+        geometry={nodes.Cylinder041?.geometry}
+        material={nodes.Cylinder041?.material}
         position={[2.82, -0.65, 1.43]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder042.geometry}
-        material={nodes.Cylinder042.material}
+        geometry={nodes.Cylinder042?.geometry}
+        material={nodes.Cylinder042?.material}
         position={[-1.38, -0.65, 1.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder043.geometry}
-        material={nodes.Cylinder043.material}
+        geometry={nodes.Cylinder043?.geometry}
+        material={nodes.Cylinder043?.material}
         position={[2.82, -0.65, 1.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder044.geometry}
-        material={nodes.Cylinder044.material}
+        geometry={nodes.Cylinder044?.geometry}
+        material={nodes.Cylinder044?.material}
         position={[2.7, -0.65, 1.43]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder045.geometry}
-        material={nodes.Cylinder045.material}
+        geometry={nodes.Cylinder045?.geometry}
+        material={nodes.Cylinder045?.material}
         position={[2.7, -0.65, 1.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder046.geometry}
-        material={nodes.Cylinder046.material}
+        geometry={nodes.Cylinder046?.geometry}
+        material={nodes.Cylinder046?.material}
         position={[-1.26, -0.65, 1.43]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder047.geometry}
-        material={nodes.Cylinder047.material}
+        geometry={nodes.Cylinder047?.geometry}
+        material={nodes.Cylinder047?.material}
         position={[-1.26, -0.65, 1.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder001.geometry}
-        material={nodes.Cylinder001.material}
+        geometry={nodes.Cylinder001?.geometry}
+        material={nodes.Cylinder001?.material}
         position={[0.54, -0.74, 3.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder002.geometry}
-        material={nodes.Cylinder002.material}
+        geometry={nodes.Cylinder002?.geometry}
+        material={nodes.Cylinder002?.material}
         position={[0.9, -0.74, 3.75]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube115.geometry}
-        material={nodes.Cube115.material}
+        geometry={nodes.Cube115?.geometry}
+        material={nodes.Cube115?.material}
         position={[1.81, -0.38, 3.75]}
         rotation={[-Math.PI / 2, 1.52, Math.PI / 2]}
         scale={[0.2, 0.01, 0.88]}
@@ -234,8 +235,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube116.geometry}
-        material={nodes.Cube116.material}
+        geometry={nodes.Cube116?.geometry}
+        material={nodes.Cube116?.material}
         position={[1.82, -0.42, 3.75]}
         rotation={[-Math.PI / 2, 1.52, Math.PI / 2]}
         scale={[0.2, 0.03, 0.88]}
@@ -243,40 +244,40 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder092.geometry}
-        material={nodes.Cylinder092.material}
+        geometry={nodes.Cylinder092?.geometry}
+        material={nodes.Cylinder092?.material}
         position={[2.62, -0.65, 3.59]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder093.geometry}
-        material={nodes.Cylinder093.material}
+        geometry={nodes.Cylinder093?.geometry}
+        material={nodes.Cylinder093?.material}
         position={[2.62, -0.65, 3.91]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder094.geometry}
-        material={nodes.Cylinder094.material}
+        geometry={nodes.Cylinder094?.geometry}
+        material={nodes.Cylinder094?.material}
         position={[2.5, -0.65, 3.59]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder095.geometry}
-        material={nodes.Cylinder095.material}
+        geometry={nodes.Cylinder095?.geometry}
+        material={nodes.Cylinder095?.material}
         position={[2.5, -0.65, 3.91]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube153.geometry}
-        material={nodes.Cube153.material}
+        geometry={nodes.Cube153?.geometry}
+        material={nodes.Cube153?.material}
         position={[-0.38, -0.38, 3.76]}
         rotation={[Math.PI / 2, 1.52, -Math.PI / 2]}
         scale={[0.2, 0.01, 0.88]}
@@ -284,8 +285,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube154.geometry}
-        material={nodes.Cube154.material}
+        geometry={nodes.Cube154?.geometry}
+        material={nodes.Cube154?.material}
         position={[-0.38, -0.42, 3.76]}
         rotation={[Math.PI / 2, 1.52, -Math.PI / 2]}
         scale={[0.2, 0.03, 0.88]}
@@ -293,8 +294,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube159.geometry}
-        material={nodes.Cube159.material}
+        geometry={nodes.Cube159?.geometry}
+        material={nodes.Cube159?.material}
         position={[-0.06, -0.38, 7.32]}
         rotation={[2.94, 1.31, -2.94]}
         scale={[0.2, 0.01, 0.88]}
@@ -302,8 +303,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube160.geometry}
-        material={nodes.Cube160.material}
+        geometry={nodes.Cube160?.geometry}
+        material={nodes.Cube160?.material}
         position={[-0.06, -0.42, 7.32]}
         rotation={[2.94, 1.31, -2.94]}
         scale={[0.2, 0.03, 0.88]}
@@ -311,8 +312,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube161.geometry}
-        material={nodes.Cube161.material}
+        geometry={nodes.Cube161?.geometry}
+        material={nodes.Cube161?.material}
         position={[0.51, -0.38, 9.4]}
         rotation={[2.95, 1.3, -2.95]}
         scale={[0.2, 0.01, 0.88]}
@@ -320,8 +321,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube162.geometry}
-        material={nodes.Cube162.material}
+        geometry={nodes.Cube162?.geometry}
+        material={nodes.Cube162?.material}
         position={[0.51, -0.42, 9.4]}
         rotation={[2.95, 1.3, -2.95]}
         scale={[0.2, 0.03, 0.88]}
@@ -329,8 +330,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube163.geometry}
-        material={nodes.Cube163.material}
+        geometry={nodes.Cube163?.geometry}
+        material={nodes.Cube163?.material}
         position={[2.07, -0.38, 6.77]}
         rotation={[-2.93, 1.32, 2.94]}
         scale={[0.2, 0.01, 0.88]}
@@ -338,8 +339,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube164.geometry}
-        material={nodes.Cube164.material}
+        geometry={nodes.Cube164?.geometry}
+        material={nodes.Cube164?.material}
         position={[2.07, -0.42, 6.77]}
         rotation={[-2.93, 1.32, 2.94]}
         scale={[0.2, 0.03, 0.88]}
@@ -347,8 +348,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube165.geometry}
-        material={nodes.Cube165.material}
+        geometry={nodes.Cube165?.geometry}
+        material={nodes.Cube165?.material}
         position={[2.62, -0.38, 8.82]}
         rotation={[-2.94, 1.3, 2.95]}
         scale={[0.2, 0.01, 0.88]}
@@ -356,8 +357,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube166.geometry}
-        material={nodes.Cube166.material}
+        geometry={nodes.Cube166?.geometry}
+        material={nodes.Cube166?.material}
         position={[2.62, -0.42, 8.82]}
         rotation={[-2.94, 1.3, 2.95]}
         scale={[0.2, 0.03, 0.88]}
@@ -365,16 +366,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree.geometry}
-        material={nodes.CoconutTree.material}
+        geometry={nodes.CoconutTree?.geometry}
+        material={nodes.CoconutTree?.material}
         position={[-0.05, -0.51, 15.98]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane.geometry}
-          material={nodes.Plane.material}
+          geometry={nodes.Plane?.geometry}
+          material={nodes.Plane?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -382,8 +383,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane001.geometry}
-          material={nodes.Plane001.material}
+          geometry={nodes.Plane001?.geometry}
+          material={nodes.Plane001?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -391,8 +392,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane002.geometry}
-          material={nodes.Plane002.material}
+          geometry={nodes.Plane002?.geometry}
+          material={nodes.Plane002?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -400,8 +401,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane003.geometry}
-          material={nodes.Plane003.material}
+          geometry={nodes.Plane003?.geometry}
+          material={nodes.Plane003?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -409,8 +410,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane004.geometry}
-          material={nodes.Plane004.material}
+          geometry={nodes.Plane004?.geometry}
+          material={nodes.Plane004?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -418,8 +419,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane005.geometry}
-          material={nodes.Plane005.material}
+          geometry={nodes.Plane005?.geometry}
+          material={nodes.Plane005?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -427,8 +428,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane006.geometry}
-          material={nodes.Plane006.material}
+          geometry={nodes.Plane006?.geometry}
+          material={nodes.Plane006?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -436,8 +437,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane007.geometry}
-          material={nodes.Plane007.material}
+          geometry={nodes.Plane007?.geometry}
+          material={nodes.Plane007?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -445,8 +446,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane008.geometry}
-          material={nodes.Plane008.material}
+          geometry={nodes.Plane008?.geometry}
+          material={nodes.Plane008?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -454,8 +455,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane009_1.geometry}
-          material={nodes.Plane009_1.material}
+          geometry={nodes.Plane009_1?.geometry}
+          material={nodes.Plane009_1?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -463,8 +464,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane010.geometry}
-          material={nodes.Plane010.material}
+          geometry={nodes.Plane010?.geometry}
+          material={nodes.Plane010?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -472,8 +473,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane011.geometry}
-          material={nodes.Plane011.material}
+          geometry={nodes.Plane011?.geometry}
+          material={nodes.Plane011?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -481,8 +482,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane012.geometry}
-          material={nodes.Plane012.material}
+          geometry={nodes.Plane012?.geometry}
+          material={nodes.Plane012?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -490,8 +491,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane013.geometry}
-          material={nodes.Plane013.material}
+          geometry={nodes.Plane013?.geometry}
+          material={nodes.Plane013?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -499,8 +500,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane014.geometry}
-          material={nodes.Plane014.material}
+          geometry={nodes.Plane014?.geometry}
+          material={nodes.Plane014?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -508,8 +509,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane015.geometry}
-          material={nodes.Plane015.material}
+          geometry={nodes.Plane015?.geometry}
+          material={nodes.Plane015?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -517,8 +518,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane016.geometry}
-          material={nodes.Plane016.material}
+          geometry={nodes.Plane016?.geometry}
+          material={nodes.Plane016?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -526,8 +527,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane017.geometry}
-          material={nodes.Plane017.material}
+          geometry={nodes.Plane017?.geometry}
+          material={nodes.Plane017?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -535,8 +536,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane018.geometry}
-          material={nodes.Plane018.material}
+          geometry={nodes.Plane018?.geometry}
+          material={nodes.Plane018?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -544,8 +545,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane019.geometry}
-          material={nodes.Plane019.material}
+          geometry={nodes.Plane019?.geometry}
+          material={nodes.Plane019?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -554,16 +555,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree001.geometry}
-        material={nodes.CoconutTree001.material}
+        geometry={nodes.CoconutTree001?.geometry}
+        material={nodes.CoconutTree001?.material}
         position={[9.09, -0.54, 13.26]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane020.geometry}
-          material={nodes.Plane020.material}
+          geometry={nodes.Plane020?.geometry}
+          material={nodes.Plane020?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -571,8 +572,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane021.geometry}
-          material={nodes.Plane021.material}
+          geometry={nodes.Plane021?.geometry}
+          material={nodes.Plane021?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -580,8 +581,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane022.geometry}
-          material={nodes.Plane022.material}
+          geometry={nodes.Plane022?.geometry}
+          material={nodes.Plane022?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -589,8 +590,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane023.geometry}
-          material={nodes.Plane023.material}
+          geometry={nodes.Plane023?.geometry}
+          material={nodes.Plane023?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -598,8 +599,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane024.geometry}
-          material={nodes.Plane024.material}
+          geometry={nodes.Plane024?.geometry}
+          material={nodes.Plane024?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -607,8 +608,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane025.geometry}
-          material={nodes.Plane025.material}
+          geometry={nodes.Plane025?.geometry}
+          material={nodes.Plane025?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -616,8 +617,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane026.geometry}
-          material={nodes.Plane026.material}
+          geometry={nodes.Plane026?.geometry}
+          material={nodes.Plane026?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -625,8 +626,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane027.geometry}
-          material={nodes.Plane027.material}
+          geometry={nodes.Plane027?.geometry}
+          material={nodes.Plane027?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -634,8 +635,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane028.geometry}
-          material={nodes.Plane028.material}
+          geometry={nodes.Plane028?.geometry}
+          material={nodes.Plane028?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -643,8 +644,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane029.geometry}
-          material={nodes.Plane029.material}
+          geometry={nodes.Plane029?.geometry}
+          material={nodes.Plane029?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -652,8 +653,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane030.geometry}
-          material={nodes.Plane030.material}
+          geometry={nodes.Plane030?.geometry}
+          material={nodes.Plane030?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -661,8 +662,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane031.geometry}
-          material={nodes.Plane031.material}
+          geometry={nodes.Plane031?.geometry}
+          material={nodes.Plane031?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -670,8 +671,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane032.geometry}
-          material={nodes.Plane032.material}
+          geometry={nodes.Plane032?.geometry}
+          material={nodes.Plane032?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -679,8 +680,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane033.geometry}
-          material={nodes.Plane033.material}
+          geometry={nodes.Plane033?.geometry}
+          material={nodes.Plane033?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -688,8 +689,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane034.geometry}
-          material={nodes.Plane034.material}
+          geometry={nodes.Plane034?.geometry}
+          material={nodes.Plane034?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -697,8 +698,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane035.geometry}
-          material={nodes.Plane035.material}
+          geometry={nodes.Plane035?.geometry}
+          material={nodes.Plane035?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -706,8 +707,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane036.geometry}
-          material={nodes.Plane036.material}
+          geometry={nodes.Plane036?.geometry}
+          material={nodes.Plane036?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -715,8 +716,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane037.geometry}
-          material={nodes.Plane037.material}
+          geometry={nodes.Plane037?.geometry}
+          material={nodes.Plane037?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -724,8 +725,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane038.geometry}
-          material={nodes.Plane038.material}
+          geometry={nodes.Plane038?.geometry}
+          material={nodes.Plane038?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -733,8 +734,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane039.geometry}
-          material={nodes.Plane039.material}
+          geometry={nodes.Plane039?.geometry}
+          material={nodes.Plane039?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -743,16 +744,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree002.geometry}
-        material={nodes.CoconutTree002.material}
+        geometry={nodes.CoconutTree002?.geometry}
+        material={nodes.CoconutTree002?.material}
         position={[8.25, -0.61, 14.12]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane040.geometry}
-          material={nodes.Plane040.material}
+          geometry={nodes.Plane040?.geometry}
+          material={nodes.Plane040?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -760,8 +761,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane041.geometry}
-          material={nodes.Plane041.material}
+          geometry={nodes.Plane041?.geometry}
+          material={nodes.Plane041?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -769,8 +770,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane042.geometry}
-          material={nodes.Plane042.material}
+          geometry={nodes.Plane042?.geometry}
+          material={nodes.Plane042?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -778,8 +779,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane043.geometry}
-          material={nodes.Plane043.material}
+          geometry={nodes.Plane043?.geometry}
+          material={nodes.Plane043?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -787,8 +788,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane044.geometry}
-          material={nodes.Plane044.material}
+          geometry={nodes.Plane044?.geometry}
+          material={nodes.Plane044?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -796,8 +797,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane045.geometry}
-          material={nodes.Plane045.material}
+          geometry={nodes.Plane045?.geometry}
+          material={nodes.Plane045?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -805,8 +806,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane046.geometry}
-          material={nodes.Plane046.material}
+          geometry={nodes.Plane046?.geometry}
+          material={nodes.Plane046?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -814,8 +815,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane047.geometry}
-          material={nodes.Plane047.material}
+          geometry={nodes.Plane047?.geometry}
+          material={nodes.Plane047?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -823,8 +824,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane048.geometry}
-          material={nodes.Plane048.material}
+          geometry={nodes.Plane048?.geometry}
+          material={nodes.Plane048?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -832,8 +833,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane049.geometry}
-          material={nodes.Plane049.material}
+          geometry={nodes.Plane049?.geometry}
+          material={nodes.Plane049?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -841,8 +842,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane050.geometry}
-          material={nodes.Plane050.material}
+          geometry={nodes.Plane050?.geometry}
+          material={nodes.Plane050?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -850,8 +851,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane051.geometry}
-          material={nodes.Plane051.material}
+          geometry={nodes.Plane051?.geometry}
+          material={nodes.Plane051?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -859,8 +860,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane052.geometry}
-          material={nodes.Plane052.material}
+          geometry={nodes.Plane052?.geometry}
+          material={nodes.Plane052?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -868,8 +869,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane053.geometry}
-          material={nodes.Plane053.material}
+          geometry={nodes.Plane053?.geometry}
+          material={nodes.Plane053?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -877,8 +878,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane054.geometry}
-          material={nodes.Plane054.material}
+          geometry={nodes.Plane054?.geometry}
+          material={nodes.Plane054?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -886,8 +887,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane055.geometry}
-          material={nodes.Plane055.material}
+          geometry={nodes.Plane055?.geometry}
+          material={nodes.Plane055?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -895,8 +896,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane056.geometry}
-          material={nodes.Plane056.material}
+          geometry={nodes.Plane056?.geometry}
+          material={nodes.Plane056?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -904,8 +905,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane057.geometry}
-          material={nodes.Plane057.material}
+          geometry={nodes.Plane057?.geometry}
+          material={nodes.Plane057?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -913,8 +914,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane058.geometry}
-          material={nodes.Plane058.material}
+          geometry={nodes.Plane058?.geometry}
+          material={nodes.Plane058?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -922,8 +923,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane059.geometry}
-          material={nodes.Plane059.material}
+          geometry={nodes.Plane059?.geometry}
+          material={nodes.Plane059?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -932,16 +933,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree003.geometry}
-        material={nodes.CoconutTree003.material}
+        geometry={nodes.CoconutTree003?.geometry}
+        material={nodes.CoconutTree003?.material}
         position={[1.43, -0.55, 15.82]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane060.geometry}
-          material={nodes.Plane060.material}
+          geometry={nodes.Plane060?.geometry}
+          material={nodes.Plane060?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -949,8 +950,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane061.geometry}
-          material={nodes.Plane061.material}
+          geometry={nodes.Plane061?.geometry}
+          material={nodes.Plane061?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -958,8 +959,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane062.geometry}
-          material={nodes.Plane062.material}
+          geometry={nodes.Plane062?.geometry}
+          material={nodes.Plane062?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -967,8 +968,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane063.geometry}
-          material={nodes.Plane063.material}
+          geometry={nodes.Plane063?.geometry}
+          material={nodes.Plane063?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -976,8 +977,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane064.geometry}
-          material={nodes.Plane064.material}
+          geometry={nodes.Plane064?.geometry}
+          material={nodes.Plane064?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -985,8 +986,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane065.geometry}
-          material={nodes.Plane065.material}
+          geometry={nodes.Plane065?.geometry}
+          material={nodes.Plane065?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -994,8 +995,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane066.geometry}
-          material={nodes.Plane066.material}
+          geometry={nodes.Plane066?.geometry}
+          material={nodes.Plane066?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1003,8 +1004,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane067.geometry}
-          material={nodes.Plane067.material}
+          geometry={nodes.Plane067?.geometry}
+          material={nodes.Plane067?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1012,8 +1013,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane068.geometry}
-          material={nodes.Plane068.material}
+          geometry={nodes.Plane068?.geometry}
+          material={nodes.Plane068?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1021,8 +1022,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane069.geometry}
-          material={nodes.Plane069.material}
+          geometry={nodes.Plane069?.geometry}
+          material={nodes.Plane069?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1030,8 +1031,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane070.geometry}
-          material={nodes.Plane070.material}
+          geometry={nodes.Plane070?.geometry}
+          material={nodes.Plane070?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1039,8 +1040,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane071.geometry}
-          material={nodes.Plane071.material}
+          geometry={nodes.Plane071?.geometry}
+          material={nodes.Plane071?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1048,8 +1049,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane072.geometry}
-          material={nodes.Plane072.material}
+          geometry={nodes.Plane072?.geometry}
+          material={nodes.Plane072?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1057,8 +1058,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane073.geometry}
-          material={nodes.Plane073.material}
+          geometry={nodes.Plane073?.geometry}
+          material={nodes.Plane073?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1066,8 +1067,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane074.geometry}
-          material={nodes.Plane074.material}
+          geometry={nodes.Plane074?.geometry}
+          material={nodes.Plane074?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1075,8 +1076,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane075.geometry}
-          material={nodes.Plane075.material}
+          geometry={nodes.Plane075?.geometry}
+          material={nodes.Plane075?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1084,8 +1085,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane076.geometry}
-          material={nodes.Plane076.material}
+          geometry={nodes.Plane076?.geometry}
+          material={nodes.Plane076?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1093,8 +1094,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane077.geometry}
-          material={nodes.Plane077.material}
+          geometry={nodes.Plane077?.geometry}
+          material={nodes.Plane077?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1102,8 +1103,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane078.geometry}
-          material={nodes.Plane078.material}
+          geometry={nodes.Plane078?.geometry}
+          material={nodes.Plane078?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1111,8 +1112,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane079.geometry}
-          material={nodes.Plane079.material}
+          geometry={nodes.Plane079?.geometry}
+          material={nodes.Plane079?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1121,16 +1122,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree004.geometry}
-        material={nodes.CoconutTree004.material}
+        geometry={nodes.CoconutTree004?.geometry}
+        material={nodes.CoconutTree004?.material}
         position={[10.06, -0.71, 12.6]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane080.geometry}
-          material={nodes.Plane080.material}
+          geometry={nodes.Plane080?.geometry}
+          material={nodes.Plane080?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1138,8 +1139,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane081.geometry}
-          material={nodes.Plane081.material}
+          geometry={nodes.Plane081?.geometry}
+          material={nodes.Plane081?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1147,8 +1148,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane082.geometry}
-          material={nodes.Plane082.material}
+          geometry={nodes.Plane082?.geometry}
+          material={nodes.Plane082?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1156,8 +1157,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane083.geometry}
-          material={nodes.Plane083.material}
+          geometry={nodes.Plane083?.geometry}
+          material={nodes.Plane083?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1165,8 +1166,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane084.geometry}
-          material={nodes.Plane084.material}
+          geometry={nodes.Plane084?.geometry}
+          material={nodes.Plane084?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1174,8 +1175,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane085.geometry}
-          material={nodes.Plane085.material}
+          geometry={nodes.Plane085?.geometry}
+          material={nodes.Plane085?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1183,8 +1184,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane086.geometry}
-          material={nodes.Plane086.material}
+          geometry={nodes.Plane086?.geometry}
+          material={nodes.Plane086?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1192,8 +1193,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane087.geometry}
-          material={nodes.Plane087.material}
+          geometry={nodes.Plane087?.geometry}
+          material={nodes.Plane087?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1201,8 +1202,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane088.geometry}
-          material={nodes.Plane088.material}
+          geometry={nodes.Plane088?.geometry}
+          material={nodes.Plane088?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1210,8 +1211,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane089.geometry}
-          material={nodes.Plane089.material}
+          geometry={nodes.Plane089?.geometry}
+          material={nodes.Plane089?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1219,8 +1220,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane090.geometry}
-          material={nodes.Plane090.material}
+          geometry={nodes.Plane090?.geometry}
+          material={nodes.Plane090?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1228,8 +1229,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane091.geometry}
-          material={nodes.Plane091.material}
+          geometry={nodes.Plane091?.geometry}
+          material={nodes.Plane091?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1237,8 +1238,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane092.geometry}
-          material={nodes.Plane092.material}
+          geometry={nodes.Plane092?.geometry}
+          material={nodes.Plane092?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1246,8 +1247,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane093.geometry}
-          material={nodes.Plane093.material}
+          geometry={nodes.Plane093?.geometry}
+          material={nodes.Plane093?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1255,8 +1256,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane094.geometry}
-          material={nodes.Plane094.material}
+          geometry={nodes.Plane094?.geometry}
+          material={nodes.Plane094?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1264,8 +1265,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane095.geometry}
-          material={nodes.Plane095.material}
+          geometry={nodes.Plane095?.geometry}
+          material={nodes.Plane095?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1273,8 +1274,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane096.geometry}
-          material={nodes.Plane096.material}
+          geometry={nodes.Plane096?.geometry}
+          material={nodes.Plane096?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1282,8 +1283,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane097.geometry}
-          material={nodes.Plane097.material}
+          geometry={nodes.Plane097?.geometry}
+          material={nodes.Plane097?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1291,8 +1292,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane098.geometry}
-          material={nodes.Plane098.material}
+          geometry={nodes.Plane098?.geometry}
+          material={nodes.Plane098?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1300,8 +1301,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane099.geometry}
-          material={nodes.Plane099.material}
+          geometry={nodes.Plane099?.geometry}
+          material={nodes.Plane099?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1310,16 +1311,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree005.geometry}
-        material={nodes.CoconutTree005.material}
+        geometry={nodes.CoconutTree005?.geometry}
+        material={nodes.CoconutTree005?.material}
         position={[-1.74, -0.73, 15.89]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane100.geometry}
-          material={nodes.Plane100.material}
+          geometry={nodes.Plane100?.geometry}
+          material={nodes.Plane100?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1327,8 +1328,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane101.geometry}
-          material={nodes.Plane101.material}
+          geometry={nodes.Plane101?.geometry}
+          material={nodes.Plane101?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1336,8 +1337,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane102.geometry}
-          material={nodes.Plane102.material}
+          geometry={nodes.Plane102?.geometry}
+          material={nodes.Plane102?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1345,8 +1346,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane103.geometry}
-          material={nodes.Plane103.material}
+          geometry={nodes.Plane103?.geometry}
+          material={nodes.Plane103?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1354,8 +1355,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane104.geometry}
-          material={nodes.Plane104.material}
+          geometry={nodes.Plane104?.geometry}
+          material={nodes.Plane104?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1363,8 +1364,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane105.geometry}
-          material={nodes.Plane105.material}
+          geometry={nodes.Plane105?.geometry}
+          material={nodes.Plane105?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1372,8 +1373,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane106.geometry}
-          material={nodes.Plane106.material}
+          geometry={nodes.Plane106?.geometry}
+          material={nodes.Plane106?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1381,8 +1382,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane107.geometry}
-          material={nodes.Plane107.material}
+          geometry={nodes.Plane107?.geometry}
+          material={nodes.Plane107?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1390,8 +1391,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane108.geometry}
-          material={nodes.Plane108.material}
+          geometry={nodes.Plane108?.geometry}
+          material={nodes.Plane108?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1399,8 +1400,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane109.geometry}
-          material={nodes.Plane109.material}
+          geometry={nodes.Plane109?.geometry}
+          material={nodes.Plane109?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1408,8 +1409,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane110.geometry}
-          material={nodes.Plane110.material}
+          geometry={nodes.Plane110?.geometry}
+          material={nodes.Plane110?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1417,8 +1418,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane111.geometry}
-          material={nodes.Plane111.material}
+          geometry={nodes.Plane111?.geometry}
+          material={nodes.Plane111?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1426,8 +1427,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane112.geometry}
-          material={nodes.Plane112.material}
+          geometry={nodes.Plane112?.geometry}
+          material={nodes.Plane112?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1435,8 +1436,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane113.geometry}
-          material={nodes.Plane113.material}
+          geometry={nodes.Plane113?.geometry}
+          material={nodes.Plane113?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1444,8 +1445,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane114.geometry}
-          material={nodes.Plane114.material}
+          geometry={nodes.Plane114?.geometry}
+          material={nodes.Plane114?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1453,8 +1454,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane115.geometry}
-          material={nodes.Plane115.material}
+          geometry={nodes.Plane115?.geometry}
+          material={nodes.Plane115?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1462,8 +1463,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane116.geometry}
-          material={nodes.Plane116.material}
+          geometry={nodes.Plane116?.geometry}
+          material={nodes.Plane116?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1471,8 +1472,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane117.geometry}
-          material={nodes.Plane117.material}
+          geometry={nodes.Plane117?.geometry}
+          material={nodes.Plane117?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1480,8 +1481,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane118.geometry}
-          material={nodes.Plane118.material}
+          geometry={nodes.Plane118?.geometry}
+          material={nodes.Plane118?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1489,8 +1490,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane119.geometry}
-          material={nodes.Plane119.material}
+          geometry={nodes.Plane119?.geometry}
+          material={nodes.Plane119?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1499,16 +1500,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree006.geometry}
-        material={nodes.CoconutTree006.material}
+        geometry={nodes.CoconutTree006?.geometry}
+        material={nodes.CoconutTree006?.material}
         position={[2.66, -0.57, 15.14]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane120.geometry}
-          material={nodes.Plane120.material}
+          geometry={nodes.Plane120?.geometry}
+          material={nodes.Plane120?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1516,8 +1517,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane121.geometry}
-          material={nodes.Plane121.material}
+          geometry={nodes.Plane121?.geometry}
+          material={nodes.Plane121?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1525,8 +1526,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane122.geometry}
-          material={nodes.Plane122.material}
+          geometry={nodes.Plane122?.geometry}
+          material={nodes.Plane122?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1534,8 +1535,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane123.geometry}
-          material={nodes.Plane123.material}
+          geometry={nodes.Plane123?.geometry}
+          material={nodes.Plane123?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1543,8 +1544,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane124.geometry}
-          material={nodes.Plane124.material}
+          geometry={nodes.Plane124?.geometry}
+          material={nodes.Plane124?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1552,8 +1553,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane125.geometry}
-          material={nodes.Plane125.material}
+          geometry={nodes.Plane125?.geometry}
+          material={nodes.Plane125?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1561,8 +1562,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane126.geometry}
-          material={nodes.Plane126.material}
+          geometry={nodes.Plane126?.geometry}
+          material={nodes.Plane126?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1570,8 +1571,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane127.geometry}
-          material={nodes.Plane127.material}
+          geometry={nodes.Plane127?.geometry}
+          material={nodes.Plane127?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1579,8 +1580,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane128.geometry}
-          material={nodes.Plane128.material}
+          geometry={nodes.Plane128?.geometry}
+          material={nodes.Plane128?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1588,8 +1589,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane129.geometry}
-          material={nodes.Plane129.material}
+          geometry={nodes.Plane129?.geometry}
+          material={nodes.Plane129?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1597,8 +1598,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane130.geometry}
-          material={nodes.Plane130.material}
+          geometry={nodes.Plane130?.geometry}
+          material={nodes.Plane130?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1606,8 +1607,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane131.geometry}
-          material={nodes.Plane131.material}
+          geometry={nodes.Plane131?.geometry}
+          material={nodes.Plane131?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1615,8 +1616,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane132.geometry}
-          material={nodes.Plane132.material}
+          geometry={nodes.Plane132?.geometry}
+          material={nodes.Plane132?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1624,8 +1625,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane133.geometry}
-          material={nodes.Plane133.material}
+          geometry={nodes.Plane133?.geometry}
+          material={nodes.Plane133?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1633,8 +1634,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane134.geometry}
-          material={nodes.Plane134.material}
+          geometry={nodes.Plane134?.geometry}
+          material={nodes.Plane134?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1642,8 +1643,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane135.geometry}
-          material={nodes.Plane135.material}
+          geometry={nodes.Plane135?.geometry}
+          material={nodes.Plane135?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1651,8 +1652,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane136.geometry}
-          material={nodes.Plane136.material}
+          geometry={nodes.Plane136?.geometry}
+          material={nodes.Plane136?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1660,8 +1661,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane137.geometry}
-          material={nodes.Plane137.material}
+          geometry={nodes.Plane137?.geometry}
+          material={nodes.Plane137?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1669,8 +1670,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane138.geometry}
-          material={nodes.Plane138.material}
+          geometry={nodes.Plane138?.geometry}
+          material={nodes.Plane138?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1678,8 +1679,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane139.geometry}
-          material={nodes.Plane139.material}
+          geometry={nodes.Plane139?.geometry}
+          material={nodes.Plane139?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1688,16 +1689,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree007.geometry}
-        material={nodes.CoconutTree007.material}
+        geometry={nodes.CoconutTree007?.geometry}
+        material={nodes.CoconutTree007?.material}
         position={[4.3, -0.37, 15.05]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane140.geometry}
-          material={nodes.Plane140.material}
+          geometry={nodes.Plane140?.geometry}
+          material={nodes.Plane140?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1705,8 +1706,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane141.geometry}
-          material={nodes.Plane141.material}
+          geometry={nodes.Plane141?.geometry}
+          material={nodes.Plane141?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1714,8 +1715,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane142.geometry}
-          material={nodes.Plane142.material}
+          geometry={nodes.Plane142?.geometry}
+          material={nodes.Plane142?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1723,8 +1724,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane143.geometry}
-          material={nodes.Plane143.material}
+          geometry={nodes.Plane143?.geometry}
+          material={nodes.Plane143?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1732,8 +1733,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane144.geometry}
-          material={nodes.Plane144.material}
+          geometry={nodes.Plane144?.geometry}
+          material={nodes.Plane144?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1741,8 +1742,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane145.geometry}
-          material={nodes.Plane145.material}
+          geometry={nodes.Plane145?.geometry}
+          material={nodes.Plane145?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1750,8 +1751,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane146.geometry}
-          material={nodes.Plane146.material}
+          geometry={nodes.Plane146?.geometry}
+          material={nodes.Plane146?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1759,8 +1760,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane147.geometry}
-          material={nodes.Plane147.material}
+          geometry={nodes.Plane147?.geometry}
+          material={nodes.Plane147?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1768,8 +1769,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane148.geometry}
-          material={nodes.Plane148.material}
+          geometry={nodes.Plane148?.geometry}
+          material={nodes.Plane148?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1777,8 +1778,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane149.geometry}
-          material={nodes.Plane149.material}
+          geometry={nodes.Plane149?.geometry}
+          material={nodes.Plane149?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1786,8 +1787,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane150.geometry}
-          material={nodes.Plane150.material}
+          geometry={nodes.Plane150?.geometry}
+          material={nodes.Plane150?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1795,8 +1796,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane151.geometry}
-          material={nodes.Plane151.material}
+          geometry={nodes.Plane151?.geometry}
+          material={nodes.Plane151?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1804,8 +1805,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane152.geometry}
-          material={nodes.Plane152.material}
+          geometry={nodes.Plane152?.geometry}
+          material={nodes.Plane152?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1813,8 +1814,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane153.geometry}
-          material={nodes.Plane153.material}
+          geometry={nodes.Plane153?.geometry}
+          material={nodes.Plane153?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1822,8 +1823,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane154.geometry}
-          material={nodes.Plane154.material}
+          geometry={nodes.Plane154?.geometry}
+          material={nodes.Plane154?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1831,8 +1832,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane155.geometry}
-          material={nodes.Plane155.material}
+          geometry={nodes.Plane155?.geometry}
+          material={nodes.Plane155?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1840,8 +1841,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane156.geometry}
-          material={nodes.Plane156.material}
+          geometry={nodes.Plane156?.geometry}
+          material={nodes.Plane156?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1849,8 +1850,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane157.geometry}
-          material={nodes.Plane157.material}
+          geometry={nodes.Plane157?.geometry}
+          material={nodes.Plane157?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1858,8 +1859,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane158.geometry}
-          material={nodes.Plane158.material}
+          geometry={nodes.Plane158?.geometry}
+          material={nodes.Plane158?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1867,8 +1868,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane159.geometry}
-          material={nodes.Plane159.material}
+          geometry={nodes.Plane159?.geometry}
+          material={nodes.Plane159?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1877,16 +1878,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree008.geometry}
-        material={nodes.CoconutTree008.material}
+        geometry={nodes.CoconutTree008?.geometry}
+        material={nodes.CoconutTree008?.material}
         position={[5.84, -0.5, 14.75]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane160.geometry}
-          material={nodes.Plane160.material}
+          geometry={nodes.Plane160?.geometry}
+          material={nodes.Plane160?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1894,8 +1895,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane161.geometry}
-          material={nodes.Plane161.material}
+          geometry={nodes.Plane161?.geometry}
+          material={nodes.Plane161?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1903,8 +1904,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane162.geometry}
-          material={nodes.Plane162.material}
+          geometry={nodes.Plane162?.geometry}
+          material={nodes.Plane162?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -1912,8 +1913,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane163.geometry}
-          material={nodes.Plane163.material}
+          geometry={nodes.Plane163?.geometry}
+          material={nodes.Plane163?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -1921,8 +1922,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane164.geometry}
-          material={nodes.Plane164.material}
+          geometry={nodes.Plane164?.geometry}
+          material={nodes.Plane164?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -1930,8 +1931,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane165.geometry}
-          material={nodes.Plane165.material}
+          geometry={nodes.Plane165?.geometry}
+          material={nodes.Plane165?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -1939,8 +1940,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane166.geometry}
-          material={nodes.Plane166.material}
+          geometry={nodes.Plane166?.geometry}
+          material={nodes.Plane166?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -1948,8 +1949,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane167.geometry}
-          material={nodes.Plane167.material}
+          geometry={nodes.Plane167?.geometry}
+          material={nodes.Plane167?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -1957,8 +1958,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane168.geometry}
-          material={nodes.Plane168.material}
+          geometry={nodes.Plane168?.geometry}
+          material={nodes.Plane168?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -1966,8 +1967,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane169.geometry}
-          material={nodes.Plane169.material}
+          geometry={nodes.Plane169?.geometry}
+          material={nodes.Plane169?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -1975,8 +1976,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane170.geometry}
-          material={nodes.Plane170.material}
+          geometry={nodes.Plane170?.geometry}
+          material={nodes.Plane170?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -1984,8 +1985,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane171.geometry}
-          material={nodes.Plane171.material}
+          geometry={nodes.Plane171?.geometry}
+          material={nodes.Plane171?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -1993,8 +1994,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane172.geometry}
-          material={nodes.Plane172.material}
+          geometry={nodes.Plane172?.geometry}
+          material={nodes.Plane172?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -2002,8 +2003,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane173.geometry}
-          material={nodes.Plane173.material}
+          geometry={nodes.Plane173?.geometry}
+          material={nodes.Plane173?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -2011,8 +2012,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane174.geometry}
-          material={nodes.Plane174.material}
+          geometry={nodes.Plane174?.geometry}
+          material={nodes.Plane174?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -2020,8 +2021,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane175.geometry}
-          material={nodes.Plane175.material}
+          geometry={nodes.Plane175?.geometry}
+          material={nodes.Plane175?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -2029,8 +2030,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane176.geometry}
-          material={nodes.Plane176.material}
+          geometry={nodes.Plane176?.geometry}
+          material={nodes.Plane176?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -2038,8 +2039,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane177.geometry}
-          material={nodes.Plane177.material}
+          geometry={nodes.Plane177?.geometry}
+          material={nodes.Plane177?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -2047,8 +2048,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane178.geometry}
-          material={nodes.Plane178.material}
+          geometry={nodes.Plane178?.geometry}
+          material={nodes.Plane178?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -2056,8 +2057,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane179.geometry}
-          material={nodes.Plane179.material}
+          geometry={nodes.Plane179?.geometry}
+          material={nodes.Plane179?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -2066,16 +2067,16 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.CoconutTree009.geometry}
-        material={nodes.CoconutTree009.material}
+        geometry={nodes.CoconutTree009?.geometry}
+        material={nodes.CoconutTree009?.material}
         position={[7.03, -0.42, 14.03]}
         scale={[0.07, 0.07, 0.07]}
       >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane180.geometry}
-          material={nodes.Plane180.material}
+          geometry={nodes.Plane180?.geometry}
+          material={nodes.Plane180?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -2083,8 +2084,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane181.geometry}
-          material={nodes.Plane181.material}
+          geometry={nodes.Plane181?.geometry}
+          material={nodes.Plane181?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -2092,8 +2093,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane182.geometry}
-          material={nodes.Plane182.material}
+          geometry={nodes.Plane182?.geometry}
+          material={nodes.Plane182?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -2101,8 +2102,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane183.geometry}
-          material={nodes.Plane183.material}
+          geometry={nodes.Plane183?.geometry}
+          material={nodes.Plane183?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -2110,8 +2111,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane184.geometry}
-          material={nodes.Plane184.material}
+          geometry={nodes.Plane184?.geometry}
+          material={nodes.Plane184?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -2119,8 +2120,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane185.geometry}
-          material={nodes.Plane185.material}
+          geometry={nodes.Plane185?.geometry}
+          material={nodes.Plane185?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -2128,8 +2129,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane186.geometry}
-          material={nodes.Plane186.material}
+          geometry={nodes.Plane186?.geometry}
+          material={nodes.Plane186?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -2137,8 +2138,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane187.geometry}
-          material={nodes.Plane187.material}
+          geometry={nodes.Plane187?.geometry}
+          material={nodes.Plane187?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -2146,8 +2147,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane188.geometry}
-          material={nodes.Plane188.material}
+          geometry={nodes.Plane188?.geometry}
+          material={nodes.Plane188?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -2155,8 +2156,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane189.geometry}
-          material={nodes.Plane189.material}
+          geometry={nodes.Plane189?.geometry}
+          material={nodes.Plane189?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -2164,8 +2165,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane190.geometry}
-          material={nodes.Plane190.material}
+          geometry={nodes.Plane190?.geometry}
+          material={nodes.Plane190?.material}
           position={[2.61, 16.6, -2.55]}
           rotation={[-0.09, -0.1, -0.23]}
           scale={[4.66, 4.66, 1.84]}
@@ -2173,8 +2174,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane191.geometry}
-          material={nodes.Plane191.material}
+          geometry={nodes.Plane191?.geometry}
+          material={nodes.Plane191?.material}
           position={[1.56, 16.32, -4.85]}
           rotation={[-0.08, 1.14, -0.34]}
           scale={[4.17, 4.17, 1.64]}
@@ -2182,8 +2183,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane192.geometry}
-          material={nodes.Plane192.material}
+          geometry={nodes.Plane192?.geometry}
+          material={nodes.Plane192?.material}
           position={[-1.11, 16.92, -4.28]}
           rotation={[-2.74, 0.65, 2.82]}
           scale={[4.38, 4.38, 1.73]}
@@ -2191,8 +2192,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane193.geometry}
-          material={nodes.Plane193.material}
+          geometry={nodes.Plane193?.geometry}
+          material={nodes.Plane193?.material}
           position={[-1.51, 16.6, -1.7]}
           rotation={[-3.04, -0.5, 3]}
           scale={[4.52, 4.52, 1.78]}
@@ -2200,8 +2201,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane194.geometry}
-          material={nodes.Plane194.material}
+          geometry={nodes.Plane194?.geometry}
+          material={nodes.Plane194?.material}
           position={[0.5, 16.6, -1.23]}
           rotation={[0.16, -1.19, 0.25]}
           scale={[4.77, 4.77, 1.88]}
@@ -2209,8 +2210,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane195.geometry}
-          material={nodes.Plane195.material}
+          geometry={nodes.Plane195?.geometry}
+          material={nodes.Plane195?.material}
           position={[0.07, 17.29, -4.28]}
           rotation={[2.42, 1.37, -2.26]}
           scale={[2.6, 2.6, 1.03]}
@@ -2218,8 +2219,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane196.geometry}
-          material={nodes.Plane196.material}
+          geometry={nodes.Plane196?.geometry}
+          material={nodes.Plane196?.material}
           position={[1.64, 17.29, -3.38]}
           rotation={[0.06, 0.46, -0.13]}
           scale={[2.3, 2.3, 0.91]}
@@ -2227,8 +2228,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane197.geometry}
-          material={nodes.Plane197.material}
+          geometry={nodes.Plane197?.geometry}
+          material={nodes.Plane197?.material}
           position={[1.64, 17.01, -1.83]}
           rotation={[0.06, -0.53, -0.08]}
           scale={[2.3, 2.3, 0.91]}
@@ -2236,8 +2237,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane198.geometry}
-          material={nodes.Plane198.material}
+          geometry={nodes.Plane198?.geometry}
+          material={nodes.Plane198?.material}
           position={[0.24, 17.23, -1.65]}
           rotation={[-2.91, -1.15, -2.89]}
           scale={[2.3, 2.3, 0.91]}
@@ -2245,8 +2246,8 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Plane199.geometry}
-          material={nodes.Plane199.material}
+          geometry={nodes.Plane199?.geometry}
+          material={nodes.Plane199?.material}
           position={[-0.66, 17.29, -3.05]}
           rotation={[2.69, 0.02, -2.92]}
           scale={[2.21, 2.21, 0.87]}
@@ -2255,40 +2256,40 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder003.geometry}
-        material={nodes.Cylinder003.material}
+        geometry={nodes.Cylinder003?.geometry}
+        material={nodes.Cylinder003?.material}
         position={[-1.09, -0.65, 3.59]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder004.geometry}
-        material={nodes.Cylinder004.material}
+        geometry={nodes.Cylinder004?.geometry}
+        material={nodes.Cylinder004?.material}
         position={[-1.09, -0.65, 3.91]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder005.geometry}
-        material={nodes.Cylinder005.material}
+        geometry={nodes.Cylinder005?.geometry}
+        material={nodes.Cylinder005?.material}
         position={[-1.21, -0.65, 3.59]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder006.geometry}
-        material={nodes.Cylinder006.material}
+        geometry={nodes.Cylinder006?.geometry}
+        material={nodes.Cylinder006?.material}
         position={[-1.21, -0.65, 3.91]}
         scale={[0.25, 0.25, 0.25]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder007.geometry}
-        material={nodes.Cylinder007.material}
+        geometry={nodes.Cylinder007?.geometry}
+        material={nodes.Cylinder007?.material}
         position={[-0.73, -0.65, 7.33]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2296,8 +2297,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder008.geometry}
-        material={nodes.Cylinder008.material}
+        geometry={nodes.Cylinder008?.geometry}
+        material={nodes.Cylinder008?.material}
         position={[-0.65, -0.65, 7.64]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2305,8 +2306,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder009.geometry}
-        material={nodes.Cylinder009.material}
+        geometry={nodes.Cylinder009?.geometry}
+        material={nodes.Cylinder009?.material}
         position={[-0.85, -0.65, 7.36]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2314,8 +2315,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder010.geometry}
-        material={nodes.Cylinder010.material}
+        geometry={nodes.Cylinder010?.geometry}
+        material={nodes.Cylinder010?.material}
         position={[-0.77, -0.65, 7.67]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2323,8 +2324,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder011.geometry}
-        material={nodes.Cylinder011.material}
+        geometry={nodes.Cylinder011?.geometry}
+        material={nodes.Cylinder011?.material}
         position={[2.82, -0.65, 6.4]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2332,8 +2333,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder012.geometry}
-        material={nodes.Cylinder012.material}
+        geometry={nodes.Cylinder012?.geometry}
+        material={nodes.Cylinder012?.material}
         position={[2.91, -0.65, 6.71]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2341,8 +2342,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder013.geometry}
-        material={nodes.Cylinder013.material}
+        geometry={nodes.Cylinder013?.geometry}
+        material={nodes.Cylinder013?.material}
         position={[2.7, -0.65, 6.43]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2350,8 +2351,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder014.geometry}
-        material={nodes.Cylinder014.material}
+        geometry={nodes.Cylinder014?.geometry}
+        material={nodes.Cylinder014?.material}
         position={[2.79, -0.65, 6.75]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2359,8 +2360,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder015.geometry}
-        material={nodes.Cylinder015.material}
+        geometry={nodes.Cylinder015?.geometry}
+        material={nodes.Cylinder015?.material}
         position={[-0.2, -0.65, 9.43]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2368,8 +2369,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder016.geometry}
-        material={nodes.Cylinder016.material}
+        geometry={nodes.Cylinder016?.geometry}
+        material={nodes.Cylinder016?.material}
         position={[-0.12, -0.65, 9.74]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2377,8 +2378,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder017.geometry}
-        material={nodes.Cylinder017.material}
+        geometry={nodes.Cylinder017?.geometry}
+        material={nodes.Cylinder017?.material}
         position={[-0.32, -0.65, 9.46]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2386,8 +2387,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder018.geometry}
-        material={nodes.Cylinder018.material}
+        geometry={nodes.Cylinder018?.geometry}
+        material={nodes.Cylinder018?.material}
         position={[-0.24, -0.65, 9.77]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2395,8 +2396,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder019.geometry}
-        material={nodes.Cylinder019.material}
+        geometry={nodes.Cylinder019?.geometry}
+        material={nodes.Cylinder019?.material}
         position={[3.38, -0.65, 8.45]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2404,8 +2405,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder020.geometry}
-        material={nodes.Cylinder020.material}
+        geometry={nodes.Cylinder020?.geometry}
+        material={nodes.Cylinder020?.material}
         position={[3.47, -0.65, 8.77]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2413,8 +2414,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder021.geometry}
-        material={nodes.Cylinder021.material}
+        geometry={nodes.Cylinder021?.geometry}
+        material={nodes.Cylinder021?.material}
         position={[3.26, -0.65, 8.49]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2422,8 +2423,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder022.geometry}
-        material={nodes.Cylinder022.material}
+        geometry={nodes.Cylinder022?.geometry}
+        material={nodes.Cylinder022?.material}
         position={[3.35, -0.65, 8.8]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2431,8 +2432,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder024.geometry}
-        material={nodes.Cylinder024.material}
+        geometry={nodes.Cylinder024?.geometry}
+        material={nodes.Cylinder024?.material}
         position={[1.76, -0.7, 10.48]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2440,8 +2441,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder023.geometry}
-        material={nodes.Cylinder023.material}
+        geometry={nodes.Cylinder023?.geometry}
+        material={nodes.Cylinder023?.material}
         position={[2.1, -0.7, 10.38]}
         rotation={[0, 0.27, 0]}
         scale={[0.25, 0.25, 0.25]}
@@ -2450,142 +2451,143 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube037.geometry}
-          material={nodes.Cube037.material}
+          geometry={nodes.Cube037?.geometry}
+          material={nodes.Cube037?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube037_1.geometry}
-          material={nodes.Cube037_1.material}
+          geometry={nodes.Cube037_1?.geometry}
+          material={nodes.Cube037_1?.material}
         />
       </group>
       <group position={[-2.55, -0.29, 14.49]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone001.geometry}
-          material={nodes.Cone001.material}
+          geometry={nodes.Cone001?.geometry}
+          material={nodes.Cone001?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone001_1.geometry}
-          material={nodes.Cone001_1.material}
+          geometry={nodes.Cone001_1?.geometry}
+          material={nodes.Cone001_1?.material}
         />
       </group>
       <group position={[0.36, -0.33, 14.92]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube071.geometry}
-          material={nodes.Cube071.material}
+          geometry={nodes.Cube071?.geometry}
+          material={nodes.Cube071?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube071_1.geometry}
-          material={nodes.Cube071_1.material}
+          geometry={nodes.Cube071_1?.geometry}
+          material={nodes.Cube071_1?.material}
         />
       </group>
       <group position={[0.48, -0.11, 14.86]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone002.geometry}
-          material={nodes.Cone002.material}
+          geometry={nodes.Cone002?.geometry}
+          material={nodes.Cone002?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone002_1.geometry}
-          material={nodes.Cone002_1.material}
+          geometry={nodes.Cone002_1?.geometry}
+          material={nodes.Cone002_1?.material}
         />
       </group>
       <group position={[5.13, -0.35, 13.95]} rotation={[0, 0.26, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube072.geometry}
-          material={nodes.Cube072.material}
+          geometry={nodes.Cube072?.geometry}
+          material={nodes.Cube072?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube072_1.geometry}
-          material={nodes.Cube072_1.material}
+          geometry={nodes.Cube072_1?.geometry}
+          material={nodes.Cube072_1?.material}
         />
       </group>
       <group position={[5.23, -0.12, 13.87]} rotation={[0, 0.26, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone004.geometry}
-          material={nodes.Cone004.material}
+          geometry={nodes.Cone004?.geometry}
+          material={nodes.Cone004?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone004_1.geometry}
-          material={nodes.Cone004_1.material}
+          geometry={nodes.Cone004_1?.geometry}
+          material={nodes.Cone004_1?.material}
         />
       </group>
       <group position={[9.41, -0.58, 12.31]} rotation={[0, 0.43, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube073.geometry}
-          material={nodes.Cube073.material}
+          geometry={nodes.Cube073?.geometry}
+          material={nodes.Cube073?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube073_1.geometry}
-          material={nodes.Cube073_1.material}
+          geometry={nodes.Cube073_1?.geometry}
+          material={nodes.Cube073_1?.material}
         />
       </group>
       <group position={[9.49, -0.37, 12.21]} rotation={[0, 0.43, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone005.geometry}
-          material={nodes.Cone005.material}
+          geometry={nodes.Cone005?.geometry}
+          material={nodes.Cone005?.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone005_1.geometry}
-          material={nodes.Cone005_1.material}
+          geometry={nodes.Cone005_1?.geometry}
+          material={nodes.Cone005_1?.material}
         />
       </group>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.SandPlane.geometry}
+        geometry={nodes.SandPlane?.geometry}
         material={materials.Sand}
         position={[1.95, -0.66, 6.02]}
         rotation={[0, 0.28, 0]}
       />
       <mesh
+        // @ts-ignore
         ref={group}
         name="SeaWater"
         castShadow
         receiveShadow
-        geometry={nodes.SeaWater.geometry}
+        geometry={nodes.SeaWater?.geometry}
         material={materials.SeaWater}
         position={[1.95, -0.66, 6.02]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere.geometry}
-        material={nodes.Icosphere.material}
+        geometry={nodes.Icosphere?.geometry}
+        material={nodes.Icosphere?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere001.geometry}
-        material={nodes.Icosphere001.material}
+        geometry={nodes.Icosphere001?.geometry}
+        material={nodes.Icosphere001?.material}
         position={[7.04, -0.83, 2.27]}
         rotation={[0, 1.12, 0]}
         scale={[0.77, 0.35, 0.79]}
@@ -2593,8 +2595,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere002.geometry}
-        material={nodes.Icosphere002.material}
+        geometry={nodes.Icosphere002?.geometry}
+        material={nodes.Icosphere002?.material}
         position={[7.47, -0.83, 3.74]}
         rotation={[0, -1.26, 0]}
         scale={[0.73, 0.45, 0.73]}
@@ -2602,8 +2604,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere003.geometry}
-        material={nodes.Icosphere003.material}
+        geometry={nodes.Icosphere003?.geometry}
+        material={nodes.Icosphere003?.material}
         position={[6.31, -0.83, -0.06]}
         rotation={[0, 0.61, 0]}
         scale={[0.61, 0.37, 0.78]}
@@ -2611,41 +2613,41 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere004.geometry}
-        material={nodes.Icosphere004.material}
+        geometry={nodes.Icosphere004?.geometry}
+        material={nodes.Icosphere004?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere005.geometry}
-        material={nodes.Icosphere005.material}
+        geometry={nodes.Icosphere005?.geometry}
+        material={nodes.Icosphere005?.material}
         position={[-4.58, -0.83, 5.41]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere006.geometry}
-        material={nodes.Icosphere006.material}
+        geometry={nodes.Icosphere006?.geometry}
+        material={nodes.Icosphere006?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere007.geometry}
-        material={nodes.Icosphere007.material}
+        geometry={nodes.Icosphere007?.geometry}
+        material={nodes.Icosphere007?.material}
         position={[-4.04, -0.83, 8.01]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere008.geometry}
-        material={nodes.Icosphere008.material}
+        geometry={nodes.Icosphere008?.geometry}
+        material={nodes.Icosphere008?.material}
         position={[5.45, -0.82, -1.5]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere009.geometry}
-        material={nodes.Icosphere009.material}
+        geometry={nodes.Icosphere009?.geometry}
+        material={nodes.Icosphere009?.material}
         position={[4.6, -0.83, -0.72]}
         rotation={[Math.PI, -0.91, Math.PI]}
         scale={[0.65, 0.4, 0.65]}
@@ -2653,8 +2655,8 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere010.geometry}
-        material={nodes.Icosphere010.material}
+        geometry={nodes.Icosphere010?.geometry}
+        material={nodes.Icosphere010?.material}
         position={[4.27, -0.85, -2.45]}
         rotation={[0, 1.44, 0]}
         scale={[1.01, 0.61, 1.04]}
@@ -2662,32 +2664,32 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere011.geometry}
-        material={nodes.Icosphere011.material}
+        geometry={nodes.Icosphere011?.geometry}
+        material={nodes.Icosphere011?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere012.geometry}
-        material={nodes.Icosphere012.material}
+        geometry={nodes.Icosphere012?.geometry}
+        material={nodes.Icosphere012?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere013.geometry}
-        material={nodes.Icosphere013.material}
+        geometry={nodes.Icosphere013?.geometry}
+        material={nodes.Icosphere013?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere015.geometry}
-        material={nodes.Icosphere015.material}
+        geometry={nodes.Icosphere015?.geometry}
+        material={nodes.Icosphere015?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere016.geometry}
-        material={nodes.Icosphere016.material}
+        geometry={nodes.Icosphere016?.geometry}
+        material={nodes.Icosphere016?.material}
         position={[-4.22, -0.83, 6.77]}
         rotation={[-3.13, -0.11, 3.07]}
         scale={[0.61, 0.37, 0.61]}
@@ -2695,23 +2697,23 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.UPlant1.geometry}
-        material={nodes.UPlant1.material}
+        geometry={nodes.UPlant1?.geometry}
+        material={nodes.UPlant1?.material}
         position={[5.06, -0.9, 2.68]}
         rotation={[0, 0.12, 0]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.UPlant2.geometry}
-        material={nodes.UPlant2.material}
+        geometry={nodes.UPlant2?.geometry}
+        material={nodes.UPlant2?.material}
         position={[-2.8, -0.89, 4.21]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere017.geometry}
-        material={nodes.Icosphere017.material}
+        geometry={nodes.Icosphere017?.geometry}
+        material={nodes.Icosphere017?.material}
         position={[5.8, -0.83, 1]}
         rotation={[Math.PI, -0.91, Math.PI]}
         scale={[0.65, 0.4, 0.65]}
@@ -2719,27 +2721,27 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.UPlant1001.geometry}
-        material={nodes.UPlant1001.material}
+        geometry={nodes.UPlant1001?.geometry}
+        material={nodes.UPlant1001?.material}
         position={[0.84, -0.89, 3.54]}
         rotation={[0, -0.22, 0]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere018.geometry}
-        material={nodes.Icosphere018.material}
+        geometry={nodes.Icosphere018?.geometry}
+        material={nodes.Icosphere018?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Icosphere019.geometry}
-        material={nodes.Icosphere019.material}
+        geometry={nodes.Icosphere019?.geometry}
+        material={nodes.Icosphere019?.material}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Plane200.geometry}
+        geometry={nodes.Plane200?.geometry}
         material={materials["Material.003"]}
         position={[-2.89, -0.43, 14.46]}
       />

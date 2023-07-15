@@ -7,6 +7,7 @@ import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials } = useGLTF("/3d/hut.gltf");
   const { dark } = props;
   const intensity = dark ? 1 : 0;
@@ -36,7 +37,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube002.geometry}
+          geometry={nodes.Cube002?.geometry}
           material={nodes.Cube002.material}
           position={[-0.26, 0.85, -3.51]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -45,7 +46,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube004.geometry}
+          geometry={nodes.Cube004?.geometry}
           material={nodes.Cube004.material}
           position={[0.1, 0.85, -3.55]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -54,7 +55,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube006.geometry}
+          geometry={nodes.Cube006?.geometry}
           material={nodes.Cube006.material}
           position={[-2.01, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -63,7 +64,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube007.geometry}
+          geometry={nodes.Cube007?.geometry}
           material={nodes.Cube007.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -72,7 +73,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube008.geometry}
+          geometry={nodes.Cube008?.geometry}
           material={nodes.Cube008.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -81,7 +82,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube009.geometry}
+          geometry={nodes.Cube009?.geometry}
           material={nodes.Cube009.material}
           position={[-2.01, 0.59, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -90,7 +91,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube010.geometry}
+          geometry={nodes.Cube010?.geometry}
           material={nodes.Cube010.material}
           position={[-1.68, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -99,7 +100,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube011.geometry}
+          geometry={nodes.Cube011?.geometry}
           material={nodes.Cube011.material}
           position={[-1.68, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -108,7 +109,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube012.geometry}
+          geometry={nodes.Cube012?.geometry}
           material={nodes.Cube012.material}
           position={[-1.68, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -117,7 +118,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube013.geometry}
+          geometry={nodes.Cube013?.geometry}
           material={nodes.Cube013.material}
           position={[-1.68, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -126,7 +127,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube014.geometry}
+          geometry={nodes.Cube014?.geometry}
           material={nodes.Cube014.material}
           position={[-1.68, 0.13, -5.28]}
           rotation={[Math.PI, -1.57, Math.PI]}
@@ -135,7 +136,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube015.geometry}
+          geometry={nodes.Cube015?.geometry}
           material={nodes.Cube015.material}
           position={[-1.41, 0.14, -3.75]}
           rotation={[0, -0.78, 0]}
@@ -144,7 +145,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube016.geometry}
+          geometry={nodes.Cube016?.geometry}
           material={nodes.Cube016.material}
           position={[-1.75, 0.36, -3.41]}
           rotation={[-0.94, -0.52, 2.54]}
@@ -153,7 +154,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube017.geometry}
+          geometry={nodes.Cube017?.geometry}
           material={nodes.Cube017.material}
           position={[-1.73, 0.39, -3.44]}
           rotation={[-0.94, -0.52, 2.54]}
@@ -162,7 +163,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube018.geometry}
+          geometry={nodes.Cube018?.geometry}
           material={nodes.Cube018.material}
           position={[-1.28, 0.21, -3.89]}
           rotation={[0, -0.78, -Math.PI]}
@@ -171,7 +172,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube019.geometry}
+          geometry={nodes.Cube019?.geometry}
           material={nodes.Cube019.material}
           position={[-1.8, 0.27, -3.36]}
           rotation={[0.99, -0.5, -2.52]}
@@ -180,7 +181,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube020.geometry}
+          geometry={nodes.Cube020?.geometry}
           material={nodes.Cube020.material}
           position={[-2.31, 0.27, -4.01]}
           rotation={[0.99, -0.5, -2.52]}
@@ -189,7 +190,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube021.geometry}
+          geometry={nodes.Cube021?.geometry}
           material={nodes.Cube021.material}
           position={[-1.79, 0.21, -4.54]}
           rotation={[0, -0.78, -Math.PI]}
@@ -198,7 +199,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube022.geometry}
+          geometry={nodes.Cube022?.geometry}
           material={nodes.Cube022.material}
           position={[-2.24, 0.39, -4.09]}
           rotation={[-0.94, -0.52, 2.54]}
@@ -207,7 +208,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube023.geometry}
+          geometry={nodes.Cube023?.geometry}
           material={nodes.Cube023.material}
           position={[-2.26, 0.36, -4.06]}
           rotation={[-0.94, -0.52, 2.54]}
@@ -216,7 +217,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube024.geometry}
+          geometry={nodes.Cube024?.geometry}
           material={nodes.Cube024.material}
           position={[-1.93, 0.14, -4.4]}
           rotation={[0, -0.78, 0]}
@@ -225,7 +226,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube025.geometry}
+          geometry={nodes.Cube025?.geometry}
           material={nodes.Cube025.material}
           position={[1.77, -0.52, -5.53]}
           scale={[1.95, 0.5, 1.3]}
@@ -233,7 +234,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube026.geometry}
+          geometry={nodes.Cube026?.geometry}
           material={nodes.Cube026.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -242,7 +243,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube027.geometry}
+          geometry={nodes.Cube027?.geometry}
           material={nodes.Cube027.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -251,7 +252,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube028.geometry}
+          geometry={nodes.Cube028?.geometry}
           material={nodes.Cube028.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -260,7 +261,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube029.geometry}
+          geometry={nodes.Cube029?.geometry}
           material={nodes.Cube029.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -269,7 +270,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube030.geometry}
+          geometry={nodes.Cube030?.geometry}
           material={nodes.Cube030.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -278,7 +279,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube031.geometry}
+          geometry={nodes.Cube031?.geometry}
           material={nodes.Cube031.material}
           position={[3.68, 0.13, -3.91]}
           rotation={[-Math.PI, 0, -Math.PI]}
@@ -287,7 +288,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube033.geometry}
+          geometry={nodes.Cube033?.geometry}
           material={nodes.Cube033.material}
           position={[1.77, -0.51, -6.61]}
           scale={[1.83, 0.44, 0.03]}
@@ -295,7 +296,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube035.geometry}
+          geometry={nodes.Cube035?.geometry}
           material={nodes.Cube035.material}
           position={[-0.11, 0.87, -0.16]}
           scale={[0.6, 0.64, 0.1]}
@@ -303,7 +304,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube036.geometry}
+          geometry={nodes.Cube036?.geometry}
           material={nodes.Cube036.material}
           position={[-0.11, 0.87, -0.15]}
           scale={[0.02, 0.58, 0.03]}
@@ -311,7 +312,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube037.geometry}
+          geometry={nodes.Cube037?.geometry}
           material={nodes.Cube037.material}
           position={[0.17, 0.87, -0.15]}
           scale={[0.26, 0.58, 0.02]}
@@ -319,7 +320,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder.geometry}
+          geometry={nodes.Cylinder?.geometry}
           material={nodes.Cylinder.material}
           position={[-1.61, 0.8, -4.16]}
           scale={[0.3, 1.42, 0.3]}
@@ -327,70 +328,70 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder001.geometry}
+          geometry={nodes.Cylinder001?.geometry}
           material={nodes.Cylinder001.material}
           position={[-3.02, -1.2, -5.17]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder002.geometry}
+          geometry={nodes.Cylinder002?.geometry}
           material={nodes.Cylinder002.material}
           position={[-1.8, -1.2, -0.2]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder003.geometry}
+          geometry={nodes.Cylinder003?.geometry}
           material={nodes.Cylinder003.material}
           position={[3.52, -1.2, -0.2]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder004.geometry}
+          geometry={nodes.Cylinder004?.geometry}
           material={nodes.Cylinder004.material}
           position={[3.52, -1.2, -6.5]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder005.geometry}
+          geometry={nodes.Cylinder005?.geometry}
           material={nodes.Cylinder005.material}
           position={[0.07, -1.2, -6.5]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder006.geometry}
+          geometry={nodes.Cylinder006?.geometry}
           material={nodes.Cylinder006.material}
           position={[3.52, -1.2, -5.51]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder007.geometry}
+          geometry={nodes.Cylinder007?.geometry}
           material={nodes.Cylinder007.material}
           position={[0.07, -1.2, -5.51]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder008.geometry}
+          geometry={nodes.Cylinder008?.geometry}
           material={nodes.Cylinder008.material}
           position={[3.49, -1.2, -4.46]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder009.geometry}
+          geometry={nodes.Cylinder009?.geometry}
           material={nodes.Cylinder009.material}
           position={[0.04, -1.2, -4.46]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder010.geometry}
+          geometry={nodes.Cylinder010?.geometry}
           material={nodes.Cylinder010.material}
           position={[-0.28, -0.37, -6.66]}
           scale={[0.3, 0.23, 0.3]}
@@ -398,7 +399,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder011.geometry}
+          geometry={nodes.Cylinder011?.geometry}
           material={nodes.Cylinder011.material}
           position={[-0.48, -0.62, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -407,7 +408,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder012.geometry}
+          geometry={nodes.Cylinder012?.geometry}
           material={nodes.Cylinder012.material}
           position={[-0.68, -0.37, -6.66]}
           scale={[0.3, 0.23, 0.3]}
@@ -415,7 +416,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder013.geometry}
+          geometry={nodes.Cylinder013?.geometry}
           material={nodes.Cylinder013.material}
           position={[-0.48, -0.82, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -424,7 +425,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder014.geometry}
+          geometry={nodes.Cylinder014?.geometry}
           material={nodes.Cylinder014.material}
           position={[-0.48, -1.02, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -433,7 +434,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder015.geometry}
+          geometry={nodes.Cylinder015?.geometry}
           material={nodes.Cylinder015.material}
           position={[-0.48, -1.22, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -442,7 +443,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder016.geometry}
+          geometry={nodes.Cylinder016?.geometry}
           material={nodes.Cylinder016.material}
           position={[-0.48, -1.42, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -451,7 +452,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder017.geometry}
+          geometry={nodes.Cylinder017?.geometry}
           material={nodes.Cylinder017.material}
           position={[-0.48, -0.42, -7.08]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -460,7 +461,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder018.geometry}
+          geometry={nodes.Cylinder018?.geometry}
           material={nodes.Cylinder018.material}
           position={[0.61, 0.29, -5.16]}
           scale={[0.3, 0.19, 0.24]}
@@ -468,7 +469,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder019.geometry}
+          geometry={nodes.Cylinder019?.geometry}
           material={nodes.Cylinder019.material}
           position={[0.41, 0.08, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -477,7 +478,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder020.geometry}
+          geometry={nodes.Cylinder020?.geometry}
           material={nodes.Cylinder020.material}
           position={[0.21, 0.29, -5.16]}
           scale={[0.3, 0.19, 0.24]}
@@ -485,7 +486,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder021.geometry}
+          geometry={nodes.Cylinder021?.geometry}
           material={nodes.Cylinder021.material}
           position={[0.41, -0.09, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -494,7 +495,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder022.geometry}
+          geometry={nodes.Cylinder022?.geometry}
           material={nodes.Cylinder022.material}
           position={[0.41, -0.26, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -503,7 +504,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder023.geometry}
+          geometry={nodes.Cylinder023?.geometry}
           material={nodes.Cylinder023.material}
           position={[0.41, -0.43, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -512,7 +513,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder024.geometry}
+          geometry={nodes.Cylinder024?.geometry}
           material={nodes.Cylinder024.material}
           position={[0.41, -0.61, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -521,7 +522,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder025.geometry}
+          geometry={nodes.Cylinder025?.geometry}
           material={nodes.Cylinder025.material}
           position={[0.41, 0.25, -5.5]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
@@ -530,7 +531,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.DoorFrameBox.geometry}
+          geometry={nodes.DoorFrameBox?.geometry}
           material={nodes.DoorFrameBox.material}
           position={[-0.07, 0.85, -3.48]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -539,7 +540,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.GlassDoorBox1.geometry}
+          geometry={nodes.GlassDoorBox1?.geometry}
           material={nodes.GlassDoorBox1.material}
           position={[-0.43, 0.85, -3.52]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -548,7 +549,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.GlassDoorBox2.geometry}
+          geometry={nodes.GlassDoorBox2?.geometry}
           material={nodes.GlassDoorBox2.material}
           position={[-0.08, 0.85, -3.52]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -557,7 +558,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.HutMainFloor001.geometry}
+          geometry={nodes.HutMainFloor001?.geometry}
           material={nodes.HutMainFloor001.material}
           position={[0.23, -0.1, -2.66]}
           scale={[3.5, 0.1, 2.67]}
@@ -565,21 +566,21 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.LightBall1.geometry}
+          geometry={nodes.LightBall1?.geometry}
           material={nodes.LightBall1.material}
           position={[3.1, 0.31, -3.62]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.LightBall2.geometry}
+          geometry={nodes.LightBall2?.geometry}
           material={nodes.LightBall2.material}
           position={[2.85, 0.31, -3.2]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Parasol.geometry}
+          geometry={nodes.Parasol?.geometry}
           material={nodes.Parasol.material}
           position={[-1.61, 1.37, -4.16]}
           scale={[0.8, 0.18, 0.8]}
@@ -587,7 +588,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.PoolWater.geometry}
+          geometry={nodes.PoolWater?.geometry}
           material={materials.PoolWater}
           position={[1.77, -0.84, -5.82]}
           scale={[1.83, 0.99, 0.76]}
@@ -595,7 +596,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SideWindowBox1.geometry}
+          geometry={nodes.SideWindowBox1?.geometry}
           material={nodes.SideWindowBox1.material}
           position={[-1.3, 0.92, -3.06]}
           rotation={[0, -0.8, 0]}
@@ -604,7 +605,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SideWindowBox2.geometry}
+          geometry={nodes.SideWindowBox2?.geometry}
           material={nodes.SideWindowBox2.material}
           position={[1.13, 0.91, -3.03]}
           rotation={[Math.PI, -0.78, Math.PI]}
@@ -613,7 +614,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SideWindowGlass1.geometry}
+          geometry={nodes.SideWindowGlass1?.geometry}
           material={nodes.SideWindowGlass1.material}
           position={[-1.3, 0.92, -3.06]}
           rotation={[0, -0.79, 0]}
@@ -622,7 +623,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SideWindowGlass2.geometry}
+          geometry={nodes.SideWindowGlass2?.geometry}
           material={nodes.SideWindowGlass2.material}
           position={[1.13, 0.91, -3.03]}
           rotation={[Math.PI, -0.78, Math.PI]}
@@ -631,7 +632,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SlidingFrontGlassDoor.geometry}
+          geometry={nodes.SlidingFrontGlassDoor?.geometry}
           material={nodes.SlidingFrontGlassDoor.material}
           position={[-0.39, 0.87, -0.2]}
           scale={[0.26, 0.58, 0.02]}
@@ -639,7 +640,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.SlidingGlassDoorBox.geometry}
+          geometry={nodes.SlidingGlassDoorBox?.geometry}
           material={nodes.SlidingGlassDoorBox.material}
           position={[0.26, 0.85, -3.47]}
           rotation={[Math.PI, -1.56, Math.PI]}
@@ -648,7 +649,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Stairs.geometry}
+          geometry={nodes.Stairs?.geometry}
           material={nodes.Stairs.material}
           position={[-0.49, -0.09, -5.42]}
           scale={[0.3, 0.1, 0.1]}
@@ -656,7 +657,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone.geometry}
+          geometry={nodes.Cone?.geometry}
           material={materials.Roof}
           position={[-0.1, 3.02, -1.83]}
           rotation={[0, -1.18, 0]}
@@ -665,7 +666,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube.geometry}
+          geometry={nodes.Cube?.geometry}
           material={nodes.Cube.material}
           position={[-2.58, 0.82, -3.71]}
           rotation={[0, -1.18, 0]}
@@ -674,7 +675,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube001.geometry}
+          geometry={nodes.Cube001?.geometry}
           material={nodes.Cube001.material}
           position={[-1.94, 0.82, -1.06]}
           scale={[0.05, 2.57, 1.4]}
@@ -682,7 +683,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube003.geometry}
+          geometry={nodes.Cube003?.geometry}
           material={nodes.Cube003.material}
           position={[3.69, 0.82, -1.19]}
           scale={[0.05, 2.57, 1.58]}
@@ -690,7 +691,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cube005.geometry}
+          geometry={nodes.Cube005?.geometry}
           material={nodes.Cube005.material}
           position={[2.71, 0.82, -2.43]}
           scale={[1.13, 2.57, 0.07]}
@@ -698,7 +699,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.FloorBox.geometry}
+          geometry={nodes.FloorBox?.geometry}
           material={nodes.FloorBox.material}
           position={[-0.1, 0.16, -1.83]}
           rotation={[Math.PI, -1.17, Math.PI]}
@@ -707,7 +708,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.HutBodyCylinder.geometry}
+          geometry={nodes.HutBodyCylinder?.geometry}
           material={nodes.HutBodyCylinder.material}
           position={[-0.1, 0.91, -1.83]}
           rotation={[Math.PI, -1.17, Math.PI]}
@@ -716,7 +717,7 @@ export default function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.HutMainFloor.geometry}
+          geometry={nodes.HutMainFloor?.geometry}
           material={nodes.HutMainFloor.material}
           position={[0.23, 0.05, -2.66]}
           scale={[3.5, 0.05, 2.67]}
