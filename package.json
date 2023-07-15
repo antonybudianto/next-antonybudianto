@@ -13,8 +13,8 @@
   "dependencies": {
     "react-icons": "4.8.0",
     "react-responsive-masonry": "2.1.7",
-    "@react-three/drei": "9.47.1",
-    "@react-three/fiber": "^8.9.1",
+    "@react-three/drei": "9.78.2",
+    "@react-three/fiber": "8.13.5",
     "gray-matter": "4.0.3",
     "highlight.js": "11.7.0",
     "next": "13.4.10",
@@ -31,7 +31,7 @@
     "remark-rehype": "10.1.0",
     "sharp": "^0.31.2",
     "sweetalert2": "^11.6.15",
-    "three": "~0.147.0",
+    "three": "0.154.0",
     "unified": "10.1.2",
     "@netlify/functions": "1.4.0"
   },

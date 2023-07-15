@@ -13,7 +13,7 @@ const GenericScene = ({
   cameraPosition,
   customFov,
   orbitTarget = [0, 0, 0],
-  maxPolarAngle = Math.PI / 2,
+  maxPolarAngle = Math.PI / 2
 }) => {
   const ref = useRef();
   const camRef = useRef();
@@ -26,6 +26,7 @@ const GenericScene = ({
       <Canvas shadows dpr={[1, 2]} className="select-none">
         <Suspense fallback={<ProgressLoader setLoading={setLoading} />}>
           <Stage
+            // @ts-ignore
             controls={ref}
             preset="rembrandt"
             adjustCamera={false}
@@ -44,8 +45,8 @@ const GenericScene = ({
         />
         <OrbitControls
           camera={camRef.current}
-          // @ts-ignore
           ref={ref}
+          // @ts-ignore
           target={orbitTarget}
           autoRotate={autoRotate}
           maxPolarAngle={maxPolarAngle}
