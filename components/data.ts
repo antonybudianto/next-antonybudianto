@@ -1,12 +1,12 @@
 export const WORKS = [
   {
     imgSrc: "/img-thumbs/mdvm1.jpg",
-    href: "/3d",
+    href: "/3d"
   },
   {
     imgSrc: "/countboard.jpg",
     title: "CountBoard App",
-    href: "https://countboard.vercel.app",
+    href: "https://countboard.vercel.app"
   },
   {
     title: "Deesain",
@@ -19,28 +19,28 @@ export const WORKS = [
     thumbs: [
       {
         type: "img",
-        src: "/img-thumbs/deesain-t1.jpg",
+        src: "/img-thumbs/deesain-t1.jpg"
       },
       {
         type: "img",
-        src: "/img-thumbs/deesain-t2a.jpg",
-      },
-    ],
+        src: "/img-thumbs/deesain-t2a.jpg"
+      }
+    ]
   },
   {
     imgSrc: "/meta-3d/meta-studio.jpg",
-    href: "https://ab-3d-studio.vercel.app/",
+    href: "https://rqnzm-3000.csb.app"
   },
   {
     imgSrc: "/ngpt1.jpg",
     title: "NextGPT: Opinionated ChatGPT web client",
-    href: "https://github.com/antonybudianto/next-gpt",
+    href: "https://github.com/antonybudianto/next-gpt"
   },
   {
     title: "JSBench",
     href: "https://jsbench.netlify.com",
     imgSrc: "/jsb.jpg",
-    desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`,
+    desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`
   },
   {
     title: "StickyNoted",
@@ -48,10 +48,10 @@ export const WORKS = [
     imgSrc: "/sticky.jpeg",
     desc: `Simple Sticky Note app with Markdown flavour`,
     imgW: 2880 / 5,
-    imgH: 1446 / 5,
+    imgH: 1446 / 5
   },
   {
     imgSrc: "/meta-3d/meta-maldive-resort.jpg",
-    href: "/3d",
-  },
+    href: "/3d"
+  }
 ];

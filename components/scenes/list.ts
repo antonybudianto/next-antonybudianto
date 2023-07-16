@@ -6,7 +6,7 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     external: true,
     name: "3D Studio",
     img: "/meta-3d/meta-studio.jpg",
-    href: "https://ab-3d-studio.vercel.app/"
+    href: "https://rqnzm-3000.csb.app"
   },
   {
     id: "maldive-resort",
