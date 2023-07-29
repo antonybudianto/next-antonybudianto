@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import DarkmodeButtonWrapper from "@/components/DarkmodeButtonWrapper";
 import RecentWork from "./RecentWork";
 import { Metadata } from "next";
 import NewHeader from "@/components/NewHeader";
@@ -19,21 +18,25 @@ export const metadata: Metadata = {
     url: "https://antonybudianto.com",
     title: META_TITLE,
     description: META_DESC,
-    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`],
+    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`]
   },
   twitter: {
     card: "summary_large_image",
     site: "@antonybudianto",
     title: META_TITLE,
     description: META_DESC,
-    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`],
-  },
+    images: [`https://vercel-og-ab.vercel.app/api/blog?title=${encodedTitle}`]
+  }
 };
 
 export default function Home() {
   return (
     <>
-      <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 dark:text-white lg:h-screen">
+      <div
+        className="bg-gradient-to-tl from-sky-100 from-30% via-cyan-50 via-60% to-cyan-100 to-90% 
+      dark:from-gray-900  dark:via-gray-800  dark:to-cyan-900 
+      dark:text-white lg:h-screen"
+      >
         <NewHeader />
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
           <div className="text-left">
@@ -50,7 +53,7 @@ export default function Home() {
               Antony Budianto
             </h1>
             <p className="text-gray-700 dark:text-gray-400 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11 ab-fade-l ab-time--3">
-              Engineering, Open-source dev, Web
+              Explore and craft with technology
             </p>
             <div className="flex flex-wrap flex-row gap-2 ab-fade-l ab-time--4">
               <a
@@ -69,6 +72,7 @@ export default function Home() {
               </a>
               <Link
                 href="/blog"
+                scroll
                 className="bg-sky-200 dark:bg-gray-700 text-sky-900 dark:text-sky-50 dark:hover:bg-gray-500 hover:bg-sky-300 text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
               >
                 Blog

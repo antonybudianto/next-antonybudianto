@@ -14,19 +14,19 @@ export const metadata: Metadata = {
     description: "Blog by Antony Budianto, post about web and technology",
     url: "https://antonybudianto.com/blog",
     images: [
-      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony",
-    ],
+      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony"
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog by Antony",
     description: "Blog by Antony",
     images: [
-      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony",
+      "https://vercel-og-ab.vercel.app/api/blog?title=Blog%20by%20Antony"
     ],
-    site: "@antonybudianto",
+    site: "@antonybudianto"
   },
-  themeColor: "#FFFFFF",
+  themeColor: "#FFFFFF"
 };
 
 async function getData() {
@@ -37,7 +37,7 @@ async function getData() {
       "date",
       "slug",
       "active",
-      "ogImage",
+      "ogImage"
     ]);
     return { allPosts };
   } catch (e) {
@@ -52,12 +52,12 @@ export default async function BlogIndex() {
       <NewHeader
         nav={{
           href: "/blog",
-          name: "Blog",
+          name: "Blog"
         }}
       />
       <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 text-gray-800 dark:text-white min-h-screen">
         <div className="container max-w-screen-lg mx-auto px-4 sm:px-6 pt-14 md:px-8 py-8 lg:py-20">
-          <div className="grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {allPosts.map((p, i) => (
               <BlogCard
                 index={i}
@@ -65,7 +65,7 @@ export default async function BlogIndex() {
                 slug={p.slug}
                 title={p.title}
                 ogImage={p.ogImage}
-                tags={["technology"]}
+                tags={["tech"]}
                 date={new Date(p.date).toDateString()}
               />
             ))}
