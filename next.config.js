@@ -3,9 +3,7 @@ const nextConfig = {
   output: "export",
   reactStrictMode: false,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
+  experimental: {},
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
