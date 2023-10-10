@@ -38,7 +38,7 @@ export default function Home() {
       dark:text-white lg:h-screen"
       >
         <NewHeader />
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-0 lg:py-0 flex min-h-[88vh] md:min-h-screen justify-start items-center">
           <div className="text-left">
             <div className="container">
               <img
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </div>
       <div id="work" className="bg-gray-50 dark:bg-zinc-900">
-        <div className="px-2 py-5 pb-8 lg:px-0 lg:py-20 container mx-auto">
+        <div className="px-2 py-5 pb-8 lg:px-0 lg:py-20 container max-w-6xl mx-auto">
           <h3
             id="recent-works"
             className="text-xl lg:text-4xl leading-none font-extrabold tracking-tight text-gray-500 dark:text-gray-100 mb-5 sm:mb-8 ab-fade-l ab-time--2"
