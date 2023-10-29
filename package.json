@@ -2,7 +2,10 @@
   "name": "next-antonybudianto",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@6.35.1",
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,7 +20,7 @@
     "@react-three/fiber": "8.13.5",
     "gray-matter": "4.0.3",
     "highlight.js": "11.7.0",
-    "next": "13.5.4",
+    "next": "14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rehype-autolink-headings": "6.1.1",
