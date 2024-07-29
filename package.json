@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -20,9 +20,9 @@
     "@react-three/fiber": "8.13.5",
     "gray-matter": "4.0.3",
     "highlight.js": "11.7.0",
-    "next": "14.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "rehype-autolink-headings": "6.1.1",
     "rehype-format": "4.0.1",
     "rehype-highlight": "6.0.0",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@netlify/ipx": "^1.4.5",
     "@next/bundle-analyzer": "^13.1.1",
-    "@netlify/plugin-nextjs": "4.40.2",
+    "@netlify/plugin-nextjs": "5.5.1",
     "@types/node": "18.11.5",
     "@types/react": "18.0.25",
     "autoprefixer": "^10.4.13",
