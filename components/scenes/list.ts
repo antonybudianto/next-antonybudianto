@@ -6,7 +6,7 @@ export const SHOWCASE_LIST: Showcase3D[] = [
     external: true,
     name: "3D Studio",
     img: "/meta-3d/meta-studio.jpg",
-    href: "https://rqnzm-3000.csb.app"
+    href: "https://stackblitz.com/edit/vite-antonyb-3d-home?embed=1&file=src%2FApp.jsx&view=preview"
   },
   {
     id: "maldive-resort",

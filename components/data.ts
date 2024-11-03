@@ -29,7 +29,7 @@ export const WORKS = [
   },
   {
     imgSrc: "/meta-3d/meta-studio.jpg",
-    href: "https://rqnzm-3000.csb.app"
+    href: "https://stackblitz.com/edit/vite-antonyb-3d-home?embed=1&file=src%2FApp.jsx&view=preview"
   },
   {
     imgSrc: "/ngpt1.jpg",
