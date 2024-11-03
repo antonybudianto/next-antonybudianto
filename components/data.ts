@@ -38,7 +38,7 @@ export const WORKS = [
   },
   {
     title: "JSBench",
-    href: "https://jsbench.netlify.com",
+    href: "https://jsbench.netlify.app",
     imgSrc: "/jsb.jpg",
     desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`
   },
