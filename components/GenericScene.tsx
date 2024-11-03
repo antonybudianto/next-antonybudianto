@@ -1,4 +1,5 @@
 import { useRef, Suspense, useState } from "react";
+// @ts-ignore
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Stage } from "@react-three/drei";
 
