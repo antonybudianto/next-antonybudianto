@@ -7,15 +7,13 @@ import NewHeader from "@/components/NewHeader";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const params = await props.params;
   const post = await getData(params.slug);
   const titleText = `${post.title} | Antony's Blog`;
   const encodedTitle = encodeURIComponent(post.title);
@@ -44,7 +42,8 @@ export async function generateMetadata(
   };
 }
 
-async function BlogTemplate({ params }) {
+async function BlogTemplate(props) {
+  const params = await props.params;
   const post = await getData(params.slug);
 
   return (

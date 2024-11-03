@@ -1,3 +1,4 @@
+// @ts-ignore
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import type { MutableRefObject } from "react";
