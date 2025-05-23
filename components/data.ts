@@ -7,13 +7,20 @@ export const WORKS = [
     imgSrc: "/notium.jpg",
     title: "Agentic Sticky Note",
     desc: "Agentic Sticky Notes",
-    imgW: 2880 / 5,
-    imgH: 1446 / 5,
+  },
+  {
+    imgSrc: "/meta-3d/meta-maldive-resort.jpg",
+    href: "/3d",
   },
   {
     imgSrc: "/countboard.jpg",
     title: "CountBoard App",
     href: "https://countboard.vercel.app",
+  },
+  {
+    imgSrc: "/ngpt1.jpg",
+    title: "NextGPT: Opinionated ChatGPT web client",
+    href: "https://github.com/antonybudianto/next-gpt",
   },
   {
     title: "Deesain",
@@ -34,21 +41,16 @@ export const WORKS = [
       },
     ],
   },
-
-  {
-    imgSrc: "/meta-3d/meta-studio.jpg",
-    href: "https://stackblitz.com/edit/vite-antonyb-3d-home?embed=1&file=src%2FApp.jsx&view=preview",
-  },
-  {
-    imgSrc: "/ngpt1.jpg",
-    title: "NextGPT: Opinionated ChatGPT web client",
-    href: "https://github.com/antonybudianto/next-gpt",
-  },
   {
     title: "JSBench",
     href: "https://jsbench.netlify.app",
     imgSrc: "/jsb.jpg",
     desc: `Simple JS Benchmark tool to compare code's performance side-by-side.`,
+  },
+
+  {
+    imgSrc: "/meta-3d/meta-studio.jpg",
+    href: "https://stackblitz.com/edit/vite-antonyb-3d-home?embed=1&file=src%2FApp.jsx&view=preview",
   },
   {
     title: "StickyNoted",
@@ -57,9 +59,5 @@ export const WORKS = [
     desc: `Simple Sticky Note app with Markdown flavour`,
     imgW: 2880 / 5,
     imgH: 1446 / 5,
-  },
-  {
-    imgSrc: "/meta-3d/meta-maldive-resort.jpg",
-    href: "/3d",
   },
 ];

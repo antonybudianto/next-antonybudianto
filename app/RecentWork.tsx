@@ -35,7 +35,7 @@ export default function RecentWork() {
     };
   }, []);
   return (
-    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 850: 3, 1800: 4 }}>
       <Masonry gutter="15px">
         {WORKS.map((w, i) => {
           let Wrapper = ({ children }) => children;
