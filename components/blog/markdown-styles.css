@@ -1,42 +1,168 @@
+/**
+ * Post body. Running text is held near 68 characters; code, tables and images
+ * are allowed to break out to the full column so they never force the page to
+ * scroll sideways. Colours come from the tokens in app/globals.css.
+ */
+
 .markdown {
-  @apply text-lg leading-relaxed;
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.markdown > * {
+  max-width: 68ch;
+}
+
+.markdown > pre,
+.markdown > table,
+.markdown > img,
+.markdown > .table-wrap {
+  max-width: 100%;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  margin: 1.4em 0;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  text-wrap: balance;
+  /* Clears the fixed header when jumped to from the table of contents.
+     Keep in step with OFFSET in components/blog/TableOfContents.tsx. */
+  scroll-margin-top: 104px;
+}
+
+/* A body-level h1 (a few older posts open with one) sits just under the post
+   title, so it reads a step above h2 without competing with it. */
+.markdown h1 {
+  font-size: 25px;
+  margin: 2.4em 0 0.7em;
 }
 
 .markdown h2 {
-  @apply text-2xl mt-12 mb-4 leading-snug;
+  font-size: 22px;
+  margin: 2.4em 0 0.7em;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--rule);
 }
 
 .markdown h3 {
-  @apply text-xl mt-8 mb-4 leading-snug;
+  font-size: 17px;
+  margin: 2em 0 0.6em;
 }
 
-.markdown pre {
-  @apply text-gray-200 mb-5 rounded text-sm overflow-auto;
-}
-
-.markdown pre > code:not(.hljs) {
-  @apply bg-gray-900 p-5 block;
-}
-
-.markdown ul {
-  @apply list-disc ml-5;
-}
-
-.markdown blockquote p {
-  @apply border-l-2 border-green-400 pl-3 italic;
+.markdown h4 {
+  font-size: 15px;
+  margin: 1.8em 0 0.5em;
 }
 
 .markdown a {
-  @apply text-blue-600 dark:text-blue-200 hover:underline;
+  color: var(--cool);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
 }
 
-.markdown p {
-  @apply overflow-auto;
+.markdown a:hover {
+  border-bottom-color: var(--cool);
+}
+
+.markdown strong {
+  font-weight: 600;
+}
+
+.markdown ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+
+.markdown ol {
+  list-style: decimal;
+  padding-left: 1.2em;
+}
+
+.markdown li {
+  margin: 0.4em 0;
+}
+
+.markdown blockquote {
+  border-left: 2px solid var(--warm);
+  padding-left: 1em;
+  color: var(--mute);
+}
+
+.markdown blockquote p {
+  margin: 0.6em 0;
+}
+
+/* Inline code, but not code inside a fenced block. */
+.markdown :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--panel-2);
+  border: 1px solid var(--rule-soft);
+  padding: 0.1em 0.35em;
+  word-break: break-word;
+}
+
+.markdown pre {
+  font-size: 13.5px;
+  line-height: 1.6;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  margin: 1.6em 0;
+}
+
+.markdown pre code {
+  font-family: var(--font-mono);
+  display: block;
+  padding: 1.1em 1.2em;
+}
+
+/* Fenced blocks highlight.js did not tag still need a ground. */
+.markdown pre > code:not(.hljs) {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.markdown img {
+  border: 1px solid var(--rule);
+  height: auto;
+}
+
+.markdown hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.4em 0;
+}
+
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid var(--rule);
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+
+.markdown th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: var(--panel-2);
 }

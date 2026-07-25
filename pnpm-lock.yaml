@@ -32,12 +32,6 @@ dependencies:
   react-dom:
     specifier: 18.3.1
     version: 18.3.1(react@18.3.1)
-  react-icons:
-    specifier: 4.10.1
-    version: 4.10.1(react@18.3.1)
-  react-responsive-masonry:
-    specifier: 2.1.7
-    version: 2.1.7
   rehype-autolink-headings:
     specifier: 6.1.1
     version: 6.1.1
@@ -4441,14 +4435,6 @@ packages:
       scheduler: 0.23.2
     dev: false
 
-  /react-icons@4.10.1(react@18.3.1):
-    resolution: {integrity: sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.3.1
-    dev: false
-
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -4464,10 +4450,6 @@ packages:
     dependencies:
       react: 18.3.1
       scheduler: 0.25.0-rc.0
-    dev: false
-
-  /react-responsive-masonry@2.1.7:
-    resolution: {integrity: sha512-/jOqnTVNtO8zRJMTl6ZXBex7EFYEIFBLVlkIFjiCT7omfm0CgNF2z4ST8RIr0v2ut15NWAQs7Q3kJJPhMoe3Ew==}
     dev: false
 
   /react-use-measure@2.1.1(react-dom@18.3.1)(react@18.3.1):

@@ -1,77 +1,88 @@
 import Script from "next/script";
-import "tailwindcss/tailwind.css";
-import "./style.css";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import type { Viewport } from "next";
+
+import WeightsField from "@/components/WeightsField";
+
+import "./globals.css";
+
+/**
+ * Self-hosted at build time — no runtime font CDN, which also keeps the
+ * static export self-contained.
+ *
+ * PROPOSAL.md Q6 is still open: the display face is intended to become
+ * Berkeley Mono or Commit Mono. That is a swap of this one declaration —
+ * everything downstream reads --font-display.
+ */
+const display = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#efeff2" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1116" },
+  ],
+};
+
+/**
+ * Resolves the theme before first paint. This has to stay inline in <head>:
+ * it previously sat at the end of <body>, so the light theme painted and then
+ * flipped to dark. See PROPOSAL.md §2.
+ */
+const THEME_INIT = `
+try {
+  var d = localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  window.__dark = d;
+  document.documentElement.classList.toggle('dark', d);
+  document.documentElement.style.colorScheme = d ? 'dark' : 'light';
+} catch (e) {}
+`;
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const dark = false;
-
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
-          rel="stylesheet"
-          // @ts-ignore
-          precedence="default"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
-          rel="stylesheet"
-        ></link>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-L79J59SE0Q');
-        `}
-      </Script>
-      <body
-        style={{
-          overscrollBehavior: "none",
-          fontFamily: "Nunito, Arial",
-        }}
-      >
+      <body>
+        <WeightsField />
         {children}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `
-            <script type="text/javascript">
-            try {
-              const __isdark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-              window.__dark = __isdark;
-              if (__dark) {
-                document.documentElement.classList.add('dark');
-              } else {
-                document.documentElement.classList.remove('dark');
-              }
-            }catch(e){console.error(e)}
-            </script>
-          `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"
+          strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L79J59SE0Q');
+          `}
+        </Script>
       </body>
     </html>
   );

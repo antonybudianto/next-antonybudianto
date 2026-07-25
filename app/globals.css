@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Design tokens — "Weights"
+   See PROPOSAL.md §3.
+
+   The palette is a diverging cool/warm pair. The rule that keeps it coherent:
+     cool  = structural + interactive  (links, focus, nav, "shipped")
+     warm  = live + emphatic           (current work, metrics, the one thing
+                                        per screen to read first)
+   Nothing else gets colour.
+
+   Neutrals are graphite with a faint blue bias so they sit under the cool
+   signal instead of fighting it. Light ground is a cool paper, not white, so
+   the warm accent stays readable on it.
+
+   Themes switch on `.dark` on <html>, set by the init script in the document
+   head. Tailwind colours map to these vars, so `bg-panel` / `text-mute` flip
+   automatically and `dark:` variants are no longer needed for colour.
+   ========================================================================== */
+
+:root {
+  --bg: #efeff2;
+  --panel: #fafafb;
+  --panel-2: #e9e9ee;
+  --rule: #d7d8df;
+  --rule-soft: #e4e5ea;
+  --text: #14161c;
+  --mute: #5a6270;
+  --faint: #878e9b;
+  --cool: #2a5faf;
+  --warm: #a94e2e;
+
+  /* quantized ramp — five steps, never interpolated */
+  --q1: #2a5faf;
+  --q2: #6e8bb5;
+  --q3: #a39c97;
+  --q4: #c08163;
+  --q5: #a94e2e;
+
+  --font-sans: var(--font-body, ui-sans-serif), ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-display, ui-monospace), ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+}
+
+.dark {
+  --bg: #0f1116;
+  --panel: #161920;
+  --panel-2: #1d212a;
+  --rule: #2a2f3a;
+  --rule-soft: #21252e;
+  --text: #e7e9ed;
+  --mute: #98a0ae;
+  --faint: #6b7382;
+  --cool: #6398e0;
+  --warm: #d06a44;
+
+  --q1: #5b93de;
+  --q2: #7e9bbe;
+  --q3: #9e9a99;
+  --q4: #be8770;
+  --q5: #d06a44;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* In-page anchors — the blog table of contents, and /#work from the nav —
+       glide rather than teleport. The reduced-motion block below turns this
+       back off for anyone who has asked for that. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.62;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg);
+  }
+
+  /* Hairlines, not cards and shadows — the ledger depends on this. */
+  * {
+    border-color: var(--rule);
+  }
+
+  ::selection {
+    background-color: var(--cool);
+    color: var(--bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cool);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Typography roles. Monospace leads as the display face; the sans only
+     handles prose. Each role bundles family + size + weight + tracking, so
+     they never drift apart across pages. */
+
+  .t-display {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: clamp(30px, 5.2vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .t-head {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: clamp(20px, 2.6vw, 26px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .t-title {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+
+  .t-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .t-nav {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .t-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  /* Running text stays near 66 characters. */
+  .t-body {
+    max-width: 66ch;
+  }
+
+  /* The quantized band. Five children, each a flex-1 step of the ramp. */
+  .band {
+    display: flex;
+    gap: 2px;
+  }
+  .band > i {
+    display: block;
+    height: 3px;
+    flex: 1 1 0%;
+  }
+
+  /* Sections that sit over the weight field need their own ground so text
+     stays off the texture. Kept translucent so the field still reads through
+     the edges rather than being boxed out. */
+  .on-field {
+    background-color: var(--bg);
+    background-color: color-mix(in srgb, var(--bg) 88%, transparent);
+  }
+
+  /* Translucent header ground. The duplicated declaration is deliberate:
+     browsers without color-mix() fall back to the opaque token. */
+  .surface-blur {
+    background-color: var(--bg);
+    background-color: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* ==========================================================================
+   Motion — one orchestrated moment on load, hover/focus after that.
+   Keyframes live inside the reduced-motion query, so an opted-out visitor
+   gets no animation at all rather than a disabled one.
+   ========================================================================== */
+
+.ab-fade,
+.ab-fade-l,
+.ab-fade-b {
+  animation-fill-mode: backwards;
+  animation-duration: 0.9s;
+}
+
+.ab-fade {
+  animation-name: animate-fade;
+}
+.ab-fade-l {
+  animation-name: animate-fade-l;
+}
+.ab-fade-b {
+  animation-name: animate-fade-b;
+}
+
+/* Five steps, mirroring the ramp. */
+.ab-time--1 {
+  animation-delay: 0.05s;
+}
+.ab-time--2 {
+  animation-delay: 0.14s;
+}
+.ab-time--3 {
+  animation-delay: 0.23s;
+}
+.ab-time--4 {
+  animation-delay: 0.32s;
+}
+.ab-time--5 {
+  animation-delay: 0.41s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes animate-fade {
+    0% {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes animate-fade-l {
+    0% {
+      opacity: 0;
+      transform: translateX(-14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes animate-fade-b {
+    0% {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
