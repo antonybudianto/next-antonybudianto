@@ -1,0 +1,72 @@
+/**
+ * Syntax highlighting on the site palette, replacing the imported base16
+ * onedark theme — that one shipped a fixed dark ground and a rainbow of hues
+ * that fought the two-colour system.
+ *
+ * The rule from PROPOSAL.md §3.1 still holds: cool is structural (keywords,
+ * types, punctuation of meaning), warm is the value (strings, numbers).
+ * Everything else stays neutral.
+ */
+
+.hljs {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--faint);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-built_in,
+.hljs-meta {
+  color: var(--cool);
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-template-variable,
+.hljs-attr,
+.hljs-addition {
+  color: var(--warm);
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-section,
+.hljs-name {
+  color: var(--q2);
+}
+
+.hljs-type,
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-attribute {
+  color: var(--q4);
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: var(--mute);
+}
+
+.hljs-deletion {
+  color: var(--warm);
+  opacity: 0.75;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 600;
+}

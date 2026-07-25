@@ -1,39 +1,82 @@
 import React from "react";
 
-import BlogFooter from "./BlogFooter";
+import QuantBand from "@/components/QuantBand";
+import SiteFooter from "@/components/SiteFooter";
+import { TocDisclosure, TocRail } from "@/components/blog/TableOfContents";
+import { hasToc, type TocItem } from "@/lib/toc";
 
-function BlogWrapper({ title, publishDate, children }) {
+const fmt = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
+
+interface BlogWrapperProps {
+  title: string;
+  /** ISO date string from the post frontmatter. */
+  publishDate: string;
+  /** Headings pulled off the rendered body — see lib/toc.ts. */
+  toc?: TocItem[];
+  children: React.ReactNode;
+}
+
+function BlogWrapper({
+  title,
+  publishDate,
+  toc = [],
+  children,
+}: BlogWrapperProps) {
+  /* Posts without enough headings keep the two-column measure rather than
+     reserving an empty track. */
+  const columns = hasToc(toc)
+    ? "sm:grid-cols-[108px_1fr] lg:grid-cols-[108px_minmax(0,1fr)_190px]"
+    : "sm:grid-cols-[108px_1fr]";
+
   return (
     <>
-      <div className="pt-10 md:pt-12 min-h-screen bg-blue-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-        <div className="container md:max-w-3xl mx-auto w-full px-4 md:px-6 text-xl leading-normal">
-          <div>
-            <h1 className="font-bold break-normal pt-6 pb-2 text-3xl md:text-4xl">
-              {title}
-            </h1>
-            <p className="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400">
-              Posted at {publishDate}
-            </p>
-          </div>
-          {children}
-          <div className=" flex w-full items-center px-4 py-12">
-            <img
-              className="w-10 h-10 rounded-full mr-4"
-              src="https://antonybudianto.com/profile.jpeg"
-              alt="Avatar of Antony"
-            />
-            <div className="flex-1 px-2">
-              <p className=" font-bold text-base md:text-xl leading-none mb-2">
-                Antony Budianto
-              </p>
-              <p className=" text-xs md:text-base">
-                Software Engineering, Web, and some random life thoughts.
+      <main className="min-h-screen bg-bg">
+        <div className="mx-auto max-w-6xl px-4 pt-28 pb-16 sm:px-6 md:px-8">
+          <div className={`grid gap-6 sm:gap-7 ${columns}`}>
+            <div className="sm:sticky sm:top-24 sm:self-start">
+              <span className="t-label">Post</span>
+              <QuantBand steps={2} className="mt-3 max-w-[72px]" />
+              <p className="t-label mt-3">
+                <time dateTime={publishDate}>
+                  {fmt.format(new Date(publishDate))}
+                </time>
               </p>
             </div>
+
+            <div className="min-w-0">
+              <h1 className="t-head text-[clamp(24px,4vw,38px)]">{title}</h1>
+
+              <TocDisclosure items={toc} />
+
+              <div className="mt-10">{children}</div>
+
+              <div className="mt-16 flex items-center gap-3 border-t border-rule pt-6">
+                <img
+                  className="h-9 w-9 rounded-full border border-rule"
+                  src="/profile.jpeg"
+                  alt="Antony Budianto"
+                  width={36}
+                  height={36}
+                />
+                <div>
+                  <p className="t-title">Antony Budianto</p>
+                  <p className="t-label mt-0.5">
+                    Software engineering, web, and some random life thoughts
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <TocRail items={toc} />
           </div>
-          <BlogFooter />
         </div>
-      </div>
+      </main>
+
+      <SiteFooter />
     </>
   );
 }

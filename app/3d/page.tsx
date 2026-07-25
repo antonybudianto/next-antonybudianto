@@ -1,40 +1,64 @@
 import Link from "next/link";
+
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import QuantBand from "@/components/QuantBand";
+
 import { SHOWCASE_LIST } from "../../components/scenes/list";
-import NewHeader from "@/components/NewHeader";
 
 export default function ThreeIndexPage() {
   return (
-    <div className="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 text-gray-800 dark:text-white min-h-screen">
-      <div className="container max-w-screen-lg mx-auto px-4 sm:px-6 pt-14 md:px-8 py-8 lg:py-20 ">
-        <NewHeader
-          nav={{
-            href: "/3d",
-            name: "3D Showcase",
-          }}
-        />
-        <div className="grid sm:grid-cols-3 gap-4">
-          {SHOWCASE_LIST.map((l, i) => (
-            <div
-              key={i}
-              className="shadow rounded-md bg-gray-700 relative overflow-hidden flex items-around"
-            >
-              <Link
-                href={l.external ? (l.href as string) : `/3d/${l.id}`}
-                passHref
-              >
-                <img
-                  className="cursor-pointer rounded-md"
-                  alt={l.name}
-                  src={l.img}
-                />
-              </Link>
-              <div className="absolute bg-blue-50 text-gray-600 px-2 py-1 rounded bottom-0 left-0 dark:bg-gray-700 dark:text-white">
-                {l.name}
+    <>
+      {/* Becomes /lab in Phase 3, with a Netlify redirect from here. */}
+      <SiteHeader nav={{ href: "/3d", name: "lab" }} />
+
+      <main className="on-field min-h-screen">
+        <div className="mx-auto max-w-6xl px-4 pt-28 pb-16 sm:px-6 md:px-8 lg:pb-24">
+          <div className="grid gap-6 sm:grid-cols-[108px_1fr] sm:gap-7">
+            <div>
+              <span className="t-label">Lab</span>
+              <QuantBand steps={4} className="mt-3 max-w-[72px]" />
+            </div>
+            <div className="min-w-0">
+              <h1 className="t-head">3D showcase</h1>
+              <p className="t-body mt-3 text-mute">
+                Interactive scenes built with three.js and Blender, with the
+                geometry and lighting baked down to a size that ships.
+              </p>
+
+              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {SHOWCASE_LIST.map((l, i) => (
+                  <Link
+                    key={i}
+                    href={l.external ? (l.href as string) : `/3d/${l.id}`}
+                    className="group flex flex-col border border-rule bg-panel transition-colors duration-300 hover:border-cool"
+                  >
+                    <div className="aspect-video overflow-hidden border-b border-rule bg-panel-2">
+                      <img
+                        className="h-full w-full object-cover"
+                        alt={l.name}
+                        src={l.img}
+                        loading={i > 2 ? "lazy" : undefined}
+                        decoding="async"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between gap-3 p-3">
+                      <span className="t-title group-hover:text-cool">
+                        {l.name}
+                      </span>
+                      {l.external ? (
+                        <span className="t-label">External</span>
+                      ) : null}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </main>
+
+      <SiteFooter />
+    </>
   );
 }

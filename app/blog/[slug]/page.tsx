@@ -2,8 +2,9 @@ import React from "react";
 import BlogBody from "@/components/blog/BlogBody";
 import BlogWrapper from "@/components/blog/BlogWrapper";
 import { getAllPosts } from "@/lib/api";
+import { extractToc } from "@/lib/toc";
 import { getData } from "./data";
-import NewHeader from "@/components/NewHeader";
+import SiteHeader from "@/components/SiteHeader";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
@@ -20,7 +21,7 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
 
   return {
     title: titleText,
-    description: "{post.desc}",
+    description: post.desc,
     openGraph: {
       url: `https://antonybudianto.com/blog/${post.slug}`,
       type: "website",
@@ -48,15 +49,16 @@ async function BlogTemplate(props) {
 
   return (
     <>
-      <NewHeader
+      <SiteHeader
         nav={{
           href: "/blog",
-          name: "Blog",
+          name: "writing",
         }}
       />
       <BlogWrapper
         title={post.title}
-        publishDate={new Date(post.date).toDateString()}
+        publishDate={post.date}
+        toc={extractToc(post.content)}
       >
         <BlogBody content={post.content} />
       </BlogWrapper>

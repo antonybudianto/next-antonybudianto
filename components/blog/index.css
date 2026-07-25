@@ -1,27 +1,33 @@
-h2 .icon-link:empty::before,
-h3 .icon-link:empty::before {
-  transition: opacity 0.3s, transform 0.3s;
-  opacity: 0;
+/**
+ * Heading anchors appended by rehype-autolink-headings.
+ *
+ * These used to be absolutely positioned at `right: -35px`, which pushed past
+ * the column edge and could scroll the page sideways on narrow screens. They
+ * now sit inline after the heading and simply fade in.
+ */
+
+.markdown .icon-link {
+  border-bottom: none;
+}
+
+.markdown h1 .icon-link:empty::before,
+.markdown h2 .icon-link:empty::before,
+.markdown h3 .icon-link:empty::before,
+.markdown h4 .icon-link:empty::before {
   content: "#";
-  text-align: center;
-  width: 30px;
-  padding: 0 2px;
-  position: absolute;
-  right: -35px;
-  border: 1px solid darkcyan;
-  border-radius: 5px;
-  transform: translateX(-5px);
-  line-height: 1.2;
-
-  @apply bg-sky-100 dark:bg-sky-700;
+  display: inline-block;
+  margin-left: 0.4em;
+  color: var(--faint);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s, transform 0.25s;
 }
 
-h2:hover .icon-link:empty::before,
-h3:hover .icon-link:empty::before {
+.markdown h1:hover .icon-link:empty::before,
+.markdown h2:hover .icon-link:empty::before,
+.markdown h3:hover .icon-link:empty::before,
+.markdown h4:hover .icon-link:empty::before,
+.markdown .icon-link:focus-visible:empty::before {
   opacity: 1;
-  transform: translateX(0px);
-}
-
-a .icon-link {
-  position: relative;
+  transform: translateX(0);
 }
