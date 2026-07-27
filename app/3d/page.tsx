@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import QuantBand from "@/components/QuantBand";
+import LayerMark from "@/components/LayerMark";
 
 import { SHOWCASE_LIST } from "../../components/scenes/list";
 
@@ -17,7 +17,7 @@ export default function ThreeIndexPage() {
           <div className="grid gap-6 sm:grid-cols-[108px_1fr] sm:gap-7">
             <div>
               <span className="t-label">Lab</span>
-              <QuantBand steps={4} className="mt-3 max-w-[72px]" />
+              <LayerMark depth={1} className="mt-3" />
             </div>
             <div className="min-w-0">
               <h1 className="t-head">3D showcase</h1>

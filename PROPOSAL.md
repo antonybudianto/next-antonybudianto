@@ -371,3 +371,163 @@ Append one line per working session: date, what landed, what's next.
   `app/page.tsx` — the thesis copy is Phase 2 and needs Q1 answered. Nav links only to routes
   that exist (`/#work`, `/blog`, `/3d`); `/3d` is no longer orphaned. **Next:** answer
   Q1–Q3 and Q7, then start Phase 2 with the `content/work.ts` schema.
+
+---
+
+## 11. Revamp 2 — direction "Substrate"
+
+**Status:** built on branch `revamp-profile`. Supersedes the "Weights" direction in §3.
+**Date:** 2026-07-27
+**Brief:** revamp the landing page around the profile and the working experience (source:
+[the profile README](https://github.com/antonybudianto/antonybudianto/blob/master/README.md));
+continuous motion-graphic CSS animation; the finish level of a professional UX/UI portfolio.
+
+### 11.0 Why the previous direction was replaced, not tuned
+
+"Weights" was built on **quantization** — a five-step ramp that never interpolated, a
+`steps()`-timed reveal, and a canvas field redrawn at 12fps. Rejected in review: *"it's not a
+smooth animation, and i don't see any motion graphic at all."* That is not a tuning note, it
+is the concept failing. Discrete timing was the concept's whole argument, so the concept had
+to go with it.
+
+Everything discrete has been retired: `QuantBand`, the `--q1..--q5` ramp, the five-rung delay
+scale, and `WeightsField`. What survives is the token *architecture* — `--bg` / `--panel` /
+`--rule` / `--cool` / `--warm`, mapped into Tailwind — so re-valuing it restyled `/blog`,
+`/blog/[slug]` and `/3d` at the same time with no changes to those files.
+
+### 11.1 Concept
+
+The README's six achievements have one thing in common that the old site never said: **every
+one of them is infrastructure for other engineers.** A design-system MCP server. One component
+library for two major Vue versions. An in-house SSR framework. Runtime reliability. A
+stack-trace parser for the frontend team. That is not a list of features — it is a career
+spent one layer under the product.
+
+So the page's thesis is *"I work a layer beneath the interface."* Its structure is depth, and
+its ground is a **substrate**: board-black with a blue cast, never neutral graphite — a
+blueprint and a board, which is what a substrate actually looks like.
+
+Two accents, one job each — the rule that stops accent drift:
+
+| Token | Role |
+| --- | --- |
+| `--cool` (vein) | structural + interactive — links, focus, plane edges, nav, `shipped` |
+| `--warm` (signal) | live + travelling — the pulse, current work, the one thing to read first |
+
+Nothing else gets colour.
+
+### 11.2 Tokens
+
+```
+                 dark        light
+--bg             #0A1017     #EEF1F7      board-black / mineral paper
+--bg-2           #0D151E     #E5EAF3
+--panel          #101A25     #FFFFFF
+--panel-2        #16222F     #E8EDF5
+--rule           #22344A     #CCD6E6
+--rule-soft      #1A2838     #DDE4F0
+--text           #E9EEF6     #08101A
+--mute           #97A9C0     #4A5A70      8.0:1 / 6.2:1
+--faint          #728AA6     #566880      5.4:1 / 5.0:1
+--cool           #4BB8FF     #0B5FA6      8.7:1 / 5.8:1
+--warm           #FFC24B     #8A5300      11.9:1 / 5.6:1
+```
+
+**On the earlier "not blue" rule.** This section previously ran a green cast on the grounds
+that blue would read as a sub-brand of Krevios. That is overridden by the owner's call, and
+the risk is handled by hue rather than by avoidance: Krevios is navy-and-indigo, this is a
+bright azure on a near-black board — adjacent in name only.
+
+The re-value also fixed a real defect. The green accent sat at **4.48:1** on the light ground,
+under AA for body-sized text; the blue clears it at **5.80:1**. Every other pair held or
+improved (worst case: the dark accent drops 11.0 → 8.7, still far above threshold).
+
+`--warm` is untouched. Amber was analogous to the old green; against blue it is complementary,
+so the signal reads harder than it did before.
+
+**Type — mono is demoted.** Monospace led as the display face in "Weights". It now does only
+what it is good at: labels, stacks, endpoints, anything measured. Display is **Bricolage
+Grotesque**, requested with its `opsz` and `wdth` axes, because the hero uses the width axis
+as its emphasis mechanism — line one runs wide at weight 500, line two narrow at weight 800.
+Same family, two voices, no colour spent on emphasis. Body stays **Instrument Sans**; data is
+**JetBrains Mono**. All three are fetched at build into `_next/static/media` — no runtime CDN,
+still one self-contained static export.
+
+### 11.3 Signature — the stack
+
+`components/LayerStack.tsx`: six isometric planes on one `preserve-3d` scene, one per shipped
+intervention, ordered by distance from the product surface. A signal rises through them on a
+9s loop and lights each plane's edge as it passes — a request crossing the layers he built.
+The hero's argument, as one image.
+
+- Ambient, not one-shot: each plane breathes on its own period (13–24s, all `ease-in-out`),
+  the scene itself drifts ±4° over 30s, and the pulse never stops. Nothing is synchronised, so
+  the diagram is always moving and never pumping in lockstep.
+- `transform` and `opacity` only — it stays on the compositor.
+- **Zero client JavaScript.** It is a server component; the animation is CSS.
+- `aria-hidden`, because the same six layers are readable rows in the section below.
+
+### 11.4 Motion inventory
+
+Two kinds, and the distinction is the point: **ambient** never stops, **arrival** runs once.
+
+| Element | Motion | Period |
+| --- | --- | --- |
+| Layer stack | plane float, scene drift, rising signal, edge-light stagger | 9–30s, infinite |
+| Substrate ground | grid pans one full cell; two chromatic washes drift | 26s / 54s / 72s, infinite |
+| Industries | seamless ticker, pauses on hover so a name can be read | 46s, infinite |
+| "Building" dot | breathe | 3.2s, infinite |
+| Hero lines | `rise` — clip + translate on `cubic-bezier(.22,1,.36,1)` | 1.05s, once |
+| Sections | same `rise`, scroll-linked via `animation-timeline: view()` | once, `@supports`-guarded |
+| Rows, links, buttons | signal wipe across the row; underline draws; fill rises | 0.45–1.1s, on hover/focus |
+
+Every keyframe lives inside `@media (prefers-reduced-motion: no-preference)`, so an opted-out
+visitor gets a still page rather than a broken one — verified: full content, static diagram, no
+pulse.
+
+### 11.5 Composition
+
+| Block | Content | Source |
+| --- | --- | --- |
+| Hero | Eyebrow (role / location / years), the thesis in two type voices, one paragraph of substantiation, two actions, and a three-fact "now" line | `content/profile.ts` |
+| Experience | Six rows, one per README achievement, each on the layer it touched. Depth marker on the left, layer name, what shipped, one line of consequence, tags | `LAYERS` |
+| Profile | Photo at a real size, bio, GCP credential, industries ticker, and the toolkit in four groups | `PROFILE`, `STACK` |
+| Work | Unchanged `WorkGrid` — Krevios lead card and its MCP connect strip survive as-is | `content/work.ts` |
+
+**Numbering.** Rows carry a depth marker, not `01 / 02 / 03`. The lit rung is the row's own
+position in the stack, so the column reads as a descent from the product surface to the tooling
+underneath — order carries information a reader needs. Sequence numbering would have been
+decoration, since these did not happen in this order.
+
+**Dates.** The README has no employers or years, so none were invented. The section says so in
+its own header note — "ordered by distance from the product surface, not by date" — and links
+to LinkedIn for the chronology. If dates and companies get added to `content/profile.ts`, the
+row grid has a slot for them.
+
+### 11.6 Defects fixed while building
+
+- **Horizontal overflow at every width below ~1180px.** The industries ticker's `nowrap` track
+  propagated its min-content width up through the grid item and dragged `documentElement`
+  to 1187px on a 500px viewport. Fixed with `min-width: 0` on `.ticker` and `min-w-0` on both
+  profile grid items. Verified 360/390/768/1024/1440 all report `scrollWidth === clientWidth`.
+- **3D bleed contributed scrollable overflow.** A `preserve-3d` subtree extends the document's
+  scroll area. `.iso-bleed` (`overflow-x: clip` with `overflow-y: visible`) stops it at the hero
+  without creating a scroll container, so the fixed header and ambient ground are unaffected and
+  the glow still spills vertically.
+- Post headings were still monospace after mono was demoted → now the display face.
+
+### 11.7 Still open
+
+- **`useDarkMode` writes `localStorage.theme` on mount** (`components/hooks/useDarkMode.ts:15`),
+  so a first visit pins the theme forever and a later OS change is ignored. Pre-existing; it
+  should only write on an explicit toggle. Not touched here — it is behaviour, not design.
+- Q5 from §9 is still open: which social channels are maintained. All four are still in the
+  footer.
+- Employers/dates for the experience rows (see 11.5).
+- Whether to publish an email address in the footer.
+
+### 11.8 Verified
+
+`pnpm build` compiles and exports 17 pages; home ships **less** client JS than before
+(`WeightsField` was the only client component on it). Screenshotted from the static export via
+CDP in both themes at 1440, and at 390 for mobile, plus a `prefers-reduced-motion: reduce` pass.

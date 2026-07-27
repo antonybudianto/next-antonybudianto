@@ -1,6 +1,6 @@
 import React from "react";
 
-import QuantBand from "@/components/QuantBand";
+import LayerMark from "@/components/LayerMark";
 import SiteFooter from "@/components/SiteFooter";
 import { TocDisclosure, TocRail } from "@/components/blog/TableOfContents";
 import { hasToc, type TocItem } from "@/lib/toc";
@@ -39,7 +39,7 @@ function BlogWrapper({
           <div className={`grid gap-6 sm:gap-7 ${columns}`}>
             <div className="sm:sticky sm:top-24 sm:self-start">
               <span className="t-label">Post</span>
-              <QuantBand steps={2} className="mt-3 max-w-[72px]" />
+              <LayerMark depth={2} className="mt-3" />
               <p className="t-label mt-3">
                 <time dateTime={publishDate}>
                   {fmt.format(new Date(publishDate))}

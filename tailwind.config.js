@@ -1,7 +1,7 @@
 /**
  * Colours map to the CSS custom properties defined in app/globals.css, so a
  * class like `bg-panel` follows the theme without a `dark:` variant.
- * See PROPOSAL.md §3.2.
+ * See PROPOSAL.md §11.
  *
  * Note: because these are plain hex vars rather than raw channels, Tailwind's
  * opacity modifiers (`bg-panel/50`) do not work. Use color-mix() in CSS when
@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       colors: {
         bg: "var(--bg)",
+        "bg-2": "var(--bg-2)",
         panel: "var(--panel)",
         "panel-2": "var(--panel-2)",
         rule: "var(--rule)",
@@ -26,13 +27,9 @@ module.exports = {
         faint: "var(--faint)",
         cool: "var(--cool)",
         warm: "var(--warm)",
-        q1: "var(--q1)",
-        q2: "var(--q2)",
-        q3: "var(--q3)",
-        q4: "var(--q4)",
-        q5: "var(--q5)",
       },
       fontFamily: {
+        display: "var(--font-display)",
         sans: "var(--font-sans)",
         mono: "var(--font-mono)",
       },
