@@ -32,7 +32,9 @@
 .markdown h2,
 .markdown h3,
 .markdown h4 {
-  font-family: var(--font-mono);
+  /* Post headings follow the site's display face. They were monospace when mono
+     led the type system; mono is now the data face only. */
+  font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;

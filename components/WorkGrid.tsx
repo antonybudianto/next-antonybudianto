@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { WORKS, type WorkItem, type WorkStatus } from "@/content/work";
-import QuantBand from "./QuantBand";
+import LayerMark from "./LayerMark";
 import CopyButton from "./CopyButton";
 
 /**
@@ -215,7 +215,7 @@ function TextCard({ item }: { item: WorkItem }) {
               {item.title}
             </TitleLink>
           </h3>
-          <QuantBand steps={4} className="mt-4 max-w-[96px]" />
+          <LayerMark depth={5} className="mt-4" />
         </div>
         <div className="flex flex-col gap-4 lg:w-2/3">
           <p className="t-body text-mute">{item.summary}</p>
@@ -237,7 +237,7 @@ function Card({ item }: { item: WorkItem }) {
             className="h-full w-full object-cover object-top"
           />
         ) : (
-          <QuantBand steps={5} className="w-1/3" />
+          <LayerMark depth={4} rungs={5} width={40} />
         )}
       </div>
       <div className="flex grow flex-col gap-3 p-4">

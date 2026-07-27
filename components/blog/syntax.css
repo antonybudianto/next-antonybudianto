@@ -40,14 +40,17 @@
 .hljs-title.function_,
 .hljs-section,
 .hljs-name {
-  color: var(--q2);
+  /* Was --q2 from the retired quantized ramp; titles now sit between the
+     vein accent and body text. */
+  color: color-mix(in srgb, var(--cool) 62%, var(--text));
 }
 
 .hljs-type,
 .hljs-title.class_,
 .hljs-class .hljs-title,
 .hljs-attribute {
-  color: var(--q4);
+  /* Was --q4. Types read as a warmer neighbour of the signal accent. */
+  color: color-mix(in srgb, var(--warm) 68%, var(--text));
 }
 
 .hljs-variable,

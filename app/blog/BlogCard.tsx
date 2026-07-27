@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import QuantBand from "@/components/QuantBand";
+import LayerMark from "@/components/LayerMark";
 
 interface BlogCardProps {
   index: number;
@@ -49,9 +49,9 @@ export default function BlogCard({
               className="h-full w-full object-cover"
             />
           ) : (
-            /* No cover image: the quantized band stands in rather than
+            /* No cover image: the site's own mark stands in rather than
                borrowing a placeholder from someone else's CDN. */
-            <QuantBand steps={5} className="w-1/3" />
+            <LayerMark depth={4} rungs={5} width={40} />
           )}
         </div>
       </Link>

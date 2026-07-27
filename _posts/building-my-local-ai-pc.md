@@ -16,11 +16,7 @@ I'm not trying to replace hosted models, and the frontier ones are still better 
 
 ### Privacy
 
-It isn't only about the text I type.
-
-Everything I send to a hosted model leaves my house: the prompt, the file I pasted in, the repository it's reading. That's a known tradeoff and mostly a fine one. What changed my thinking is that I stopped using models purely to produce text and started letting them *do things*, through tools and MCP servers. Now it isn't just my data going out, it's a record of my actions: what I searched, which files I touched, what I asked to be changed.
-
-Running locally collapses that. The weights are on my disk, the prompt never leaves the machine, and the tool calls happen against my own filesystem and my own network. There's no third party to trust, log, retain, or get breached, because there's no third party.
+Running locally improves my privacy concern when using cloud models. The weights are on my disk, the prompt never leaves the machine, and the tool calls happen against my own filesystem and my own network. There's no third party to trust, log, retain, or get breached, because there's no third party. Also, it can work offline too.
 
 ### A fallback when the cloud isn't there
 

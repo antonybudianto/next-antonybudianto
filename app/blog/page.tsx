@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import QuantBand from "@/components/QuantBand";
+import LayerMark from "@/components/LayerMark";
 
 import { getAllPosts } from "../../lib/api";
 import BlogCard from "./BlogCard";
@@ -55,7 +55,7 @@ export default async function BlogIndex() {
           <div className="grid gap-6 sm:grid-cols-[108px_1fr] sm:gap-7">
             <div>
               <span className="t-label">Writing</span>
-              <QuantBand steps={2} className="mt-3 max-w-[72px]" />
+              <LayerMark depth={2} className="mt-3" />
             </div>
             <div className="min-w-0">
               <h1 className="t-head">Notes on web, tooling and 3D</h1>

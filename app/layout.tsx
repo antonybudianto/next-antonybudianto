@@ -1,23 +1,28 @@
 import Script from "next/script";
-import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Instrument_Sans,
+  JetBrains_Mono,
+} from "next/font/google";
 import type { Viewport } from "next";
 
-import WeightsField from "@/components/WeightsField";
+import Substrate from "@/components/Substrate";
 
 import "./globals.css";
 
 /**
- * Self-hosted at build time — no runtime font CDN, which also keeps the
- * static export self-contained.
+ * Three faces, three jobs. Fetched at build and emitted into
+ * `_next/static/media` — no runtime font CDN, which also keeps the static
+ * export self-contained. See PROPOSAL.md §11.2.
  *
- * PROPOSAL.md Q6 is still open: the display face is intended to become
- * Berkeley Mono or Commit Mono. That is a swap of this one declaration —
- * everything downstream reads --font-display.
+ * Display is Bricolage Grotesque, requested with its optical-size and width
+ * axes: the page narrows the display face as it gets bigger, which is what a
+ * width axis is for and is not something a static face can do.
  */
-const display = JetBrains_Mono({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-display",
+  axes: ["opsz", "wdth"],
+  variable: "--font-bricolage",
   display: "swap",
 });
 
@@ -28,13 +33,24 @@ const body = Instrument_Sans({
   display: "swap",
 });
 
+/** Demoted from display to data: labels, stacks, endpoints, anything measured. */
+const data = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-data",
+  display: "swap",
+});
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "dark light",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#efeff2" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1116" },
+    /* Kept in step with --bg in app/globals.css. These paint the mobile
+       browser chrome, so a stale value leaves a green bar around a blue
+       page. */
+    { media: "(prefers-color-scheme: light)", color: "#eef1f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1017" },
   ],
 };
 
@@ -61,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable}`}
+      className={`${display.variable} ${body.variable} ${data.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -69,7 +85,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
       <body>
-        <WeightsField />
+        <Substrate />
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"

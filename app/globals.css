@@ -3,88 +3,107 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   Design tokens — "Weights"
-   See PROPOSAL.md §3.
+   Design tokens — "Substrate"
+   See PROPOSAL.md §11.
 
-   The palette is a diverging cool/warm pair. The rule that keeps it coherent:
-     cool  = structural + interactive  (links, focus, nav, "shipped")
-     warm  = live + emphatic           (current work, metrics, the one thing
-                                        per screen to read first)
+   The subject is a decade of platform work: design systems, in-house
+   frameworks, runtime reliability, tooling. All of it sits *under* somebody
+   else's product. So the ground is a substrate — a board-black with a blue
+   cast, never neutral graphite — and the page's structure is depth.
+
+   The cast is blue rather than green because the reference is a blueprint and
+   a board, which is what a substrate actually looks like. It also buys the
+   light theme a legible accent: the green `#0a7d68` sat at 4.48:1 on paper,
+   under AA; the blue clears it at 5.80:1.
+
+   Two accents, each with one job. The rule that keeps them from drifting:
+     --cool  (vein)   structural + interactive — links, focus, edges, nav
+     --warm  (signal) live + travelling — the pulse, current work, the one
+                      thing per screen to read first
    Nothing else gets colour.
 
-   Neutrals are graphite with a faint blue bias so they sit under the cool
-   signal instead of fighting it. Light ground is a cool paper, not white, so
-   the warm accent stays readable on it.
-
-   Themes switch on `.dark` on <html>, set by the init script in the document
-   head. Tailwind colours map to these vars, so `bg-panel` / `text-mute` flip
-   automatically and `dark:` variants are no longer needed for colour.
+   Token names are unchanged from the previous direction on purpose: every
+   surface in the app already reads `bg-panel` / `text-mute` / `hover:text-cool`,
+   so a re-value lands everywhere at once.
    ========================================================================== */
 
 :root {
-  --bg: #efeff2;
-  --panel: #fafafb;
-  --panel-2: #e9e9ee;
-  --rule: #d7d8df;
-  --rule-soft: #e4e5ea;
-  --text: #14161c;
-  --mute: #5a6270;
-  --faint: #878e9b;
-  --cool: #2a5faf;
-  --warm: #a94e2e;
+  --bg: #eef1f7;
+  --bg-2: #e5eaf3;
+  --panel: #ffffff;
+  --panel-2: #e8edf5;
+  --rule: #ccd6e6;
+  --rule-soft: #dde4f0;
+  --text: #08101a;
+  --mute: #4a5a70;
+  --faint: #566880;
+  --cool: #0b5fa6;
+  --warm: #8a5300;
 
-  /* quantized ramp — five steps, never interpolated */
-  --q1: #2a5faf;
-  --q2: #6e8bb5;
-  --q3: #a39c97;
-  --q4: #c08163;
-  --q5: #a94e2e;
+  /* The isometric stack. Planes are near-opaque on paper so the diagram reads
+     as ink rather than as a glow that only works on black. */
+  --plane: rgba(255, 255, 255, 0.76);
+  --plane-edge: #9dadc4;
+  --plane-lit: #8a5300;
+  --plane-shadow: 0 22px 34px -20px rgba(8, 16, 26, 0.28);
+  --glow: rgba(138, 83, 0, 0.2);
 
+  /* Ambient ground */
+  --grid: rgba(11, 95, 166, 0.07);
+  --wash-cool: rgba(11, 95, 166, 0.1);
+  --wash-warm: rgba(138, 83, 0, 0.08);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-display: var(--font-bricolage, ui-sans-serif), "Helvetica Neue", Arial,
+    sans-serif;
   --font-sans: var(--font-body, ui-sans-serif), ui-sans-serif, system-ui,
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: var(--font-display, ui-monospace), ui-monospace, SFMono-Regular,
+  --font-mono: var(--font-data, ui-monospace), ui-monospace, SFMono-Regular,
     Menlo, Consolas, monospace;
 }
 
 .dark {
-  --bg: #0f1116;
-  --panel: #161920;
-  --panel-2: #1d212a;
-  --rule: #2a2f3a;
-  --rule-soft: #21252e;
-  --text: #e7e9ed;
-  --mute: #98a0ae;
-  --faint: #6b7382;
-  --cool: #6398e0;
-  --warm: #d06a44;
+  --bg: #0a1017;
+  --bg-2: #0d151e;
+  --panel: #101a25;
+  --panel-2: #16222f;
+  --rule: #22344a;
+  --rule-soft: #1a2838;
+  --text: #e9eef6;
+  --mute: #97a9c0;
+  --faint: #728aa6;
+  --cool: #4bb8ff;
+  --warm: #ffc24b;
 
-  --q1: #5b93de;
-  --q2: #7e9bbe;
-  --q3: #9e9a99;
-  --q4: #be8770;
-  --q5: #d06a44;
+  --plane: rgba(75, 184, 255, 0.05);
+  --plane-edge: #2c4a63;
+  --plane-lit: #ffc24b;
+  --plane-shadow: 0 0 0 0 transparent;
+  --glow: rgba(255, 194, 75, 0.5);
+
+  --grid: rgba(75, 184, 255, 0.06);
+  --wash-cool: rgba(75, 184, 255, 0.11);
+  --wash-warm: rgba(255, 194, 75, 0.07);
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    /* In-page anchors — the blog table of contents, and /#work from the nav —
-       glide rather than teleport. The reduced-motion block below turns this
-       back off for anyone who has asked for that. */
     scroll-behavior: smooth;
   }
 
   body {
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 15px;
-    line-height: 1.62;
+    font-size: 15.5px;
+    line-height: 1.6;
     overscroll-behavior: none;
     -webkit-font-smoothing: antialiased;
     background-color: var(--bg);
   }
 
-  /* Hairlines, not cards and shadows — the ledger depends on this. */
   * {
     border-color: var(--rule);
   }
@@ -102,36 +121,184 @@
 }
 
 @layer components {
-  /* Typography roles. Monospace leads as the display face; the sans only
-     handles prose. Each role bundles family + size + weight + tracking, so
-     they never drift apart across pages. */
+  /* ------------------------------------------------------------------
+     Typography
+
+     The previous direction led with monospace as the display face. It is
+     demoted here to what it is actually good at — labels, stacks, endpoints,
+     anything that wants to look measured. Display is Bricolage Grotesque,
+     run wide and heavy at the top of the page and slightly narrowed
+     (`font-stretch`) as it gets bigger, which is what its width axis is for.
+     ------------------------------------------------------------------ */
 
   .t-display {
-    font-family: var(--font-mono);
-    font-weight: 500;
-    font-size: clamp(30px, 5.2vw, 52px);
-    line-height: 1.04;
-    letter-spacing: -0.035em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-stretch: 88%;
+    font-size: clamp(40px, 7.4vw, 88px);
+    line-height: 0.94;
+    letter-spacing: -0.032em;
     text-wrap: balance;
   }
 
   .t-head {
-    font-family: var(--font-mono);
-    font-weight: 500;
-    font-size: clamp(20px, 2.6vw, 26px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-stretch: 92%;
+    font-size: clamp(26px, 3.4vw, 40px);
+    line-height: 1.06;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  .t-sub {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
 
   .t-title {
-    font-family: var(--font-mono);
+    font-family: var(--font-display);
     font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.01em;
+    font-size: 17px;
+    letter-spacing: -0.012em;
+  }
+
+  .t-lead {
+    font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.58;
+    max-width: 46ch;
+    color: var(--mute);
   }
 
   .t-label {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .t-nav {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .t-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  .t-body {
+    max-width: 66ch;
+  }
+
+  /* ------------------------------------------------------------------
+     Surfaces
+     ------------------------------------------------------------------ */
+
+  /* Sections that carry running text get their own ground so prose never
+     sits directly on the ambient field. Translucent, so the field still
+     reads through the edges. */
+  .on-field {
+    background-color: var(--bg);
+    background-color: color-mix(in srgb, var(--bg) 86%, transparent);
+  }
+
+  .surface-blur {
+    background-color: var(--bg);
+    background-color: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  /* ------------------------------------------------------------------
+     Signature — the stack
+
+     Six planes on a shared isometric scene, one per shipped intervention,
+     ordered by distance from the product surface. A signal rises through
+     them on a loop and lights each plane's edge as it passes: a request
+     crossing the layers. Everything here animates `transform` and `opacity`
+     only, so it stays on the compositor.
+     ------------------------------------------------------------------ */
+
+  .scene {
+    --unit: clamp(210px, 29vw, 340px);
+    --gap: calc(var(--unit) * 0.115);
+    position: relative;
+    width: var(--unit);
+    height: var(--unit);
+    transform-style: preserve-3d;
+    transform: rotateX(58deg) rotateZ(-42deg);
+  }
+
+  /* A 3D-transformed subtree contributes scrollable overflow to the document,
+     which put a horizontal scrollbar on the whole page at phone widths. Clipping
+     on one axis stops that at the hero without creating a scroll container, so
+     the fixed header and the ambient ground are unaffected and the stack's glow
+     is still free to spill vertically. */
+  .iso-bleed {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .plane {
+    position: absolute;
+    inset: 0;
+    translate: 0 0 calc(var(--i) * var(--gap));
+    transform-style: preserve-3d;
+    border: 1px solid var(--plane-edge);
+    background-color: var(--plane);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--plane-edge) 40%, transparent),
+      var(--plane-shadow);
+  }
+
+  /* Interior texture: a grid on the plane that sits under everything, dots on
+     the one nearest the surface. Reads as a board, not as a card. */
+  .plane--grid {
+    background-image: linear-gradient(
+        to right,
+        var(--grid) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+    background-size: calc(var(--unit) / 9) calc(var(--unit) / 9);
+  }
+
+  .plane--dots {
+    background-image: radial-gradient(
+      var(--plane-edge) 1px,
+      transparent 1.2px
+    );
+    background-size: calc(var(--unit) / 7) calc(var(--unit) / 7);
+  }
+
+  /* The lit edge. One shared period with the pulse; the delay is what makes
+     the light climb the stack instead of flashing all at once. */
+  .plane::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 1px solid var(--plane-lit);
+    box-shadow: 0 0 26px var(--glow), inset 0 0 22px var(--glow);
+    opacity: 0;
+  }
+
+  .pulse {
+    position: absolute;
+    inset: 16%;
+    background: radial-gradient(closest-side, var(--glow), transparent 62%);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  /* Legend beside the diagram — flat, unrotated, so it stays readable. */
+  .legend {
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.08em;
@@ -139,124 +306,443 @@
     color: var(--faint);
   }
 
-  .t-nav {
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
+  /* ------------------------------------------------------------------
+     Experience rows — the same six layers, flattened
+     ------------------------------------------------------------------ */
+
+  .layer-row {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s var(--ease-soft),
+      transform 0.5s var(--ease);
   }
 
-  .t-data {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.02em;
+  .layer-row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--warm) 12%, transparent) 45%,
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 1.1s var(--ease);
+    pointer-events: none;
   }
 
-  /* Running text stays near 66 characters. */
-  .t-body {
-    max-width: 66ch;
+  .layer-row:hover,
+  .layer-row:focus-within {
+    background-color: var(--panel);
   }
 
-  /* The quantized band. Five children, each a flex-1 step of the ramp. */
-  .band {
+  .layer-row:hover::before,
+  .layer-row:focus-within::before {
+    transform: translateX(100%);
+  }
+
+  /* The depth marker: a stack of rungs where the lit rung is the layer's own
+     depth. It encodes the row's position, so it is information, not a bullet. */
+  .rungs {
     display: flex;
+    flex-direction: column-reverse;
     gap: 2px;
   }
-  .band > i {
+
+  .rungs > i {
     display: block;
-    height: 3px;
-    flex: 1 1 0%;
+    width: 14px;
+    height: 2px;
+    background-color: var(--rule);
+    transition: background-color 0.4s var(--ease-soft), width 0.4s var(--ease);
   }
 
-  /* Sections that sit over the weight field need their own ground so text
-     stays off the texture. Kept translucent so the field still reads through
-     the edges rather than being boxed out. */
-  .on-field {
-    background-color: var(--bg);
-    background-color: color-mix(in srgb, var(--bg) 88%, transparent);
+  .rungs > i[data-on="true"] {
+    width: 22px;
+    background-color: var(--cool);
   }
 
-  /* Translucent header ground. The duplicated declaration is deliberate:
-     browsers without color-mix() fall back to the opaque token. */
-  .surface-blur {
-    background-color: var(--bg);
-    background-color: color-mix(in srgb, var(--bg) 82%, transparent);
-    backdrop-filter: blur(12px);
+  .layer-row:hover .rungs > i[data-on="true"] {
+    background-color: var(--warm);
+  }
+
+  /* ------------------------------------------------------------------
+     Ticker — the industries line. Continuous, seamless, low contrast.
+     ------------------------------------------------------------------ */
+
+  .ticker {
+    display: flex;
+    /* Without this the nowrap track's min-content size propagates up through
+       the grid item and drags the whole document wider than the viewport. */
+    min-width: 0;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+
+  .ticker-track {
+    display: flex;
+    flex-shrink: 0;
+    gap: 3rem;
+    padding-right: 3rem;
+    white-space: nowrap;
+  }
+
+  /* Underline that draws rather than appears. */
+  .link {
+    position: relative;
+    color: var(--mute);
+    transition: color 0.3s var(--ease-soft);
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background-color: var(--cool);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease);
+  }
+
+  .link:hover {
+    color: var(--text);
+  }
+
+  .link:hover::after,
+  .link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.35rem;
+    border: 1px solid var(--rule);
+    color: var(--text);
+    background-color: color-mix(in srgb, var(--panel) 70%, transparent);
+    transition: border-color 0.4s var(--ease-soft), color 0.4s var(--ease-soft);
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--cool) 14%, transparent);
+    transform: translateY(101%);
+    transition: transform 0.5s var(--ease);
+  }
+
+  .btn > * {
+    position: relative;
+  }
+
+  .btn:hover {
+    border-color: var(--cool);
+  }
+
+  .btn:hover::before {
+    transform: translateY(0);
+  }
+
+  .btn--signal:hover {
+    border-color: var(--warm);
+  }
+
+  .btn--signal::before {
+    background-color: color-mix(in srgb, var(--warm) 16%, transparent);
   }
 }
 
 /* ==========================================================================
-   Motion — one orchestrated moment on load, hover/focus after that.
-   Keyframes live inside the reduced-motion query, so an opted-out visitor
-   gets no animation at all rather than a disabled one.
+   Motion
+
+   Two kinds, and the distinction matters:
+     · ambient  — never stops, long periods, always eased. The substrate, the
+                  stack, the pulse, the ticker.
+     · arrival  — one smooth pass on load or on first scroll into view.
+   Nothing steps, nothing snaps. All keyframes live inside the
+   no-preference query, so an opted-out visitor gets a still page rather than
+   a disabled one.
    ========================================================================== */
 
-.ab-fade,
-.ab-fade-l,
-.ab-fade-b {
-  animation-fill-mode: backwards;
-  animation-duration: 0.9s;
-}
-
-.ab-fade {
-  animation-name: animate-fade;
-}
-.ab-fade-l {
-  animation-name: animate-fade-l;
-}
-.ab-fade-b {
-  animation-name: animate-fade-b;
-}
-
-/* Five steps, mirroring the ramp. */
-.ab-time--1 {
-  animation-delay: 0.05s;
-}
-.ab-time--2 {
-  animation-delay: 0.14s;
-}
-.ab-time--3 {
-  animation-delay: 0.23s;
-}
-.ab-time--4 {
-  animation-delay: 0.32s;
-}
-.ab-time--5 {
-  animation-delay: 0.41s;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes animate-fade {
+  /* --- ambient: the substrate ground ------------------------------------ */
+
+  @keyframes grid-drift {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(48px, 48px, 0);
+    }
+  }
+
+  @keyframes wash-a {
     0% {
-      opacity: 0;
-      transform: scale(0.96);
+      transform: translate3d(-6%, -4%, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(10%, 6%, 0) scale(1.18);
     }
     100% {
+      transform: translate3d(-6%, -4%, 0) scale(1);
+    }
+  }
+
+  @keyframes wash-b {
+    0% {
+      transform: translate3d(8%, 6%, 0) scale(1.1);
+    }
+    50% {
+      transform: translate3d(-8%, -8%, 0) scale(0.92);
+    }
+    100% {
+      transform: translate3d(8%, 6%, 0) scale(1.1);
+    }
+  }
+
+  .substrate-grid {
+    animation: grid-drift 26s linear infinite;
+  }
+
+  .substrate-wash-a {
+    animation: wash-a 54s ease-in-out infinite;
+  }
+
+  .substrate-wash-b {
+    animation: wash-b 72s ease-in-out infinite;
+  }
+
+  /* --- ambient: the stack ---------------------------------------------- */
+
+  @keyframes scene-drift {
+    from {
+      transform: rotateX(58deg) rotateZ(-46deg);
+    }
+    to {
+      transform: rotateX(54deg) rotateZ(-37deg);
+    }
+  }
+
+  @keyframes plane-float {
+    from {
+      transform: translate3d(0, 0, -4px);
+    }
+    to {
+      transform: translate3d(0, 0, 5px);
+    }
+  }
+
+  /* The signal. Rises the full height of the stack and a little past it, then
+     restarts from below — a loop, not a bounce. */
+  @keyframes pulse-rise {
+    0% {
+      transform: translate3d(0, 0, calc(var(--gap) * -1.4));
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.95;
+    }
+    82% {
+      opacity: 0.95;
+    }
+    100% {
+      transform: translate3d(0, 0, calc(var(--gap) * 6.4));
+      opacity: 0;
+    }
+  }
+
+  @keyframes plane-lit {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    6% {
+      opacity: 0.85;
+    }
+    22% {
+      opacity: 0;
+    }
+  }
+
+  .scene {
+    animation: scene-drift 30s ease-in-out infinite alternate;
+  }
+
+  .plane {
+    animation: plane-float var(--dur, 14s) ease-in-out infinite alternate;
+    animation-delay: calc(var(--i) * -2.3s);
+  }
+
+  .plane::after {
+    animation: plane-lit 9s linear infinite;
+    animation-delay: calc(0.6s + var(--i) * 1.28s);
+  }
+
+  .pulse {
+    animation: pulse-rise 9s linear infinite;
+  }
+
+  /* --- ambient: the ticker --------------------------------------------- */
+
+  @keyframes ticker-run {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .ticker-track {
+    animation: ticker-run 46s linear infinite;
+  }
+
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  /* --- ambient: the live dot ------------------------------------------- */
+
+  @keyframes breathe {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.9);
+    }
+  }
+
+  .breathe {
+    animation: breathe 3.2s ease-in-out infinite;
+  }
+
+  /* --- arrival ---------------------------------------------------------- */
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 22px, 0);
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      clip-path: inset(0 0 -20% 0);
+    }
+  }
+
+  @keyframes animate-fade {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
       opacity: 1;
       transform: scale(1);
     }
   }
 
   @keyframes animate-fade-l {
-    0% {
+    from {
       opacity: 0;
-      transform: translateX(-14px);
+      transform: translate3d(-16px, 0, 0);
     }
-    100% {
+    to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes animate-fade-b {
-    0% {
+    from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translate3d(0, 18px, 0);
     }
-    100% {
+    to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
   }
+
+  .rise {
+    animation: rise 1.05s var(--ease) backwards;
+  }
+
+  .ab-fade,
+  .ab-fade-l,
+  .ab-fade-b {
+    animation-duration: 1s;
+    animation-timing-function: var(--ease);
+    animation-fill-mode: backwards;
+  }
+
+  .ab-fade {
+    animation-name: animate-fade;
+  }
+  .ab-fade-l {
+    animation-name: animate-fade-l;
+  }
+  .ab-fade-b {
+    animation-name: animate-fade-b;
+  }
+
+  /* Scroll-linked arrival where the browser supports it. Guarded, so a browser
+     without view timelines shows the content rather than hiding it. */
+  @supports (animation-timeline: view()) {
+    .in-view {
+      animation: rise 1s var(--ease) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 26%;
+    }
+  }
+}
+
+/* Arrival delays. Not a scale of five discrete rungs — just a stagger, so the
+   hero reads top to bottom at reading speed. */
+.d-1 {
+  animation-delay: 0.05s;
+}
+.d-2 {
+  animation-delay: 0.16s;
+}
+.d-3 {
+  animation-delay: 0.28s;
+}
+.d-4 {
+  animation-delay: 0.4s;
+}
+.d-5 {
+  animation-delay: 0.52s;
+}
+.d-6 {
+  animation-delay: 0.64s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -266,5 +752,14 @@
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+
+  /* The pulse is only legible in motion; parked mid-stack it reads as a blob. */
+  .pulse {
+    display: none;
+  }
+
+  .plane::after {
+    display: none;
   }
 }
