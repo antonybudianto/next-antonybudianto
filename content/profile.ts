@@ -18,7 +18,7 @@ export const PROFILE = {
   thesis: "Antony Budianto",
   thesisAccent: "",
 
-  lead: "Design systems, in-house frameworks and the tooling other teams ship on — a decade of it, across fintech, HRIS, e-commerce and omni-channel. Now I'm building the same layer for agentic AI.",
+  lead: "10+ years experience on web development from various industry (B2B, HRIS, E-Commerce, Fintech, CRM, Omni-channel). I spent most of my time on Web development, building agentic AI workflows with MCP, Skills, and local AI models",
 
   /** Shown as a live line under the hero. Keep to three facts. */
   now: [

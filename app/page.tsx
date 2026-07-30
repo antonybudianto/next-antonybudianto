@@ -189,11 +189,9 @@ export default function Home() {
                 </div>
 
                 <p className="t-body mt-8 text-mute">
-                  Ten years of web work across B2B, HRIS, e-commerce, fintech,
-                  CRM and omni-channel — mostly on the parts other engineers
-                  depend on. These days most of my time goes to agentic
-                  workflows: MCP servers, agent skills, and open-weight models
-                  running on my own hardware. I also build{" "}
+                  Ten years of software engineering experience across B2B, HRIS, e-commerce, fintech,
+                  CRM and omni-channel — mostly on web development and tooling.
+                  Currently building{" "}
                   <a
                     href="https://krevios.com"
                     target="_blank"
@@ -201,17 +199,9 @@ export default function Home() {
                     className="link"
                   >
                     Krevios
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="https://stickynoted.netlify.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link"
-                  >
-                    StickyNoted
                   </a>
-                  , and contribute to open source occasionally.
+                  , building agentic AI workflows with MCP, Skills, and local AI models,
+                   and contribute to open source occasionally.
                 </p>
 
                 {/* Range, shown rather than claimed. Runs continuously; pauses
