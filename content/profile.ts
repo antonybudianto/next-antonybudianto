@@ -65,6 +65,14 @@ export const LAYERS: Layer[] = [
   },
   {
     depth: 5,
+    layer: "architecture",
+    title: "Implemented Micro-frontend architecture using Module Federation",
+    detail:
+      "Implementing micro-frontend with Nuxt 3 and Vite, so multiple teams can ship independently.",
+    tags: ["Microfrontend", "Vue"],
+  },
+  {
+    depth: 5,
     layer: "components",
     title: "One component library for Vue 2 and Vue 3",
     detail:
