@@ -39,37 +39,32 @@ export default function CopyButton({
       onClick={copy}
       aria-label={copied ? `${label} copied` : `Copy ${label}`}
       title={copied ? "Copied" : "Copy"}
-      className={`relative z-10 shrink-0 border border-rule p-1.5 transition-colors duration-200 hover:border-cool ${
-        copied ? "text-warm" : "text-faint hover:text-ink"
+      className={`icon-btn relative z-10 shrink-0 !rounded-lg ${
+        copied ? "!text-live" : ""
       }`}
     >
       {copied ? (
-        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
           <path
-            d="M3 8.5l3.2 3.2L13 5"
+            d="M5 12.5l4.5 4.5L19 7.5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="square"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ) : (
-        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
-          <rect
-            x="5.2"
-            y="5.2"
-            width="8.3"
-            height="8.3"
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+          <g
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.4"
-          />
-          <path
-            d="M10.8 5.2V2.5H2.5v8.3h2.7"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.4"
-          />
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          >
+            <rect x="8.5" y="8.5" width="12" height="12" rx="2.5" />
+            <path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5" />
+          </g>
         </svg>
       )}
     </button>

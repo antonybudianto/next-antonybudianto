@@ -1,16 +1,19 @@
 /**
- * Syntax highlighting on the site palette, replacing the imported base16
- * onedark theme — that one shipped a fixed dark ground and a rainbow of hues
- * that fought the two-colour system.
- *
- * The rule from PROPOSAL.md §3.1 still holds: cool is structural (keywords,
- * types, punctuation of meaning), warm is the value (strings, numbers).
- * Everything else stays neutral.
+ * Syntax highlighting on the site palette: mostly neutral, with the accent for
+ * structure and one muted warm tone for values, so code reads calmly next to
+ * prose rather than as a rainbow.
  */
 
 .hljs {
-  background: var(--panel-2);
-  color: var(--text);
+  --code-value: #b45309;
+  --code-title: color-mix(in srgb, var(--accent) 55%, var(--ink));
+
+  background: var(--subtle);
+  color: var(--ink);
+}
+
+.dark .hljs {
+  --code-value: #f2b872;
 }
 
 .hljs-comment,
@@ -24,7 +27,7 @@
 .hljs-literal,
 .hljs-built_in,
 .hljs-meta {
-  color: var(--cool);
+  color: var(--accent);
 }
 
 .hljs-string,
@@ -33,24 +36,21 @@
 .hljs-template-variable,
 .hljs-attr,
 .hljs-addition {
-  color: var(--warm);
+  color: var(--code-value);
 }
 
 .hljs-title,
 .hljs-title.function_,
 .hljs-section,
 .hljs-name {
-  /* Was --q2 from the retired quantized ramp; titles now sit between the
-     vein accent and body text. */
-  color: color-mix(in srgb, var(--cool) 62%, var(--text));
+  color: var(--code-title);
 }
 
 .hljs-type,
 .hljs-title.class_,
 .hljs-class .hljs-title,
 .hljs-attribute {
-  /* Was --q4. Types read as a warmer neighbour of the signal accent. */
-  color: color-mix(in srgb, var(--warm) 68%, var(--text));
+  color: color-mix(in srgb, var(--code-value) 70%, var(--ink));
 }
 
 .hljs-variable,
@@ -62,7 +62,7 @@
 }
 
 .hljs-deletion {
-  color: var(--warm);
+  color: var(--code-value);
   opacity: 0.75;
 }
 

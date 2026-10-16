@@ -1,43 +1,27 @@
 import Script from "next/script";
-import {
-  Bricolage_Grotesque,
-  Instrument_Sans,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import type { Viewport } from "next";
-
-import Substrate from "@/components/Substrate";
 
 import "./globals.css";
 
 /**
- * Three faces, three jobs. Fetched at build and emitted into
- * `_next/static/media` — no runtime font CDN, which also keeps the static
- * export self-contained. See PROPOSAL.md §11.2.
- *
- * Display is Bricolage Grotesque, requested with its optical-size and width
- * axes: the page narrows the display face as it gets bigger, which is what a
- * width axis is for and is not something a static face can do.
+ * One family for everything people read. Inter is requested as a variable
+ * font with its optical-size axis, so headlines pick up the display cut on
+ * their own. Mono only appears where something is meant to be copied: commands
+ * and code. Both are fetched at build into `_next/static/media` — no runtime
+ * font CDN, which keeps the static export self-contained.
  */
-const display = Bricolage_Grotesque({
+const sans = Inter({
   subsets: ["latin"],
-  axes: ["opsz", "wdth"],
-  variable: "--font-bricolage",
+  axes: ["opsz"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const body = Instrument_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-/** Demoted from display to data: labels, stacks, endpoints, anything measured. */
-const data = JetBrains_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-data",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -46,18 +30,16 @@ export const viewport: Viewport = {
   initialScale: 1,
   colorScheme: "dark light",
   themeColor: [
-    /* Kept in step with --bg in app/globals.css. These paint the mobile
-       browser chrome, so a stale value leaves a green bar around a blue
-       page. */
-    { media: "(prefers-color-scheme: light)", color: "#eef1f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a1017" },
+    /* Kept in step with --bg in app/globals.css; these paint the mobile
+       browser chrome. */
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
   ],
 };
 
 /**
- * Resolves the theme before first paint. This has to stay inline in <head>:
- * it previously sat at the end of <body>, so the light theme painted and then
- * flipped to dark. See PROPOSAL.md §2.
+ * Resolves the theme before first paint. This has to stay inline in <head>,
+ * otherwise the light theme paints first and then flips.
  */
 const THEME_INIT = `
 try {
@@ -77,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${data.variable}`}
+      className={`${sans.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -85,7 +67,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
       <body>
-        <Substrate />
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-L79J59SE0Q"

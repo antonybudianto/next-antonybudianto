@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { hasToc, type TocItem } from "@/lib/toc";
 
 /**
- * Roughly the fixed header plus a little air — matches the `scroll-margin-top`
- * on headings in markdown-styles.css, so the entry that highlights after a jump
- * is the one that actually lands below the header.
+ * The sticky header plus a little air — a touch past the `scroll-padding-top`
+ * in app/globals.css, so the entry that highlights after a jump is the one
+ * that actually lands below the header.
  */
 const OFFSET = 104;
 
@@ -65,7 +65,7 @@ function useActiveHeading(items: TocItem[]) {
 
 function TocList({ items, active }: { items: TocItem[]; active: string }) {
   return (
-    <ol className="border-l border-rule">
+    <ol className="border-l border-line">
       {items.map((item) => {
         const current = item.id === active;
         return (
@@ -73,12 +73,12 @@ function TocList({ items, active }: { items: TocItem[]; active: string }) {
             <a
               href={`#${item.id}`}
               aria-current={current ? "location" : undefined}
-              className={`-ml-px block border-l-2 py-1 text-[12.5px] leading-snug transition-colors duration-200 ${
+              className={`-ml-px block border-l py-1.5 text-[13px] leading-snug transition-colors duration-200 ${
                 INDENT[item.depth]
               } ${
                 current
-                  ? "border-warm text-warm"
-                  : "border-transparent text-mute hover:border-rule hover:text-ink"
+                  ? "border-ink font-medium text-ink"
+                  : "border-transparent text-faint hover:border-line-strong hover:text-ink"
               }`}
             >
               {item.text}
@@ -100,8 +100,8 @@ export function TocRail({ items }: { items: TocItem[] }) {
   if (!hasToc(items)) return null;
 
   return (
-    <aside className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
-      <span className="t-label">Contents</span>
+    <aside className="hidden lg:sticky lg:top-28 lg:block lg:self-start">
+      <p className="text-[13px] font-medium">On this page</p>
       <nav className="mt-3">
         <TocList items={items} active={active} />
       </nav>
@@ -120,9 +120,10 @@ export function TocDisclosure({ items }: { items: TocItem[] }) {
   if (!hasToc(items)) return null;
 
   return (
-    <details className="mt-8 border-y border-rule py-3 lg:hidden">
-      <summary className="t-label cursor-pointer list-none marker:content-none">
-        Contents — {items.length} sections
+    <details className="group/toc mt-8 rounded-xl border border-line bg-surface px-4 py-3 lg:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between text-[14px] font-medium marker:content-none [&::-webkit-details-marker]:hidden">
+        On this page
+        <span className="t-meta">{items.length} sections</span>
       </summary>
       <nav className="mt-3">
         <TocList items={items} active={active} />

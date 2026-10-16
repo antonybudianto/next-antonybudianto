@@ -14,17 +14,17 @@ export const PROFILE = {
   years: "10+ years",
   role: "Web engineer",
 
-  /** The hero statement. Read as one sentence with `thesisTail`. */
-  thesis: "Antony Budianto",
-  thesisAccent: "",
-
   lead: "10+ years experience on web development from various industry (B2B, HRIS, E-Commerce, Fintech, CRM, Omni-channel). I spent most of my time on Web development, building agentic AI workflows with MCP, Skills, and local AI models",
 
   /** Shown as a live line under the hero. Keep to three facts. */
   now: [
-    { label: "Building", value: "Krevios AI Studio" },
+    {
+      label: "Building",
+      value: "Krevios AI Studio",
+      href: "https://krevios.com",
+    },
     { label: "Current AI Stack", value: "Claude · Hermes · vLLM" },
-  ],
+  ] as { label: string; value: string; href?: string }[],
 
   industries: [
     "B2B",
@@ -42,9 +42,19 @@ export const PROFILE = {
 };
 
 /**
- * The six shipped interventions from the README, each placed on the layer it
- * touched. `depth` is the plane index used by the hero diagram — 6 is nearest
- * the product surface, 1 is underneath everything.
+ * Shared by the hero and the footer. PROPOSAL.md Q5 is still open — which of
+ * these are actually maintained — so all four stay until that is answered.
+ */
+export const LINKS = [
+  { name: "GitHub", href: "https://github.com/antonybudianto" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/antonybudianto/" },
+  { name: "X", href: "https://twitter.com/antonybudianto" },
+  { name: "Instagram", href: "https://instagram.com/antonybudianto" },
+];
+
+/**
+ * Shipped work from the README, each tagged with the layer it touched. `depth`
+ * orders the list from the product surface (high) down to the plumbing (low).
  */
 export interface Layer {
   depth: number;

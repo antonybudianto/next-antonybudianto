@@ -1,66 +1,57 @@
 import Link from "next/link";
 
 import DarkmodeButtonWrapper from "./DarkmodeButtonWrapper";
-import LayerMark from "./LayerMark";
 
-interface SiteHeaderProps {
-  /** Current section, shown after the wordmark as a breadcrumb. */
-  nav?: {
-    name: string;
-    href: string;
-  };
-}
+type Section = "work" | "experience" | "writing" | "lab";
 
-/**
- * Nav lists only what exists today. `/3d` is reached from the footer and from
- * the scene cards in the work grid, so it stays out of a header that also has to
- * fit on a 360px screen.
- */
-const NAV = [
-  { name: "work", href: "/#work" },
-  { name: "experience", href: "/#experience" },
-  { name: "writing", href: "/blog" },
+const NAV: { id: Section; name: string; href: string }[] = [
+  { id: "work", name: "Work", href: "/#work" },
+  { id: "experience", name: "Experience", href: "/#experience" },
+  { id: "writing", name: "Writing", href: "/blog" },
 ];
 
-export default function SiteHeader({ nav }: SiteHeaderProps) {
+export default function SiteHeader({ active }: { active?: Section }) {
   return (
-    <header className="fixed top-0 left-0 z-40 w-full">
-      <div className="surface-blur border-b border-rule">
-        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-4 py-3.5 sm:px-6 md:px-8">
-          <div className="flex min-w-0 items-center gap-3">
-            {/* The site's mark at its smallest: a stack seen edge-on. */}
-            <LayerMark depth={4} rungs={4} width={9} className="shrink-0" />
-            {/* Drops a size on phones so "antonybudianto" is not truncated by
-                the nav. */}
-            <div className="t-title min-w-0 truncate !text-[15px] sm:!text-[17px]">
-              <Link href="/" title="Home" className="hover:text-cool">
-                antonybudianto
-              </Link>
-              {nav ? (
-                <>
-                  <span className="text-faint"> / </span>
-                  <Link href={nav.href} title={nav.name} className="text-warm">
-                    {nav.name}
-                  </Link>
-                </>
-              ) : null}
-            </div>
-          </div>
+    <header className="surface-blur sticky top-0 z-40 border-b border-line">
+      <div className="shell flex h-16 items-center justify-between gap-4">
+        <Link
+          href="/"
+          className="group flex min-w-0 items-center gap-2.5"
+          aria-label="Antony Budianto — home"
+        >
+          <img
+            src="/profile.jpeg"
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7 shrink-0 rounded-full border border-line object-cover"
+          />
+          {/* The avatar carries the link on phones, where the nav needs the
+              room. */}
+          <span className="hidden truncate text-[15px] font-semibold tracking-[-0.015em] sm:inline">
+            Antony Budianto
+          </span>
+        </Link>
 
-          <div className="flex items-center gap-4 sm:gap-6">
-            <nav className="t-nav flex items-center gap-3.5 text-[11px] sm:gap-5 sm:text-[12px]">
-              {NAV.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-mute hover:text-ink"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-            <DarkmodeButtonWrapper />
-          </div>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <nav className="flex items-center text-[14px]">
+            {NAV.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                aria-current={active === item.id ? "page" : undefined}
+                className={`rounded-full px-2.5 py-1.5 transition-colors duration-200 sm:px-3 ${
+                  active === item.id
+                    ? "text-ink"
+                    : "text-mute hover:text-ink"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+          <span className="mx-1 h-4 w-px bg-line" aria-hidden="true" />
+          <DarkmodeButtonWrapper />
         </div>
       </div>
     </header>

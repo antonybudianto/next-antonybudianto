@@ -48,13 +48,8 @@ async function BlogTemplate(props) {
   const post = await getData(params.slug);
 
   return (
-    <>
-      <SiteHeader
-        nav={{
-          href: "/blog",
-          name: "writing",
-        }}
-      />
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader active="writing" />
       <BlogWrapper
         title={post.title}
         publishDate={post.date}
@@ -62,7 +57,7 @@ async function BlogTemplate(props) {
       >
         <BlogBody content={post.content} />
       </BlogWrapper>
-    </>
+    </div>
   );
 }
 

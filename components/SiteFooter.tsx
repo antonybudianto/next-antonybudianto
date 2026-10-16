@@ -1,15 +1,6 @@
-/**
- * PROPOSAL.md Q5 is still open: which of these channels are actually
- * maintained. All four are kept until that is answered — dropping a live
- * channel is worse than keeping a quiet one. `/3d` lives here rather than in the
- * header, so the scenes are reachable without competing for a nav slot.
- */
-const LINKS = [
-  { name: "GitHub", href: "https://github.com/antonybudianto" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/antonybudianto/" },
-  { name: "X", href: "https://twitter.com/antonybudianto" },
-  { name: "Instagram", href: "https://instagram.com/antonybudianto" },
-];
+import Link from "next/link";
+
+import { LINKS } from "@/content/profile";
 
 const PAGES = [
   { name: "Writing", href: "/blog" },
@@ -18,40 +9,34 @@ const PAGES = [
 
 export default function SiteFooter() {
   return (
-    <footer className="on-field border-t border-rule">
-      <div className="mx-auto w-full max-w-[1180px] px-4 py-14 sm:px-6 md:px-8">
-        <div className="grid gap-10 sm:grid-cols-[132px_1fr_1fr]">
-          <div className="t-label">Elsewhere</div>
-
-          <ul className="t-nav flex flex-col gap-2.5">
-            {LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link"
-                >
-                  {link.name} ↗
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <ul className="t-nav flex flex-col gap-2.5">
-            {PAGES.map((page) => (
-              <li key={page.href}>
-                <a href={page.href} className="link">
-                  {page.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <p className="t-label mt-14 border-t border-rule pt-5">
+    <footer className="mt-auto border-t border-line">
+      <div className="shell flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+        <p className="t-meta">
           &copy; {new Date().getFullYear()} Antony Budianto
         </p>
+
+        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
+          {PAGES.map((page) => (
+            <li key={page.href}>
+              <Link href={page.href} className="link-quiet">
+                {page.name}
+              </Link>
+            </li>
+          ))}
+          <li aria-hidden="true" className="hidden h-4 w-px bg-line sm:block" />
+          {LINKS.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-quiet"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   );

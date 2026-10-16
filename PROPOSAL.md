@@ -326,6 +326,7 @@ Phase 1 can start without any of these. Phase 2 cannot.
 
 Append one line per working session: date, what landed, what's next.
 
+- **2026-10-16** — Revamp 3, "Quiet" (see §12): solid ground, one family, one accent, card + list layouts across home, blog and 3D.
 - **2026-07-25** — Audit complete, direction chosen, proposal written. Nothing built yet.
 - **2026-07-25** — Added Hermes (`hermes mcp add krevios --url …`) as a third MCP install
   line, confirmed against the Nous Research docs and the `hermes_cli` source. Command labels
@@ -531,3 +532,74 @@ row grid has a slot for them.
 `pnpm build` compiles and exports 17 pages; home ships **less** client JS than before
 (`WeightsField` was the only client component on it). Screenshotted from the static export via
 CDP in both themes at 1440, and at 390 for mobile, plus a `prefers-reduced-motion: reduce` pass.
+
+---
+
+## 12. Revamp 3 — direction "Quiet"
+
+**Status:** built on `main` (uncommitted at time of writing). Supersedes "Substrate" in §11.
+**Date:** 2026-10-16
+**Brief:** full design revamp — a simple background with a modern look, and nothing that reads as
+sloppy.
+
+### 12.1 What changed and why
+
+"Substrate" had a lot going on at once: an animated grid ground with two drifting washes, an
+isometric stack, a ticker, three typefaces, two accents, mono uppercase labels on almost every
+element, and square boxes everywhere. Each piece had a reason; together they read as busy. This
+direction removes texture as a design tool and lets type, spacing and hairlines carry the
+structure.
+
+- **Ground:** solid `--bg`. No grid, no washes, no canvas.
+- **Colour:** neutrals plus one accent (`--accent`, blue) for links, focus and the active item,
+  and `--live` (green) only for the status dot on things that are running.
+- **Type:** one family — Inter, variable, with its `opsz` axis so headlines pick up the display
+  cut automatically. JetBrains Mono only where something is meant to be copied (commands, code).
+  Mono uppercase labels are gone.
+- **Shape:** 16px cards with an inset 10px screenshot frame, pill buttons and chips, hairline
+  section dividers. Light theme gets a 1px shadow; dark relies on borders.
+- **Motion:** one staggered arrival on the hero, then hover/focus only. No ambient animation.
+
+### 12.2 Tokens
+
+```
+                 light       dark
+--bg             #fafafa     #09090b
+--surface        #ffffff     #111113
+--subtle         #f4f4f5     #18181b
+--line           #e7e7ea     #222226
+--line-strong    #d4d4d8     #303036
+--ink            #0a0a0b     #ededef
+--mute           #52525b     #a1a1aa     7.4:1 / 7.8:1
+--faint          #6e6e77     #83838c     4.8:1 / 5.3:1
+--accent         #2563eb     #6aa8ff     5.0:1 / 8.2:1
+--live           #16a34a     #4ade80
+```
+
+Ratios are against `--bg`; all text tokens also clear AA on `--surface`, and `--faint`
+clears it on `--subtle` (code comments, the command prompt, inactive tabs).
+
+### 12.3 Composition
+
+| Page | Shape |
+| --- | --- |
+| Home | Hero (avatar, role, name, lead, actions) beside a "Now" card → Work → Experience → Toolkit → Writing (latest 3) → footer |
+| Work | Krevios lead card; its three MCP install lines are now **tabs** (`components/CommandTabs.tsx`) instead of three stacked rows. `skills` as a text card with its install line. Everything else in a 4-up grid. |
+| `/blog` | Text list grouped by year. Cover images dropped from the index — most were inconsistent external screenshots. |
+| `/blog/[slug]` | 720px column, author + date under the title, "On this page" rail at `lg`, author card at the end. |
+| `/3d` | Same card + frame treatment as the work grid. Scene viewer overlay restyled to frosted pills with SVG icons (was emoji). |
+
+### 12.4 Removed
+
+`Substrate`, `LayerStack`, `LayerMark`, `ExperienceLayers` (→ `ExperienceList`), `app/blog/BlogCard.tsx`
+(→ `components/PostList.tsx`). Social links moved to `LINKS` in `content/profile.ts` so the hero
+and footer share one list. The duplicate profile paragraph on the home page was dropped — the
+hero lead and the "Now" card already say the same things.
+
+### 12.5 Verified
+
+`next build` compiles and exports 17 pages. Checked in the browser at desktop and 375px in both
+themes: no horizontal overflow, command tabs switch and copy without navigating the card, console
+clean (also fixes a duplicate React key warning from two experience rows sharing `depth: 5`).
+`next lint` is broken on `main` independently of this change — ESLint 8.29 cannot load the
+`eslint-plugin-next` 15 rules.

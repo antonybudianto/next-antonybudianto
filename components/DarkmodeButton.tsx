@@ -19,7 +19,7 @@ const DarkmodeButton: FC<DarkmodeButtonProps> = ({
     aria-label={title}
     onClick={onClick}
     suppressHydrationWarning
-    className={`flex h-7 w-7 items-center justify-center border border-rule text-mute transition-colors duration-200 hover:border-cool hover:text-ink ${className}`}
+    className={`icon-btn ${className}`}
   >
     {children}
   </button>

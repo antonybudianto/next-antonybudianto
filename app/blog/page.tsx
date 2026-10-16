@@ -3,10 +3,10 @@ import { Metadata } from "next";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import LayerMark from "@/components/LayerMark";
+import PostList, { type PostSummary } from "@/components/PostList";
+import { yearOf } from "@/lib/date";
 
 import { getAllPosts } from "../../lib/api";
-import BlogCard from "./BlogCard";
 
 export const metadata: Metadata = {
   title: "Blog by Antony",
@@ -27,61 +27,60 @@ export const metadata: Metadata = {
   },
 };
 
-async function getData() {
+function getData(): PostSummary[] {
   try {
-    const allPosts = getAllPosts([
-      "title",
-      "desc",
-      "date",
-      "slug",
-      "active",
-      "ogImage",
-    ]);
-    return { allPosts };
+    return getAllPosts(["title", "desc", "date", "slug", "active"]);
   } catch (e) {
-    return { allPosts: [] };
+    return [];
   }
 }
 
-export default async function BlogIndex() {
-  const { allPosts } = await getData();
+/** Posts are already sorted newest first, so groups come out in order. */
+function byYear(posts: PostSummary[]) {
+  const groups: { year: number; posts: PostSummary[] }[] = [];
+  for (const post of posts) {
+    const year = yearOf(post.date);
+    const last = groups[groups.length - 1];
+    if (last?.year === year) last.posts.push(post);
+    else groups.push({ year, posts: [post] });
+  }
+  return groups;
+}
+
+export default function BlogIndex() {
+  const posts = getData();
 
   return (
     <ErrorBoundary>
-      <SiteHeader nav={{ href: "/blog", name: "writing" }} />
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader active="writing" />
 
-      <main className="on-field min-h-screen">
-        <div className="mx-auto max-w-6xl px-4 pt-28 pb-16 sm:px-6 md:px-8 lg:pb-24">
-          <div className="grid gap-6 sm:grid-cols-[108px_1fr] sm:gap-7">
-            <div>
-              <span className="t-label">Writing</span>
-              <LayerMark depth={2} className="mt-3" />
-            </div>
-            <div className="min-w-0">
-              <h1 className="t-head">Notes on web, tooling and 3D</h1>
-              <p className="t-body mt-3 text-mute">
-                {allPosts.length} posts. Longer pieces on build tooling,
-                rendering and the things I take apart.
-              </p>
+        <main className="shell pb-24 pt-14 md:pt-24">
+          <header className="max-w-[640px]">
+            <h1 className="t-h1">Writing</h1>
+            <p className="t-lead mt-4">
+              Notes on build tooling, rendering, 3D on the web, and running
+              models at home. {posts.length} posts.
+            </p>
+          </header>
 
-              <div className="mt-10 grid gap-5 md:grid-cols-2 lg:gap-6">
-                {allPosts.map((p, i) => (
-                  <BlogCard
-                    index={i}
-                    key={p.slug}
-                    slug={p.slug}
-                    title={p.title}
-                    ogImage={p.ogImage}
-                    date={p.date}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="mt-14 flex flex-col gap-10 md:mt-16">
+            {byYear(posts).map((group) => (
+              <section
+                key={group.year}
+                className="grid gap-x-10 gap-y-2 border-t border-line pt-6 md:grid-cols-[120px_minmax(0,1fr)]"
+              >
+                <h2 className="t-meta pt-4 font-medium md:sticky md:top-24 md:self-start">
+                  {group.year}
+                </h2>
+                <PostList posts={group.posts} />
+              </section>
+            ))}
           </div>
-        </div>
-      </main>
+        </main>
 
-      <SiteFooter />
+        <SiteFooter />
+      </div>
     </ErrorBoundary>
   );
 }

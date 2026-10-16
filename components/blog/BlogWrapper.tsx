@@ -1,15 +1,11 @@
 import React from "react";
+import Link from "next/link";
 
-import LayerMark from "@/components/LayerMark";
 import SiteFooter from "@/components/SiteFooter";
+import { ArrowLeft, ArrowRight } from "@/components/icons";
 import { TocDisclosure, TocRail } from "@/components/blog/TableOfContents";
+import { formatDate } from "@/lib/date";
 import { hasToc, type TocItem } from "@/lib/toc";
-
-const fmt = new Intl.DateTimeFormat("en-GB", {
-  day: "numeric",
-  month: "short",
-  year: "numeric",
-});
 
 interface BlogWrapperProps {
   title: string;
@@ -26,53 +22,73 @@ function BlogWrapper({
   toc = [],
   children,
 }: BlogWrapperProps) {
-  /* Posts without enough headings keep the two-column measure rather than
-     reserving an empty track. */
+  /* Posts without enough headings keep a single column rather than reserving
+     an empty track. */
   const columns = hasToc(toc)
-    ? "sm:grid-cols-[108px_1fr] lg:grid-cols-[108px_minmax(0,1fr)_190px]"
-    : "sm:grid-cols-[108px_1fr]";
+    ? "lg:grid-cols-[minmax(0,720px)_200px] lg:justify-between"
+    : "lg:grid-cols-[minmax(0,720px)]";
 
   return (
     <>
-      <main className="min-h-screen bg-bg">
-        <div className="mx-auto max-w-6xl px-4 pt-28 pb-16 sm:px-6 md:px-8">
-          <div className={`grid gap-6 sm:gap-7 ${columns}`}>
-            <div className="sm:sticky sm:top-24 sm:self-start">
-              <span className="t-label">Post</span>
-              <LayerMark depth={2} className="mt-3" />
-              <p className="t-label mt-3">
-                <time dateTime={publishDate}>
-                  {fmt.format(new Date(publishDate))}
-                </time>
-              </p>
+      <main className="shell pb-24 pt-10 md:pt-16">
+        <div className={`grid gap-16 ${columns}`}>
+          <article className="min-w-0">
+            <Link
+              href="/blog"
+              className="link-quiet inline-flex items-center gap-1.5 text-[14px]"
+            >
+              <ArrowLeft />
+              Writing
+            </Link>
+
+            <h1 className="t-h1 mt-8">{title}</h1>
+
+            <div className="mt-6 flex items-center gap-3">
+              <img
+                className="h-9 w-9 rounded-full border border-line object-cover"
+                src="/profile.jpeg"
+                alt=""
+                width={36}
+                height={36}
+              />
+              <div className="leading-tight">
+                <p className="text-[14px] font-medium">Antony Budianto</p>
+                <p className="t-meta mt-0.5">
+                  <time dateTime={publishDate}>{formatDate(publishDate)}</time>
+                </p>
+              </div>
             </div>
 
-            <div className="min-w-0">
-              <h1 className="t-head text-[clamp(24px,4vw,38px)]">{title}</h1>
+            <TocDisclosure items={toc} />
 
-              <TocDisclosure items={toc} />
+            <div className="mt-10 border-t border-line pt-2">{children}</div>
 
-              <div className="mt-10">{children}</div>
-
-              <div className="mt-16 flex items-center gap-3 border-t border-rule pt-6">
+            <div className="card mt-16 flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-3">
                 <img
-                  className="h-9 w-9 rounded-full border border-rule"
+                  className="h-10 w-10 rounded-full border border-line object-cover"
                   src="/profile.jpeg"
                   alt="Antony Budianto"
-                  width={36}
-                  height={36}
+                  width={40}
+                  height={40}
                 />
-                <div>
-                  <p className="t-title">Antony Budianto</p>
-                  <p className="t-label mt-0.5">
+                <div className="leading-tight">
+                  <p className="text-[15px] font-semibold">Antony Budianto</p>
+                  <p className="t-meta mt-1">
                     Software engineering, web, and some random life thoughts
                   </p>
                 </div>
               </div>
+              <Link
+                href="/blog"
+                className="link-quiet inline-flex shrink-0 items-center gap-1.5 text-[14px]"
+              >
+                More writing <ArrowRight />
+              </Link>
             </div>
+          </article>
 
-            <TocRail items={toc} />
-          </div>
+          <TocRail items={toc} />
         </div>
       </main>
 

@@ -1,10 +1,10 @@
 /**
  * Colours map to the CSS custom properties defined in app/globals.css, so a
- * class like `bg-panel` follows the theme without a `dark:` variant.
- * See PROPOSAL.md §11.
+ * class like `bg-surface` follows the theme without a `dark:` variant.
+ * See PROPOSAL.md §12.
  *
  * Note: because these are plain hex vars rather than raw channels, Tailwind's
- * opacity modifiers (`bg-panel/50`) do not work. Use color-mix() in CSS when
+ * opacity modifiers (`bg-surface/50`) do not work. Use color-mix() in CSS when
  * transparency is needed.
  */
 module.exports = {
@@ -17,24 +17,22 @@ module.exports = {
     extend: {
       colors: {
         bg: "var(--bg)",
-        "bg-2": "var(--bg-2)",
-        panel: "var(--panel)",
-        "panel-2": "var(--panel-2)",
-        rule: "var(--rule)",
-        "rule-soft": "var(--rule-soft)",
-        ink: "var(--text)",
+        surface: "var(--surface)",
+        subtle: "var(--subtle)",
+        line: "var(--line)",
+        "line-strong": "var(--line-strong)",
+        ink: "var(--ink)",
         mute: "var(--mute)",
         faint: "var(--faint)",
-        cool: "var(--cool)",
-        warm: "var(--warm)",
+        accent: "var(--accent)",
+        live: "var(--live)",
       },
       fontFamily: {
-        display: "var(--font-display)",
         sans: "var(--font-sans)",
         mono: "var(--font-mono)",
       },
       maxWidth: {
-        prose: "66ch",
+        prose: "68ch",
       },
     },
   },
